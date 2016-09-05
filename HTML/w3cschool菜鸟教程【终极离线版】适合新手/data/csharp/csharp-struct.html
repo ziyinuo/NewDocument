@@ -1,0 +1,256 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>C# 结构（Struct） | w3cschool菜鸟教程</title> <link rel='prev' title='C# 字符串（String）' href="csharp-string.html"/> <link rel='next' title='C# 枚举（Enum）' href="csharp-enum.html"/> <link rel='canonical' href='http://www.w3cschool.cc/csharp/csharp-struct.html'/> <meta name="keywords" content="C# 结构（Struct）"> <meta name="description" content="C# 结构（Struct） 在 C# 中，结构是值类型数据结构。它使得一个单一变量可以存储各种数据类型的相关数据。struct 关键字用于创建结构。 结构是用来代表一个记录。假设您想跟踪图书馆中书的动态。您可能想跟踪每本书的以下属性： Title Author Subject Book ID 定义结构 为了定义一个结构，您必须使用 struct 语句。struct 语句为程序定义了一个带有多个成员的新的数据类型。 例如，您.."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="../ruby/ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>C# 教程</strong></h2> <a target="_top" title="C# 教程" href="csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html"> C# 教程 </a> <a target="_top" title="C# 简介" href="csharp-intro.html" href="http://www.w3cschool.cc/csharp/csharp-intro.html"> C# 简介 </a> <a target="_top" title="C# 环境" href="csharp-environment-setup.html" href="http://www.w3cschool.cc/csharp/csharp-environment-setup.html"> C# 环境 </a> <a target="_top" title="C# 程序结构" href="csharp-program-structure.html" href="http://www.w3cschool.cc/csharp/csharp-program-structure.html"> C# 程序结构 </a> <a target="_top" title="C# 基本语法" href="csharp-basic-syntax.html" href="http://www.w3cschool.cc/csharp/csharp-basic-syntax.html"> C# 基本语法 </a> <a target="_top" title="C# 数据类型" href="csharp-data-types.html" href="http://www.w3cschool.cc/csharp/csharp-data-types.html"> C# 数据类型 </a> <a target="_top" title="C# 类型转换" href="csharp-type-conversion.html" href="http://www.w3cschool.cc/csharp/csharp-type-conversion.html"> C# 类型转换 </a> <a target="_top" title="C# 变量" href="csharp-variables.html" href="http://www.w3cschool.cc/csharp/csharp-variables.html"> C# 变量 </a> <a target="_top" title="C# 常量" href="csharp-constants.html" href="http://www.w3cschool.cc/csharp/csharp-constants.html"> C# 常量 </a> <a target="_top" title="C# 运算符" href="csharp-operators.html" href="http://www.w3cschool.cc/csharp/csharp-operators.html"> C# 运算符 </a> <a target="_top" title="C# 判断" href="csharp-decision.html" href="http://www.w3cschool.cc/csharp/csharp-decision.html"> C# 判断 </a> <a target="_top" title="C# 循环" href="csharp-loops.html" href="http://www.w3cschool.cc/csharp/csharp-loops.html"> C# 循环 </a> <a target="_top" title="C# 封装" href="csharp-encapsulation.html" href="http://www.w3cschool.cc/csharp/csharp-encapsulation.html"> C# 封装 </a> <a target="_top" title="C# 方法" href="csharp-methods.html" href="http://www.w3cschool.cc/csharp/csharp-methods.html"> C# 方法 </a> <a target="_top" title="C# 可空类型" href="csharp-nullable.html" href="http://www.w3cschool.cc/csharp/csharp-nullable.html"> C# 可空类型 </a> <a target="_top" title="C# 数组（Array）" href="csharp-array.html" href="http://www.w3cschool.cc/csharp/csharp-array.html"> C# 数组（Array） </a> <a target="_top" title="C# 字符串（String）" href="csharp-string.html" href="http://www.w3cschool.cc/csharp/csharp-string.html"> C# 字符串（String） </a> <a target="_top" title="C# 结构（Struct）" href="csharp-struct.html" href="http://www.w3cschool.cc/csharp/csharp-struct.html"> C# 结构（Struct） </a> <a target="_top" title="C# 枚举（Enum）" href="csharp-enum.html" href="http://www.w3cschool.cc/csharp/csharp-enum.html"> C# 枚举（Enum） </a> <a target="_top" title="C# 类（Class）" href="csharp-class.html" href="http://www.w3cschool.cc/csharp/csharp-class.html"> C# 类（Class） </a> <a target="_top" title="C# 继承" href="csharp-inheritance.html" href="http://www.w3cschool.cc/csharp/csharp-inheritance.html"> C# 继承 </a> <a target="_top" title="C# 多态性" href="csharp-polymorphism.html" href="http://www.w3cschool.cc/csharp/csharp-polymorphism.html"> C# 多态性 </a> <a target="_top" title="C# 运算符重载" href="csharp-operator-overloading.html" href="http://www.w3cschool.cc/csharp/csharp-operator-overloading.html"> C# 运算符重载 </a> <a target="_top" title="C# 接口（Interface）" href="csharp-interface.html" href="http://www.w3cschool.cc/csharp/csharp-interface.html"> C# 接口（Interface） </a> <a target="_top" title="C# 命名空间（Namespace）" href="csharp-namespace.html" href="http://www.w3cschool.cc/csharp/csharp-namespace.html"> C# 命名空间（Namespace） </a> <a target="_top" title="C# 预处理器指令" href="csharp-preprocessor-directives.html" href="http://www.w3cschool.cc/csharp/csharp-preprocessor-directives.html"> C# 预处理器指令 </a> <a target="_top" title="C# 正则表达式" href="csharp-regular-expressions.html" href="http://www.w3cschool.cc/csharp/csharp-regular-expressions.html"> C# 正则表达式 </a> <a target="_top" title="C# 异常处理" href="csharp-exception-handling.html" href="http://www.w3cschool.cc/csharp/csharp-exception-handling.html"> C# 异常处理 </a> <a target="_top" title="C# 文件的输入与输出" href="csharp-file-io.html" href="http://www.w3cschool.cc/csharp/csharp-file-io.html"> C# 文件的输入与输出 </a> <br><h2 class="left"><span class="left_h2">C#</span> 高级教程</h2> <a target="_top" title="C# 特性（Attribute）" href="csharp-attribute.html" href="http://www.w3cschool.cc/csharp/csharp-attribute.html"> C# 特性（Attribute） </a> <a target="_top" title="C# 反射（Reflection）" href="csharp-reflection.html" href="http://www.w3cschool.cc/csharp/csharp-reflection.html"> C# 反射（Reflection） </a> <a target="_top" title="C# 属性（Property）" href="csharp-property.html" href="http://www.w3cschool.cc/csharp/csharp-property.html"> C# 属性（Property） </a> <a target="_top" title="C# 索引器（Indexer）" href="csharp-indexer.html" href="http://www.w3cschool.cc/csharp/csharp-indexer.html"> C# 索引器（Indexer） </a> <a target="_top" title="C# 委托（Delegate）" href="csharp-delegate.html" href="http://www.w3cschool.cc/csharp/csharp-delegate.html"> C# 委托（Delegate） </a> <a target="_top" title="C# 事件（Event）" href="csharp-event.html" href="http://www.w3cschool.cc/csharp/csharp-event.html"> C# 事件（Event） </a> <a target="_top" title="C# 集合（Collection）" href="csharp-collection.html" href="http://www.w3cschool.cc/csharp/csharp-collection.html"> C# 集合（Collection） </a> <a target="_top" title="C# 泛型（Generic）" href="csharp-generic.html" href="http://www.w3cschool.cc/csharp/csharp-generic.html"> C# 泛型（Generic） </a> <a target="_top" title="C# 匿名方法" href="csharp-anonymous-methods.html" href="http://www.w3cschool.cc/csharp/csharp-anonymous-methods.html"> C# 匿名方法 </a> <a target="_top" title="C# 不安全代码" href="csharp-unsafe-codes.html" href="http://www.w3cschool.cc/csharp/csharp-unsafe-codes.html"> C# 不安全代码 </a> <a target="_top" title="C# 多线程" href="csharp-multithreading.html" href="http://www.w3cschool.cc/csharp/csharp-multithreading.html"> C# 多线程 </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="csharp-string.html" href="http://www.w3cschool.cc/csharp/csharp-string.html" rel="prev"> C# 字符串（String）</a></div> <div class="next"><a href="csharp-enum.html" href="http://www.w3cschool.cc/csharp/csharp-enum.html" rel="next">C# 枚举（Enum）</a> &raquo;</div> </div> <div id="content"> <h1>C# <span class="color_h1">结构（Struct）</span></h1> <div class="tutintro"> <p>在 C# 中，结构是值类型数据结构。它使得一个单一变量可以存储各种数据类型的相关数据。<b>struct</b> 关键字用于创建结构。</p> <p>结构是用来代表一个记录。假设您想跟踪图书馆中书的动态。您可能想跟踪每本书的以下属性：</p> <ul class="list"> <li>Title</li> <li>Author</li> <li>Subject</li> <li>Book ID</li> </ul> </div> <h2 class="tutheader">定义结构</h2> <p>为了定义一个结构，您必须使用 struct 语句。struct 语句为程序定义了一个带有多个成员的新的数据类型。</p> <p>例如，您可以按照如下的方式声明 Book 结构：</p> <pre class="prettyprint">
+struct Books
+{
+   public string title;
+   public string author;
+   public string subject;
+   public int book_id;
+};  
+</pre> <p>下面的程序演示了结构的用法：</p> <pre class="prettyprint">
+using System;
+     
+struct Books
+{
+   public string title;
+   public string author;
+   public string subject;
+   public int book_id;
+};  
+
+public class testStructure
+{
+   public static void Main(string[] args)
+   {
+
+      Books Book1;        /* 声明 Book1，类型为 Book */
+      Books Book2;        /* 声明 Book2，类型为 Book */
+
+      /* book 1 详述 */
+      Book1.title = "C Programming";
+      Book1.author = "Nuha Ali"; 
+      Book1.subject = "C Programming Tutorial";
+      Book1.book_id = 6495407;
+
+      /* book 2 详述 */
+      Book2.title = "Telecom Billing";
+      Book2.author = "Zara Ali";
+      Book2.subject =  "Telecom Billing Tutorial";
+      Book2.book_id = 6495700;
+
+      /* 打印 Book1 信息 */
+      Console.WriteLine( "Book 1 title : {0}", Book1.title);
+      Console.WriteLine("Book 1 author : {0}", Book1.author);
+      Console.WriteLine("Book 1 subject : {0}", Book1.subject);
+      Console.WriteLine("Book 1 book_id :{0}", Book1.book_id);
+
+      /* 打印 Book2 信息 */
+      Console.WriteLine("Book 2 title : {0}", Book2.title);
+      Console.WriteLine("Book 2 author : {0}", Book2.author);
+      Console.WriteLine("Book 2 subject : {0}", Book2.subject);
+      Console.WriteLine("Book 2 book_id : {0}", Book2.book_id);       
+
+      Console.ReadKey();
+
+   }
+}
+</pre> <p>当上面的代码被编译和执行时，它会产生下列结果：</p> <pre class="result">
+Book 1 title : C Programming
+Book 1 author : Nuha Ali
+Book 1 subject : C Programming Tutorial
+Book 1 book_id : 6495407
+Book 2 title : Telecom Billing
+Book 2 author : Zara Ali
+Book 2 subject : Telecom Billing Tutorial
+Book 2 book_id : 6495700
+</pre> <h2 class="tutheader">C# 结构的特点</h2> <p>您已经用了一个简单的名为 Books 的结构。在 C# 中的结构与传统的 C 或 C++ 中的结构不同。C# 中的结构有一下特点：</p> <ul class="list"> <li>结构可带有方法、字段、索引、属性、运算符方法和事件。</li> <li>结构可定义构造函数，但不能定义析构函数。但是，您不能为结构定义默认的构造函数。默认的构造函数是自动定义的，且不能被改变。</li> <li>与类不同，结构不能继承其他的结构或类。</li> <li>结构不能作为其他结构或类的基础结构。</li> <li>结构可实现一个或多个接口。</li> <li>结构成员不能指定为 abstract、virtual 或 protected。</li> <li>当您使用 <b>New</b> 操作符创建一个结构对象时，会调用适当的构造函数来创建结构。与类不同，结构可以不使用 New 操作符即可被实例化。</li> <li>如果不使用 New 操作符，只有在所有的字段都被初始化之后，字段才被赋值，对象才被使用。</li> </ul> <h2 class="tutheader">类 vs 结构</h2> <p>类和结构有以下几个基本的不同点：</p> <ul class="list"> <li>类是引用类型，结构是值类型。</li> <li>结构不支持继承。</li> <li>结构不能声明默认的构造函数。</li> </ul> <p>针对上述讨论，让我们重写前面的实例：</p> <pre class="prettyprint">
+using System;
+     
+struct Books
+{
+   private string title;
+   private string author;
+   private string subject;
+   private int book_id;
+   public void getValues(string t, string a, string s, int id)
+   {
+      title = t;
+      author = a;
+      subject = s;
+      book_id = id;
+   }
+   public void display()
+   {
+      Console.WriteLine("Title : {0}", title);
+      Console.WriteLine("Author : {0}", author);
+      Console.WriteLine("Subject : {0}", subject);
+      Console.WriteLine("Book_id :{0}", book_id);
+   }
+
+};  
+
+public class testStructure
+{
+   public static void Main(string[] args)
+   {
+
+      Books Book1 = new Books(); /* 声明 Book1，类型为 Book */
+      Books Book2 = new Books(); /* 声明 Book2，类型为 Book */
+
+      /* book 1 详述 */
+      Book1.getValues("C Programming",
+      "Nuha Ali", "C Programming Tutorial",6495407);
+
+      /* book 2 详述 */
+      Book2.getValues("Telecom Billing",
+      "Zara Ali", "Telecom Billing Tutorial", 6495700);
+
+      /* 打印 Book1 信息 */
+      Book1.display();
+
+      /* 打印 Book2 信息 */
+      Book2.display(); 
+
+      Console.ReadKey();
+
+   }
+}
+</pre> <p>当上面的代码被编译和执行时，它会产生下列结果：</p> <pre class="result">
+Title : C Programming
+Author : Nuha Ali
+Subject : C Programming Tutorial
+Book_id : 6495407
+Title : Telecom Billing
+Author : Zara Ali
+Subject : Telecom Billing Tutorial
+Book_id : 6495700
+</pre> </div> <div class="chapter"> <div class="prev">&laquo; <a href="csharp-string.html" href="http://www.w3cschool.cc/csharp/csharp-string.html" rel="prev"> C# 字符串（String）</a></div> <div class="next"><a href="csharp-enum.html" href="http://www.w3cschool.cc/csharp/csharp-enum.html" rel="next">C# 枚举（Enum）</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/csharp/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/csharp/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

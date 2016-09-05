@@ -1,0 +1,539 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>jQuery UI 实例 &#8211; 日期选择器（Datepicker） | w3cschool菜鸟教程</title> <link rel='prev' title='jQuery UI 实例 &#8211; 按钮（Button）' href="example-button.html"/> <link rel='next' title='jQuery UI 实例 &#8211; 对话框（Dialog）' href="example-dialog.html"/> <link rel='canonical' href='http://www.w3cschool.cc/jqueryui/example-datepicker.html'/> <meta name="keywords" content="jQuery UI 实例 &#8211; 日期选择器（Datepicker）"> <meta name="description" content="jQuery UI 实例 - 日期选择器（Datepicker） 从弹出框或内联日历选择一个日期。 如需了解更多有关 datepicker 部件的细节，请查看 API 文档 日期选择器部件（Datepicker Widget）。 默认功能 日期选择器（Datepicker）绑定到一个标准的表单 input 字段上。把焦点移到 input 上（点击或者使用 tab 键），在一个小的覆盖层上打开一个交互日历。选择一个日期，点击页面上.."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="../ruby/ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>jQuery UI 教程</strong></h2> <a target="_top" title="jQuery UI 教程" href="jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html"> jQuery UI 教程 </a> <a target="_top" title="jQuery UI 简介" href="jqueryui-intro.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-intro.html"> jQuery UI 简介 </a> <a target="_top" title="jQuery UI 下载" href="jqueryui-download.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-download.html"> jQuery UI 下载 </a> <a target="_top" title="jQuery UI 使用" href="jqueryui-use.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-use.html"> jQuery UI 使用 </a> <a target="_top" title="jQuery UI 定制" href="jqueryui-custom.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-custom.html"> jQuery UI 定制 </a> <a target="_top" title="jQuery UI 工作原理" href="jqueryui-work.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-work.html"> jQuery UI 工作原理 </a> <br><h2 class="left">jQuery UI <span class="left_h2">主题</span></h2> <a target="_top" title="jQuery UI 主题" href="jqueryui-theme.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-theme.html"> jQuery UI 主题 </a> <a target="_top" title="jQuery UI ThemeRoller" href="jqueryui-theme-themeroller.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-theme-themeroller.html"> jQuery UI ThemeRoller </a> <a target="_top" title="jQuery UI CSS 框架 API" href="jqueryui-theme-api.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-theme-api.html"> jQuery UI CSS 框架 API </a> <a target="_top" title="jQuery UI 设计主题" href="jqueryui-theme-design.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-theme-design.html"> jQuery UI 设计主题 </a> <br><h2 class="left">jQuery UI <span class="left_h2">部件库</span></h2> <a target="_top" title="jQuery UI 部件库" href="jqueryui-widget-factory.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-widget-factory.html"> jQuery UI 部件库 </a> <a target="_top" title="jQuery UI 通过部件库扩展小部件" href="jqueryui-widget-extend.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-widget-extend.html"> jQuery UI 扩展小部件 </a> <a target="_top" title="jQuery UI 小部件方法调用" href="jqueryui-widget-method.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-widget-method.html"> jQuery UI 小部件方法调用 </a> <a target="_top" title="jQuery UI 为什么使用部件库" href="jqueryui-widget-factory-why.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-widget-factory-why.html"> jQuery UI 为什么使用部件库 </a> <a target="_top" title="jQuery UI 如何使用部件库" href="jqueryui-widget-factory-how.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-widget-factory-how.html"> jQuery UI 如何使用部件库 </a> <br><h2 class="left">jQuery UI <span class="left_h2">参考手册</span></h2> <a target="_top" title="jQuery UI API 文档" href="jqueryui-api.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-api.html"> jQuery UI API 文档 </a> <a target="_top" title="jQuery UI API 类别 &#8211; 特效" href="ref-effects.html" href="http://www.w3cschool.cc/jqueryui/ref-effects.html"> API 类别 - 特效 </a> <a target="_top" title="jQuery UI API 类别 &#8211; 特效核心" href="ref-effects-core.html" href="http://www.w3cschool.cc/jqueryui/ref-effects-core.html"> API 类别 - 特效核心 </a> <a target="_top" title="jQuery UI API 类别 &#8211; 交互" href="ref-interactions.html" href="http://www.w3cschool.cc/jqueryui/ref-interactions.html"> API 类别 - 交互 </a> <a target="_top" title="jQuery UI API 类别 &#8211; 方法重载" href="ref-overrides.html" href="http://www.w3cschool.cc/jqueryui/ref-overrides.html"> API 类别 - 方法重载 </a> <a target="_top" title="jQuery UI API 类别 &#8211; 方法" href="ref-methods.html" href="http://www.w3cschool.cc/jqueryui/ref-methods.html"> API 类别 - 方法 </a> <a target="_top" title="jQuery UI API 类别 &#8211; 选择器" href="ref-selectors.html" href="http://www.w3cschool.cc/jqueryui/ref-selectors.html"> API 类别 - 选择器 </a> <a target="_top" title="jQuery UI API 类别 &#8211; 主题" href="ref-theming.html" href="http://www.w3cschool.cc/jqueryui/ref-theming.html"> API 类别 - 主题 </a> <a target="_top" title="jQuery UI API 类别 &#8211; UI 核心" href="ref-ui-core.html" href="http://www.w3cschool.cc/jqueryui/ref-ui-core.html"> API 类别 - UI 核心 </a> <a target="_top" title="jQuery UI API 类别 &#8211; 实用工具" href="ref-utilities.html" href="http://www.w3cschool.cc/jqueryui/ref-utilities.html"> API 类别 - 实用工具 </a> <a target="_top" title="jQuery UI API 类别 &#8211; 小部件" href="ref-widgets.html" href="http://www.w3cschool.cc/jqueryui/ref-widgets.html"> API 类别 - 小部件 </a> <br><h2 class="left">jQuery UI <span class="left_h2">实例</span></h2> <a target="_top" title="jQuery UI 实例" href="jqueryui-examples.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-examples.html"> jQuery UI 实例 </a> <a target="_top" title="jQuery UI 实例 &#8211; 拖动（Draggable）" href="example-draggable.html" href="http://www.w3cschool.cc/jqueryui/example-draggable.html"> 拖动（Draggable） </a> <a target="_top" title="jQuery UI 实例 &#8211; 放置（Droppable）" href="example-droppable.html" href="http://www.w3cschool.cc/jqueryui/example-droppable.html"> 放置（Droppable） </a> <a target="_top" title="jQuery UI 实例 &#8211; 缩放（Resizable）" href="example-resizable.html" href="http://www.w3cschool.cc/jqueryui/example-resizable.html"> 缩放（Resizable） </a> <a target="_top" title="jQuery UI 实例 &#8211; 选择（Selectable）" href="example-selectable.html" href="http://www.w3cschool.cc/jqueryui/example-selectable.html"> 选择（Selectable） </a> <a target="_top" title="jQuery UI 实例 &#8211; 排序（Sortable）" href="example-sortable.html" href="http://www.w3cschool.cc/jqueryui/example-sortable.html"> 排序（Sortable） </a> <a target="_top" title="jQuery UI 实例 &#8211; 折叠面板（Accordion）" href="example-accordion.html" href="http://www.w3cschool.cc/jqueryui/example-accordion.html"> 折叠面板（Accordion） </a> <a target="_top" title="jQuery UI 实例 &#8211; 自动完成（Autocomplete）" href="example-autocomplete.html" href="http://www.w3cschool.cc/jqueryui/example-autocomplete.html"> 自动完成（Autocomplete） </a> <a target="_top" title="jQuery UI 实例 &#8211; 按钮（Button）" href="example-button.html" href="http://www.w3cschool.cc/jqueryui/example-button.html"> 按钮（Button） </a> <a target="_top" title="jQuery UI 实例 &#8211; 日期选择器（Datepicker）" href="example-datepicker.html" href="http://www.w3cschool.cc/jqueryui/example-datepicker.html"> 日期选择器（Datepicker） </a> <a target="_top" title="jQuery UI 实例 &#8211; 对话框（Dialog）" href="example-dialog.html" href="http://www.w3cschool.cc/jqueryui/example-dialog.html"> 对话框（Dialog） </a> <a target="_top" title="jQuery UI 实例 &#8211; 菜单（Menu）" href="example-menu.html" href="http://www.w3cschool.cc/jqueryui/example-menu.html"> 菜单（Menu） </a> <a target="_top" title="jQuery UI 实例 &#8211; 进度条（Progressbar）" href="example-progressbar.html" href="http://www.w3cschool.cc/jqueryui/example-progressbar.html"> 进度条（Progressbar） </a> <a target="_top" title="jQuery UI 实例 &#8211; 滑块（Slider）" href="example-slider.html" href="http://www.w3cschool.cc/jqueryui/example-slider.html"> 滑块（Slider） </a> <a target="_top" title="jQuery UI 实例 &#8211; 旋转器（Spinner）" href="example-spinner.html" href="http://www.w3cschool.cc/jqueryui/example-spinner.html"> 旋转器（Spinner） </a> <a target="_top" title="jQuery UI 实例 &#8211; 标签页（Tabs）" href="example-tabs.html" href="http://www.w3cschool.cc/jqueryui/example-tabs.html"> 标签页（Tabs） </a> <a target="_top" title="jQuery UI 实例 &#8211; 工具提示框（Tooltip）" href="example-tooltip.html" href="http://www.w3cschool.cc/jqueryui/example-tooltip.html"> 工具提示框（Tooltip） </a> <a target="_top" title="jQuery UI 实例 &#8211; 特效（Effect）" href="example-effect.html" href="http://www.w3cschool.cc/jqueryui/example-effect.html"> 特效（Effect） </a> <a target="_top" title="jQuery UI 实例 &#8211; 显示（Show）" href="example-show.html" href="http://www.w3cschool.cc/jqueryui/example-show.html"> 显示（Show） </a> <a target="_top" title="jQuery UI 实例 &#8211; 隐藏（Hide）" href="example-hide.html" href="http://www.w3cschool.cc/jqueryui/example-hide.html"> 隐藏（Hide） </a> <a target="_top" title="jQuery UI 实例 &#8211; 切换（Toggle）" href="example-toggle.html" href="http://www.w3cschool.cc/jqueryui/example-toggle.html"> 切换（Toggle） </a> <a target="_top" title="jQuery UI 实例 &#8211; 添加 Class（Add Class）" href="example-addclass.html" href="http://www.w3cschool.cc/jqueryui/example-addclass.html"> .addClass() </a> <a target="_top" title="jQuery UI 实例 &#8211; 移除 Class（Remove Class）" href="example-removeclass.html" href="http://www.w3cschool.cc/jqueryui/example-removeclass.html"> .removeClass() </a> <a target="_top" title="jQuery UI 实例 &#8211; 切换 Class（Toggle Class）" href="example-toggleclass.html" href="http://www.w3cschool.cc/jqueryui/example-toggleclass.html"> .toggleClass() </a> <a target="_top" title="jQuery UI 实例 &#8211; 转换 Class（Switch Class）" href="example-switchclass.html" href="http://www.w3cschool.cc/jqueryui/example-switchclass.html"> .switchClass() </a> <a target="_top" title="jQuery UI 实例 &#8211; 颜色动画（Color Animation）" href="example-animate.html" href="http://www.w3cschool.cc/jqueryui/example-animate.html"> 颜色动画 </a> <a target="_top" title="jQuery UI 实例 &#8211; 定位（Position）" href="example-position.html" href="http://www.w3cschool.cc/jqueryui/example-position.html"> 定位（Position） </a> <a target="_top" title="jQuery UI 实例 &#8211; 部件库（Widget Factory）" href="example-widget.html" href="http://www.w3cschool.cc/jqueryui/example-widget.html"> 部件库（Widget Factory） </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="example-button.html" href="http://www.w3cschool.cc/jqueryui/example-button.html" rel="prev"> jQuery UI 实例 &#8211; 按钮（Button）</a></div> <div class="next"><a href="example-dialog.html" href="http://www.w3cschool.cc/jqueryui/example-dialog.html" rel="next">jQuery UI 实例 &#8211; 对话框（Dialog）</a> &raquo;</div> </div> <div id="content"> <h1>jQuery UI 实例 - <span class="color_h1">日期选择器（Datepicker）</span></h1> <div class="tutintro"> <p>从弹出框或内联日历选择一个日期。</p> <p>如需了解更多有关 datepicker 部件的细节，请查看 API 文档 <a title="javascript:if(confirm('http://www.w3cschool.cc/jqueryui/tag-cite.html  \n\n?????????? Teleport Ultra ????, ??? ??????, ???????????, ?????????????  \n\n?????????????????'))window.location='http://www.w3cschool.cc/jqueryui/tag-cite.html'" href="http://www.w3cschool.cc/jqueryui/api-datepicker.html">日期选择器部件（Datepicker Widget）</a>。</p> </div> <h2>默认功能</h2> <p>日期选择器（Datepicker）绑定到一个标准的表单 input 字段上。把焦点移到 input 上（点击或者使用 tab 键），在一个小的覆盖层上打开一个交互日历。选择一个日期，点击页面上的任意地方（输入框即失去焦点），或者点击 Esc 键来关闭。如果选择了一个日期，则反馈显示为 input 的值。</p> <pre style="white-space: pre-wrap;">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset=gbk&gt;
+  &lt;title&gt;jQuery UI 日期选择器（Datepicker） - 默认功能&lt;/title&gt;
+  &lt;link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"&gt;
+  &lt;script src="//code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;
+  &lt;script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"&gt;
+  &lt;script&gt;
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;p&gt;日期：&lt;input type="text" id="datepicker"&gt;&lt;/p&gt;
+ 
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a title="javascript:if(confirm('http://www.w3csol.cc/try/tag-thead.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/tag-thead.html'" href="http://www.w3cschool.cc/try/tryit.php?filename=jqueryui-example-datepicker" target="_blank"><button class="btn btn-info btn-lg">查看演示</button></a></p> <h2>动画</h2> <p>当打开或关闭 datepicker 时使用不同的动画。从下拉框中选择一个动画，然后在输入框中点击来查看它的效果。您可以使用三个标准动画中任意一个，或者使用 UI 特效中的任意一个。</p> <pre style="white-space: pre-wrap;">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset=gbk&gt;
+	&lt;title&gt;jQuery UI 日期选择器（Datepicker） - 动画&lt;/title&gt;
+	&lt;link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"&gt;
+	&lt;script src="//code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;
+	&lt;script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"&gt;&lt;/script&gt;
+	&lt;link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"&gt;
+	&lt;script&gt;
+	$(function() {
+		$( "#datepicker" ).datepicker();
+		$( "#anim" ).change(function() {
+			$( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val() );
+		});
+	});
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p&gt;日期：&lt;input type="text" id="datepicker" size="30"&gt;&lt;/p&gt;
+
+&lt;p&gt;动画：&lt;br&gt;
+	&lt;select id="anim"&gt;
+		&lt;option value="show"&gt;Show (默认)&lt;/option&gt;
+		&lt;option value="slideDown"&gt;滑下&lt;/option&gt;
+		&lt;option value="fadeIn"&gt;淡入&lt;/option&gt;
+		&lt;option value="blind"&gt;Blind (UI 百叶窗特效)&lt;/option&gt;
+		&lt;option value="bounce"&gt;Bounce (UI 反弹特效)&lt;/option&gt;
+		&lt;option value="clip"&gt;Clip (UI 剪辑特效)&lt;/option&gt;
+		&lt;option value="drop"&gt;Drop (UI 降落特效)&lt;/option&gt;
+		&lt;option value="fold"&gt;Fold (UI 折叠特效)&lt;/option&gt;
+		&lt;option value="slide"&gt;Slide (UI 滑动特效)&lt;/option&gt;
+		&lt;option value=""&gt;无&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/p&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a title="javascript:if(confirm('http://www.w3csol.cc/try/tag-time.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/tag-time.html'" href="http://www.w3cschool.cc/try/tryit.php?filename=jqueryui-example-datepicker-animation" target="_blank"><button class="btn btn-info btn-lg">查看演示</button></a></p> <h2>其他月份的日期</h2> <p>datepicker 可以显示其他月份的日期，这些日期也可以设置成可选择的。</p> <pre style="white-space: pre-wrap;">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset=gbk&gt;
+  &lt;title&gt;jQuery UI 日期选择器（Datepicker） - 其他月份的日期&lt;/title&gt;
+  &lt;link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"&gt;
+  &lt;script src="//code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;
+  &lt;script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"&gt;
+  &lt;script&gt;
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      showOtherMonths: true,
+      selectOtherMonths: true
+    });
+  });
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;p&gt;日期：&lt;input type="text" id="datepicker"&gt;&lt;/p&gt;
+ 
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a title="javascript:if(confirm('http://www.w3csol.cc/try/tag-title.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/tag-title.html'" href="http://www.w3cschool.cc/try/tryit.php?filename=jqueryui-example-datepicker-other-months" target="_blank"><button class="btn btn-info btn-lg">查看演示</button></a></p> <h2>显示按钮栏</h2> <p>通过布尔值的 <code>showButtonPanel</code> 选项为选择当天日期显示一个"Today"按钮，为关闭日历显示一个"Done"按钮。默认情况下，当按钮栏显示时会启用每个按钮，但是按钮可通过其他的选项进行关闭。按钮文本可自定义。</p> <pre style="white-space: pre-wrap;">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset=gbk&gt;
+  &lt;title&gt;jQuery UI 日期选择器（Datepicker） - 显示按钮栏&lt;/title&gt;
+  &lt;link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"&gt;
+  &lt;script src="//code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;
+  &lt;script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"&gt;
+  &lt;script&gt;
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      showButtonPanel: true
+    });
+  });
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;p&gt;日期：&lt;input type="text" id="datepicker"&gt;&lt;/p&gt;
+ 
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a title="javascript:if(confirm('http://www.w3csol.cc/try/tag-tr.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/tag-tr.html'" href="http://www.w3cschool.cc/try/tryit.php?filename=jqueryui-example-datepicker-buttonbar" target="_blank"><button class="btn btn-info btn-lg">查看演示</button></a></p> <h2>内联显示</h2> <p>datepicker 是嵌套在页面中显示，而不是显示在一个覆盖层中。只需要简单地在 div 上调用 .datepicker() 即可，而不是在 input 上调用。</p> <pre style="white-space: pre-wrap;">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset=gbk&gt;
+  &lt;title&gt;jQuery UI 日期选择器（Datepicker） - 内联显示&lt;/title&gt;
+  &lt;link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"&gt;
+  &lt;script src="//code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;
+  &lt;script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"&gt;
+  &lt;script&gt;
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+日期：&lt;div id="datepicker"&gt;&lt;/div&gt;
+ 
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a title="javascript:if(confirm('http://www.w3csol.cc/try/tag-track.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/tag-track.html'" href="http://www.w3cschool.cc/try/tryit.php?filename=jqueryui-example-datepicker-inline" target="_blank"><button class="btn btn-info btn-lg">查看演示</button></a></p> <h2>显示月份 &amp; 年份菜单</h2> <p>显示月份和年份的下拉框，而不是显示静态的月份/年份标题，这样便于在大范围的时间跨度上导航。添加布尔值 <code>changeMonth</code> 和 <code>changeYear</code> 选项即可。</p> <pre style="white-space: pre-wrap;">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset=gbk&gt;
+  &lt;title&gt;jQuery UI 日期选择器（Datepicker） - 显示月份 &amp;amp; 年份菜单&lt;/title&gt;
+  &lt;link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"&gt;
+  &lt;script src="//code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;
+  &lt;script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"&gt;
+  &lt;script&gt;
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
+  });
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;p&gt;日期：&lt;input type="text" id="datepicker"&gt;&lt;/p&gt;
+ 
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a title="javascript:if(confirm('http://www.w3csol.cc/try/tag-tt.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/tag-tt.html'" href="http://www.w3cschool.cc/try/tryit.php?filename=jqueryui-example-datepicker-dropdown-month-year" target="_blank"><button class="btn btn-info btn-lg">查看演示</button></a></p> <h2>显示多个月份</h2> <p>设置 <code>numberOfMonths</code> 选项为一个整数 2，或者大于 2 的整数，来在一个 datepicker 中显示多个月份。</p> <pre style="white-space: pre-wrap;">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset=gbk&gt;
+  &lt;title&gt;jQuery UI 日期选择器（Datepicker） - 显示多个月份&lt;/title&gt;
+  &lt;link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"&gt;
+  &lt;script src="//code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;
+  &lt;script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"&gt;
+  &lt;script&gt;
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      numberOfMonths: 3,
+      showButtonPanel: true
+    });
+  });
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;p&gt;日期：&lt;input type="text" id="datepicker"&gt;&lt;/p&gt;
+ 
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a title="javascript:if(confirm('http://www.w3csol.cc/try/tag-u.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/tag-u.html'" href="http://www.w3cschool.cc/try/tryit.php?filename=jqueryui-example-datepicker-multiple-calendars" target="_blank"><button class="btn btn-info btn-lg">查看演示</button></a></p> <h2>格式化日期</h2> <p>以各种方式显示日期反馈。从下拉框中选择一种日期格式，然后在输入框中点击并选择一个日期，查看所选格式的日期显示。</p> <pre style="white-space: pre-wrap;">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset=gbk&gt;
+  &lt;title&gt;jQuery UI 日期选择器（Datepicker） - 格式化日期&lt;/title&gt;
+  &lt;link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"&gt;
+  &lt;script src="//code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;
+  &lt;script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"&gt;
+  &lt;script&gt;
+  $(function() {
+    $( "#datepicker" ).datepicker();
+    $( "#format" ).change(function() {
+      $( "#datepicker" ).datepicker( "option", "dateFormat", $( this ).val() );
+    });
+  });
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;p&gt;日期：&lt;input type="text" id="datepicker" size="30"&gt;&lt;/p&gt;
+ 
+&lt;p&gt;格式选项：&lt;br&gt;
+  &lt;select id="format"&gt;
+    &lt;option value="mm/dd/yy"&gt;Default - mm/dd/yy&lt;/option&gt;
+    &lt;option value="yy-mm-dd"&gt;ISO 8601 - yy-mm-dd&lt;/option&gt;
+    &lt;option value="d M, y"&gt;Short - d M, y&lt;/option&gt;
+    &lt;option value="d MM, y"&gt;Medium - d MM, y&lt;/option&gt;
+    &lt;option value="DD, d MM, yy"&gt;Full - DD, d MM, yy&lt;/option&gt;
+    &lt;option value="&amp;apos;day&amp;apos; d &amp;apos;of&amp;apos; MM &amp;apos;in the year&amp;apos; yy"&gt;With text - 'day' d 'of' MM 'in the year' yy&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/p&gt;
+ 
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a title="javascript:if(confirm('http://www.w3csol.cc/try/tag-ul.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/tag-ul.html'" href="http://www.w3cschool.cc/try/tryit.php?filename=jqueryui-example-datepicker-date-formats" target="_blank"><button class="btn btn-info btn-lg">查看演示</button></a></p> <h2>图标触发器</h2> <p>点击输入框旁边的图标来显示 datepicker。设置 datepicker 在获得焦点时打开（默认行为），或者在点击图标时打开，或者在获得焦点/点击图标时打开。</p> <pre style="white-space: pre-wrap;">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset=gbk&gt;
+  &lt;title&gt;jQuery UI 日期选择器（Datepicker） - 图标触发器&lt;/title&gt;
+  &lt;link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"&gt;
+  &lt;script src="//code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;
+  &lt;script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"&gt;
+  &lt;script&gt;
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      showOn: "button",
+      buttonImage: "images/calendar.gif",
+      buttonImageOnly: true
+    });
+  });
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;p&gt;日期：&lt;input type="text" id="datepicker"&gt;&lt;/p&gt;
+ 
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a title="javascript:if(confirm('http://www.w3csol.cc/try/tag-var.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/tag-var.html'" href="http://www.w3cschool.cc/try/tryit.php?filename=jqueryui-example-datepicker-icon-trigger" target="_blank"><button class="btn btn-info btn-lg">查看演示</button></a></p> <h2>本地化日历</h2> <p>本地化 datepicker 日历语言和格式（默认为 English / Western 格式）。datepicker 包含对从右到左读取的语言的内建支持，比如 Arabic 和 Hebrew。</p> <pre style="white-space: pre-wrap;">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset=gbk&gt;
+  &lt;title&gt;jQuery UI 日期选择器（Datepicker） - 本地化日历&lt;/title&gt;
+  &lt;link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"&gt;
+  &lt;script src="//code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;
+  &lt;script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"&gt;&lt;/script&gt;
+  &lt;script src="http://jqueryui.com/resources/demos/datepicker/jquery.ui.datepicker-ar.js"&gt;&lt;/script&gt;
+  &lt;script src="http://jqueryui.com/resources/demos/datepicker/jquery.ui.datepicker-fr.js"&gt;&lt;/script&gt;
+  &lt;script src="http://jqueryui.com/resources/demos/datepicker/jquery.ui.datepicker-he.js"&gt;&lt;/script&gt;
+  &lt;script src="http://jqueryui.com/resources/demos/datepicker/jquery.ui.datepicker-zh-TW.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"&gt;
+  &lt;script&gt;
+  $(function() {
+    $( "#datepicker" ).datepicker( $.datepicker.regional[ "fr" ] );
+    $( "#locale" ).change(function() {
+      $( "#datepicker" ).datepicker( "option",
+        $.datepicker.regional[ $( this ).val() ] );
+    });
+  });
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;p&gt;日期：&lt;input type="text" id="datepicker"&gt;&amp;nbsp;
+  &lt;select id="locale"&gt;
+    &lt;option value="ar"&gt;Arabic (&amp;#8235;(&amp;#1575;&amp;#1604;&amp;#1593;&amp;#1585;&amp;#1576;&amp;#1610;&amp;#1577;&lt;/option&gt;
+    &lt;option value="zh-TW"&gt;Chinese Traditional (&amp;#32321;&amp;#39636;&amp;#20013;&amp;#25991;)&lt;/option&gt;
+    &lt;option value=""&gt;English&lt;/option&gt;
+    &lt;option value="fr" selected="selected"&gt;French (Fran&amp;ccedil;ais)&lt;/option&gt;
+    &lt;option value="he"&gt;Hebrew (&amp;#8235;(&amp;#1506;&amp;#1489;&amp;#1512;&amp;#1497;&amp;#1514;&lt;/option&gt;
+  &lt;/select&gt;&lt;/p&gt;
+ 
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a title="javascript:if(confirm('http://www.w3csol.cc/try/tag-video.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/tag-video.html'" href="http://www.w3cschool.cc/try/tryit.php?filename=jqueryui-example-datepicker-localization" target="_blank"><button class="btn btn-info btn-lg">查看演示</button></a></p> <h2>填充另一个输入框</h2> <p>使用 <code>altField</code> 和 <code>altFormat</code> 选项，无论何时选择日期，会在另一个输入框中填充带有一定格式的日期。这个功能通过对电脑友好性的日期进一步加工后，向用户呈现一个用户友好性的日期。</p> <pre style="white-space: pre-wrap;">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset=gbk&gt;
+  &lt;title&gt;jQuery UI 日期选择器（Datepicker） - 填充另一个输入框&lt;/title&gt;
+  &lt;link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"&gt;
+  &lt;script src="//code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;
+  &lt;script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"&gt;
+  &lt;script&gt;
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      altField: "#alternate",
+      altFormat: "DD, d MM, yy"
+    });
+  });
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;p&gt;日期：&lt;input type="text" id="datepicker"&gt;&amp;nbsp;&lt;input type="text" id="alternate" size="30"&gt;&lt;/p&gt;
+ 
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a title="javascript:if(confirm('http://www.w3csol.cc/try/tag-wbr.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/tag-wbr.html'" href="http://www.w3cschool.cc/try/tryit.php?filename=jqueryui-example-datepicker-alt-field" target="_blank"><button class="btn btn-info btn-lg">查看演示</button></a></p> <h2>限制日期范围</h2> <p>通过 <code>minDate</code> 和 <code>maxDate</code> 选项限制可选择的日期范围。设置起止日期为实际的日期（new Date(2009, 1 - 1, 26)），或者为与今天的一个数值偏移（-20），或者为一个周期和单位的字符串（'+1M +10D'）。如果设置为字符串，使用 'D' 表示天，使用 'W' 表示周，使用 'M' 表示月，使用 'Y' 表示年。</p> <pre style="white-space: pre-wrap;">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset=gbk&gt;
+  &lt;title&gt;jQuery UI 日期选择器（Datepicker） - 限制日期范围&lt;/title&gt;
+  &lt;link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"&gt;
+  &lt;script src="//code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;
+  &lt;script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"&gt;
+  &lt;script&gt;
+  $(function() {
+    $( "#datepicker" ).datepicker({ minDate: -20, maxDate: "+1M +10D" });
+  });
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;p&gt;日期：&lt;input type="text" id="datepicker"&gt;&lt;/p&gt;
+ 
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a title="javascript:if(confirm('http://www.w3csol.cc/try/ref-html-ascii.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/ref-html-ascii.html'" href="http://www.w3cschool.cc/try/tryit.php?filename=jqueryui-example-datepicker-min-max" target="_blank"><button class="btn btn-info btn-lg">查看演示</button></a></p> <h2>选择一个日期范围</h2> <p>选择要搜索的日期范围。</p> <pre style="white-space: pre-wrap;">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset=gbk&gt;
+  &lt;title&gt;jQuery UI 日期选择器（Datepicker） - 选择一个日期范围&lt;/title&gt;
+  &lt;link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"&gt;
+  &lt;script src="//code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;
+  &lt;script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"&gt;
+  &lt;script&gt;
+  $(function() {
+    $( "#from" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 3,
+      onClose: function( selectedDate ) {
+        $( "#to" ).datepicker( "option", "minDate", selectedDate );
+      }
+    });
+    $( "#to" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 3,
+      onClose: function( selectedDate ) {
+        $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+      }
+    });
+  });
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;label for="from"&gt;从&lt;/label&gt;
+&lt;input type="text" id="from" name="from"&gt;
+&lt;label for="to"&gt;到&lt;/label&gt;
+&lt;input type="text" id="to" name="to"&gt;
+ 
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a title="javascript:if(confirm('http://www.w3csol.cc/try/ref-html-ansi.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/ref-html-ansi.html'" href="http://www.w3cschool.cc/try/tryit.php?filename=jqueryui-example-datepicker-date-range" target="_blank"><button class="btn btn-info btn-lg">查看演示</button></a></p> <h2>显示一年中的第几周</h2> <p>datepicker 可以显示一年中的第几周。默认的计算是按照 ISO 8601 定义：每周从星期一开始，每年的第一周包含该年的第一个星期四。这就意味着一年中的一些天可能是属于另一年中的周。</p> <pre style="white-space: pre-wrap;">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset=gbk&gt;
+  &lt;title&gt;jQuery UI 日期选择器（Datepicker） - 显示一年中的第几周&lt;/title&gt;
+  &lt;link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"&gt;
+  &lt;script src="//code.jquery.com/jquery-1.9.1.js"&gt;&lt;/script&gt;
+  &lt;script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"&gt;
+  &lt;script&gt;
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      showWeek: true,
+      firstDay: 1
+    });
+  });
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;p&gt;日期：&lt;input type="text" id="datepicker"&gt;&lt;/p&gt;
+ 
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a title="javascript:if(confirm('http://www.w3csol.cc/try/ref-html-8859.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/ref-html-8859.html'" href="http://www.w3cschool.cc/try/tryit.php?filename=jqueryui-example-datepicker-show-week" target="_blank"><button class="btn btn-info btn-lg">查看演示</button></a></p> </div> <div class="chapter"> <div class="prev">&laquo; <a href="example-button.html" href="http://www.w3cschool.cc/jqueryui/example-button.html" rel="prev"> jQuery UI 实例 &#8211; 按钮（Button）</a></div> <div class="next"><a href="example-dialog.html" href="http://www.w3cschool.cc/jqueryui/example-dialog.html" rel="next">jQuery UI 实例 &#8211; 对话框（Dialog）</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/jqueryui/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/jqueryui/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

@@ -1,0 +1,230 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>Ruby Web Services 应用 &#8211; SOAP4R | w3cschool菜鸟教程</title> <link rel='prev' title='HTTP content-type' href="/http/http-content-type.html"/> <link rel='next' title='Ruby 多线程' href="ruby-multithreading.html"/> <link rel='canonical' href='http://www.w3cschool.cc/ruby/ruby-web-services.html'/> <meta name="keywords" content="Ruby Web Services 应用 &#8211; SOAP4R"> <meta name="description" content="Ruby Web Services 应用 - SOAP4R 什么是 SOAP？ 简单对象访问协议(SOAP,全写为Simple Object Access Protocol)是交换数据的一种协议规范。 SOAP 是一种简单的基于 XML 的协议，它使应用程序通过 HTTP 来交换信息。 简单对象访问协议是交换数据的一种协议规范，是一种轻量的、简单的、基于XML（标准通用标记语言下的一个子集）的协议，它被设计成在WEB上交换结构化的和固.."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>Ruby 教程</strong></h2> <a target="_top" title="Ruby 教程" href="ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html"> Ruby 教程 </a> <a target="_top" title="Ruby 简介" href="ruby-intro.html" href="http://www.w3cschool.cc/ruby/ruby-intro.html"> Ruby 简介 </a> <a target="_top" title="Ruby 环境" href="ruby-environment.html" href="http://www.w3cschool.cc/ruby/ruby-environment.html"> Ruby 环境 </a> <a target="_top" title="Ruby 安装 &#8211; Unix" href="ruby-installation-unix.html" href="http://www.w3cschool.cc/ruby/ruby-installation-unix.html"> Ruby 安装 - Unix </a> <a target="_top" title="Ruby 安装 &#8211; Windows" href="ruby-installation-windows.html" href="http://www.w3cschool.cc/ruby/ruby-installation-windows.html"> Ruby 安装 - Windows </a> <a target="_top" title="Ruby 命令行选项" href="ruby-command-line-options.html" href="http://www.w3cschool.cc/ruby/ruby-command-line-options.html"> Ruby 命令行选项 </a> <a target="_top" title="Ruby 环境变量" href="ruby-environment-variables.html" href="http://www.w3cschool.cc/ruby/ruby-environment-variables.html"> Ruby 环境变量 </a> <a target="_top" title="Ruby 语法" href="ruby-syntax.html" href="http://www.w3cschool.cc/ruby/ruby-syntax.html"> Ruby 语法 </a> <a target="_top" title="Ruby 类和对象" href="ruby-class.html" href="http://www.w3cschool.cc/ruby/ruby-class.html"> Ruby 类和对象 </a> <a target="_top" title="Ruby 类案例" href="ruby-class-case-study.html" href="http://www.w3cschool.cc/ruby/ruby-class-case-study.html"> Ruby 类案例 </a> <a target="_top" title="Ruby 变量" href="ruby-variable.html" href="http://www.w3cschool.cc/ruby/ruby-variable.html"> Ruby 变量 </a> <a target="_top" title="Ruby 运算符" href="ruby-operator.html" href="http://www.w3cschool.cc/ruby/ruby-operator.html"> Ruby 运算符 </a> <a target="_top" title="Ruby 注释" href="ruby-comment.html" href="http://www.w3cschool.cc/ruby/ruby-comment.html"> Ruby 注释 </a> <a target="_top" title="Ruby 判断" href="ruby-decision.html" href="http://www.w3cschool.cc/ruby/ruby-decision.html"> Ruby 判断 </a> <a target="_top" title="Ruby 循环" href="ruby-loop.html" href="http://www.w3cschool.cc/ruby/ruby-loop.html"> Ruby 循环 </a> <a target="_top" title="Ruby 方法" href="ruby-method.html" href="http://www.w3cschool.cc/ruby/ruby-method.html"> Ruby 方法 </a> <a target="_top" title="Ruby 块" href="ruby-block.html" href="http://www.w3cschool.cc/ruby/ruby-block.html"> Ruby 块 </a> <a target="_top" title="Ruby 模块（Module）" href="ruby-module.html" href="http://www.w3cschool.cc/ruby/ruby-module.html"> Ruby 模块（Module） </a> <a target="_top" title="Ruby 字符串（String）" href="ruby-string.html" href="http://www.w3cschool.cc/ruby/ruby-string.html"> Ruby 字符串（String） </a> <a target="_top" title="Ruby 数组（Array）" href="ruby-array.html" href="http://www.w3cschool.cc/ruby/ruby-array.html"> Ruby 数组（Array） </a> <a target="_top" title="Ruby 哈希（Hash）" href="ruby-hash.html" href="http://www.w3cschool.cc/ruby/ruby-hash.html"> Ruby 哈希（Hash） </a> <a target="_top" title="Ruby 日期 &#038; 时间（Date &#038; Time）" href="ruby-date-time.html" href="http://www.w3cschool.cc/ruby/ruby-date-time.html"> Ruby 日期 & 时间 </a> <a target="_top" title="Ruby 范围（Range）" href="ruby-range.html" href="http://www.w3cschool.cc/ruby/ruby-range.html"> Ruby 范围（Range） </a> <a target="_top" title="Ruby 迭代器" href="ruby-iterators.html" href="http://www.w3cschool.cc/ruby/ruby-iterators.html"> Ruby 迭代器 </a> <a target="_top" title="Ruby 文件的输入与输出" href="ruby-input-output.html" href="http://www.w3cschool.cc/ruby/ruby-input-output.html"> Ruby 文件的输入与输出 </a> <a target="_top" title="Ruby File 类和方法" href="ruby-file-methods.html" href="http://www.w3cschool.cc/ruby/ruby-file-methods.html"> Ruby File 类和方法 </a> <a target="_top" title="Ruby Dir 类和方法" href="ruby-dir-methods.html" href="http://www.w3cschool.cc/ruby/ruby-dir-methods.html"> Ruby Dir 类和方法 </a> <a target="_top" title="Ruby 异常" href="ruby-exceptions.html" href="http://www.w3cschool.cc/ruby/ruby-exceptions.html"> Ruby 异常 </a> <br><h2 class="left"><span class="left_h2">Ruby</span> 高级教程</h2> <a target="_top" title="Ruby 面向对象" href="ruby-object-oriented.html" href="http://www.w3cschool.cc/ruby/ruby-object-oriented.html"> Ruby 面向对象 </a> <a target="_top" title="Ruby 正则表达式" href="ruby-regular-expressions.html" href="http://www.w3cschool.cc/ruby/ruby-regular-expressions.html"> Ruby 正则表达式 </a> <a target="_top" title="Ruby 数据库访问 &#8211; DBI 教程" href="ruby-database-access.html" href="http://www.w3cschool.cc/ruby/ruby-database-access.html"> Ruby 数据库访问 - DBI 教程 </a> <a target="_top" title="Ruby CGI 编程" href="ruby-cgi.html" href="http://www.w3cschool.cc/ruby/ruby-cgi.html"> Ruby CGI 编程 </a> <a target="_top" title="Ruby CGI方法" href="ruby-cgi-methods.html" href="http://www.w3cschool.cc/ruby/ruby-cgi-methods.html"> Ruby CGI方法 </a> <a target="_top" title="Ruby CGI Cookies" href="ruby-cgi-cookies.html" href="http://www.w3cschool.cc/ruby/ruby-cgi-cookies.html"> Ruby CGI Cookies </a> <a target="_top" title="Ruby CGI Sessions" href="ruby-cgi-sessions.html" href="http://www.w3cschool.cc/ruby/ruby-cgi-sessions.html"> Ruby CGI Sessions </a> <a target="_top" title="Ruby 发送邮件 &#8211; SMTP" href="ruby-sending-email.html" href="http://www.w3cschool.cc/ruby/ruby-sending-email.html"> Ruby 发送邮件 - SMTP </a> <a target="_top" title="Ruby Socket 编程" href="ruby-socket-programming.html" href="http://www.w3cschool.cc/ruby/ruby-socket-programming.html"> Ruby Socket 编程 </a> <a target="_top" title="Ruby XML, XSLT 和 XPath 教程" href="ruby-xml-xslt-xpath.html" href="http://www.w3cschool.cc/ruby/ruby-xml-xslt-xpath.html"> Ruby XML, XSLT 和 XPath 教程 </a> <a target="_top" title="Ruby Web Services 应用 &#8211; SOAP4R" href="ruby-web-services.html" href="http://www.w3cschool.cc/ruby/ruby-web-services.html"> Ruby Web Services </a> <a target="_top" title="Ruby 多线程" href="ruby-multithreading.html" href="http://www.w3cschool.cc/ruby/ruby-multithreading.html"> Ruby 多线程 </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="ruby-xml-xslt-xpath.html" href="http://www.w3cschool.cc/ruby/ruby-xml-xslt-xpath.html" rel="prev"> Ruby XML, XSLT 和 XPath 教程</a></div> <div class="next"><a href="ruby-multithreading.html" href="http://www.w3cschool.cc/ruby/ruby-multithreading.html" rel="next">Ruby 多线程</a> &raquo;</div> </div> <div id="content"> <h1>Ruby Web Services 应用 - SOAP4R</h1> <hr> <h2>什么是 SOAP？</h2> <p>简单对象访问协议(SOAP,全写为Simple Object Access Protocol)是交换数据的一种协议规范。</p> <p>SOAP 是一种简单的基于 XML 的协议，它使应用程序通过 HTTP 来交换信息。</p> <p>简单对象访问协议是交换数据的一种协议规范，是一种轻量的、简单的、基于XML（标准通用标记语言下的一个子集）的协议，它被设计成在WEB上交换结构化的和固化的信息。 </p> <p>更多 SOAP 教程请查看：<a href="../soap/soap-tutorial.html" href="http://www.w3cschool.cc/soap/soap-tutorial.html" target="_blank">http://www.w3cschool.cc/soap/soap-tutorial.html</a>。</p> <hr> <h2>SOAP4R 安装</h2> <p>SOAP4R 由Hiroshi Nakamura开发实现，用于 Ruby 的 SOAP 应用。</p> <p>SOAP4R 下载地址：<a title="javascript:if(confirm('http://raa.ruby-lang.org/project/soap4r/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://raa.ruby-lang.org/project/soap4r/'" tppabs="http://raa.ruby-lang.org/project/soap4r/" target="_blank">http://raa.ruby-lang.org/project/soap4r/</a>。</p> <p><strong>注意：</strong>你的ruby环境可能已经安装了该该组件。</p> <p>Linux 环境下你也可以使用 gem 来安装该组件，命令如下：</p> <pre>
+$ gem install soap4r --include-dependencies
+</pre> <p>如果你是window环境下开发，你需要下载zip压缩文件，并通过执行 install.rb 来安装。</p> <hr> <h2>SOAP4R 服务</h2> <p>SOAP4R 支持两种不同的服务类型：</p> <ul> <li> 基于 CGI/FastCGI 服务 (SOAP::RPC::CGIStub) </li><li> 独立服务 (SOAP::RPC:StandaloneServer)</li></ul> <p>本教程将为大家介绍如何建立独立的 SOAP 服务。步骤如下：</p> <h3>第1步 - 继承SOAP::RPC::StandaloneServer </h3> <p>为了实现自己的独立的服务器，你需要编写一个新的类，该类为 SOAP::RPC::StandaloneServer 的子类：</p> <pre>
+class MyServer &lt; SOAP::RPC::StandaloneServer
+  ...............
+end
+</pre> <p><strong>注意：</strong>如果你要编写一个基于FastCGI的服务器，那么你需要继承 SOAP::RPC::CGIStub 类，程序的其余部分将保持不变。</p> <h3>第二步 - 定义处理方法</h3> <p>接下来我们定义Web Services的方法，如下我们定义两个方法，一个是两个数相加，一个是两个数相除：</p> <pre>
+class MyServer &lt; SOAP::RPC::StandaloneServer
+   ...............
+
+   # 处理方法
+   def add(a, b)
+      return a + b
+   end
+   def div(a, b) 
+      return a / b 
+   end
+end
+</pre> <h3>第三步 - 公布处理方法</h3> <p>接下来添加我们在服务器上定义的方法，initialize方法是公开的，用于外部的连接：</p> <pre>
+class MyServer &lt; SOAP::RPC::StandaloneServer
+   def initialize(*args)
+      add_method(receiver, methodName, *paramArg)
+   end
+end
+</pre> <p>以下是各参数的说明：</p> <table class="reference"> <tbody><tr><th>参数</th><th>描述</th></tr> <tr><td><b>receiver</b></td><td>包含方法名的方法的对象。 如果你在同一个类中定义服务方法，该参数为 <i>self</i>。</td></tr> <tr><td><b>methodName</b></td><td> 调用 RPC 请求的方法名。</td></tr> <tr><td><b>paramArg</b></td><td>参数名和参数模式</td></tr> </tbody></table> <p>为了理解 <i>inout</i> 和 <i>out</i> 参数，考虑以下服务方法，需要输入两个参数:inParam 和 inoutParam，函数执行完成后返回三个值：retVal、inoutParam 、outParam:</p> <pre>
+def aMeth(inParam, inoutParam)
+   retVal = inParam + inoutParam
+   outParam = inParam . inoutParam
+   inoutParam = inParam * inoutParam
+   return retVal, inoutParam, outParam
+end
+</pre> <p>公开的调用方法如下：</p> <pre>
+add_method(self, 'aMeth', [
+    %w(in inParam),
+    %w(inout inoutParam),
+    %w(out outParam),
+    %w(retval return)
+])
+</pre> <h3>第四步 - 开启服务</h3> <p>最后我们通过实例化派生类，并调用 start 方法来启动服务：</p> <pre>
+myServer = MyServer.new('ServerName',
+                        'urn:ruby:ServiceName', hostname, port)
+
+myServer.start
+</pre> <p>以下是请求参数的说明：</p> <table class="reference"> <tbody><tr><th>参数</th><th>描述</th></tr> <tr><td><b>ServerName</b></td><td>服务名，你可以取你喜欢的</td></tr> <tr><td><b>urn:ruby:ServiceName</b></td><td>Here <i>urn:ruby</i> 是固定的，但是你可以为你的服务取一个唯一的 <i>ServiceName</i></td></tr> <tr><td><b>hostname</b></td><td>指定主机名</td></tr> <tr><td><b>port</b></td><td>web 服务端口</td></tr> </tbody></table> <h3>实例</h3> <p>接下来我们通过以上的步骤，创建一个独立的服务：</p> <pre>
+require "soap/rpc/standaloneserver"
+
+begin
+   class MyServer &lt; SOAP::RPC::StandaloneServer
+
+      # Expose our services
+      def initialize(*args)
+         add_method(self, 'add', 'a', 'b')
+         add_method(self, 'div', 'a', 'b')
+      end
+
+      # Handler methods
+      def add(a, b)
+         return a + b
+      end
+      def div(a, b) 
+         return a / b 
+      end
+  end
+  server = MyServer.new("MyServer", 
+            'urn:ruby:calculation', 'localhost', 8080)
+  trap('INT){
+     server.shutdown
+  }
+  server.start
+rescue =&gt; err
+  puts err.message
+end
+</pre> <p>执行以上程序后，就启动了一个监听 8080 端口的本地服务，并公开两个方法：add 和 div。</p> <p>你可以再后台执行以上服务：</p> <pre>
+$ ruby MyServer.rb&amp;
+</pre> <hr> <h2>SOAP4R 客户端</h2> <p>ruby 中使用 SOAP::RPC::Driver 类开发 SOAP 客户端。接下来我们来详细看下 SOAP::RPC::Driver 类的使用。</p> <p>调用 SOAP 服务需要以下信息：</p> <ul> <li>SOAP 服务 URL 地址 (SOAP Endpoint URL)</li> <li>服务方法的命名空间（Method Namespace URI） </li> <li>服务方法名及参数信息</li> </ul> <p>接下来我们就一步步来创建 SOAP 客户端来调用以上的 SOAP 方法：add 、 div:</p> <h3>第一步 - 创建 SOAP Driver 实例</h3> <p>我们可以通过实例化 SOAP::RPC::Driver 类来调用它的新方法，如下所示：</p> <pre>
+SOAP::RPC::Driver.new(endPoint, nameSpace, soapAction)
+</pre> <p>以下是参数的描述：</p> <table class="reference"> <tbody><tr><th>参数</th><th>描述</th></tr> <tr><td><b>endPoint</b></td><td>连接 SOAP 服务的 URL 地址</td></tr> <tr><td><b>nameSpace</b></td><td> 命名空间用于 SOAP::RPC::Driver 对象的所有 RPC .</td></tr> <tr><td><b>soapAction</b></td><td>用于 HTTP 头部的 SOAPAction 字段值。如果是字符串是"" 则默认为 <i>nil</i> </td></tr> </tbody></table> <h3>第二步 - 添加服务方法</h3> <p>为 SOAP::RPC::Driver 添加 SOAP 服务方法，我们可以通过实例 SOAP::RPC::Driver 来调用以下方法：</p> <pre>
+driver.add_method(name, *paramArg)
+</pre> <p>以下是参数的说明：</p> <table class="reference"> <tbody><tr><th>参数</th><th>描述</th></tr> <tr><td><b>name</b></td><td>远程web服务的方法名</td></tr> <tr><td><b>paramArg</b></td><td> 指定远程程序的参数</td></tr> </tbody></table> <h3>第三步 - 调用SOAP服务</h3> <p>最后我们可以使用 SOAP::RPC::Driver 实例来调用 SOAP 服务：</p> <pre>
+result = driver.serviceMethod(paramArg...)
+</pre> <p>serviceMethod SOAP服务的实际方法名，paramArg为方法的参数列表。</p> <h3>实例</h3> <p>基于以上的步骤，我们可以编写以下的 SOAP 客户端：</p> <pre>
+#!/usr/bin/ruby -w
+
+require 'soap/rpc/driver'
+
+NAMESPACE = 'urn:ruby:calculation'
+URL = 'http://localhost:8080/'
+
+begin
+   driver = SOAP::RPC::Driver.new(URL, NAMESPACE)
+   
+   # Add remote sevice methods
+   driver.add_method('add', 'a', 'b')
+
+   # Call remote service methods
+   puts driver.add(20, 30)
+rescue =&gt; err
+   puts err.message
+end
+</pre> <p> 以上我们只是简单介绍 Ruby 的 Web Services 。 如果你想了解更多可以查看官方文档：<a title="javascript:if(confirm('http://www.ruby-doc.org/stdlib/libdoc/soap/rdoc/index.html  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://www.ruby-doc.org/stdlib/libdoc/soap/rdoc/index.html'" tppabs="http://www.ruby-doc.org/stdlib/libdoc/soap/rdoc/index.html" title="Web Services with Ruby" target="_blank">Ruby 的 Web Services </a></p> </div> <div class="chapter"> <div class="prev">&laquo; <a href="ruby-xml-xslt-xpath.html" href="http://www.w3cschool.cc/ruby/ruby-xml-xslt-xpath.html" rel="prev"> Ruby XML, XSLT 和 XPath 教程</a></div> <div class="next"><a href="ruby-multithreading.html" href="http://www.w3cschool.cc/ruby/ruby-multithreading.html" rel="next">Ruby 多线程</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/ruby/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/ruby/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

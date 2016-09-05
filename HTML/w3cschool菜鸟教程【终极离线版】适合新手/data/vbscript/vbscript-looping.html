@@ -1,0 +1,131 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>VBScript 循环语句 | w3cschool菜鸟教程</title> <link rel='prev' title='VBScript 条件语句' href="vbscript-conditionals.html"/> <link rel='next' title='VBScript 总结' href="vbscript-summary.html"/> <link rel='canonical' href='http://www.w3cschool.cc/vbscript/vbscript-looping.html'/> <meta name="keywords" content="VBScript 循环语句"> <meta name="description" content="VBScript 循环 循环语句 循环语句用于运行相同的代码块指定的次数。Looping statements are used to run the same block of code a specified number of times. 在 VBScript 中，我们可以使用四种循环语句： For...Next 语句 - 运行一段代码指定的次数 For Each...Next 语句 - 针对集合中的每个项目或者数组中.."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="../ruby/ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>VBScript 教程</strong></h2> <a target="_top" title="VBScript 教程" href="vbscript-tutorial.html" href="http://www.w3cschool.cc/vbscript/vbscript-tutorial.html"> VB 教程 </a> <a target="_top" title="VBScript 用法" href="vbscript-howto.html" href="http://www.w3cschool.cc/vbscript/vbscript-howto.html"> VB 用法 </a> <a target="_top" title="VBScript 变量" href="vbscript-variables.html" href="http://www.w3cschool.cc/vbscript/vbscript-variables.html"> VB 变量 </a> <a target="_top" title="VBScript 程序" href="vbscript-procedures.html" href="http://www.w3cschool.cc/vbscript/vbscript-procedures.html"> VB 程序 </a> <a target="_top" title="VBScript 条件语句" href="vbscript-conditionals.html" href="http://www.w3cschool.cc/vbscript/vbscript-conditionals.html"> VB 条件 </a> <a target="_top" title="VBScript 循环语句" href="vbscript-looping.html" href="http://www.w3cschool.cc/vbscript/vbscript-looping.html"> VB 循环 </a> <a target="_top" title="VBScript 总结" href="vbscript-summary.html" href="http://www.w3cschool.cc/vbscript/vbscript-summary.html"> VB 总结 </a> <a target="_top" title="VBScript 实例" href="vbscript-examples.html" href="http://www.w3cschool.cc/vbscript/vbscript-examples.html"> VB 实例 </a> <a target="_top" title="VBScript 函数" href="vbscript-ref-functions.html" href="http://www.w3cschool.cc/vbscript/vbscript-ref-functions.html"> VB 函数 </a> <a target="_top" title="VBScript 关键字" href="vbscript-ref-keywords.html" href="http://www.w3cschool.cc/vbscript/vbscript-ref-keywords.html"> VB 关键字 </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="vbscript-conditionals.html" href="http://www.w3cschool.cc/vbscript/vbscript-conditionals.html" rel="prev"> VBScript 条件语句</a></div> <div class="next"><a href="vbscript-summary.html" href="http://www.w3cschool.cc/vbscript/vbscript-summary.html" rel="next">VBScript 总结</a> &raquo;</div> </div> <div id="content"> <h1>VBScript <span class="color_h1">循环</span> </h1> <hr> <h2>循环语句</h2> <p>循环语句用于运行相同的代码块指定的次数。Looping statements are used to run the same block of code a specified number of times.</p> <p>在 VBScript 中，我们可以使用四种循环语句：</p> <ul> <li> <b>For...Next 语句 </b>- 运行一段代码指定的次数</li> <li> <b>For Each...Next 语句 </b>- 针对集合中的每个项目或者数组中的每个元素来运行某段代码</li> <li> <b>Do...Loop 语句 </b>- 运行循环，当条件为 true 或者直到条件为 true 时</li> <li> <b>While...Wend 语句 </b>- 不要使用这个语句 - 请使用 Do...Loop 语句代替它</li> </ul> <hr> <h2>For...Next 循环</h2> <p>请使用 <b>For...Next</b> 语句运行一段代码指定的次数。 </p> <p><b>For</b> 语句规定计数变量（<b>i</b>）以及它的初始值和结束值。<b>Next</b> 语句会以 1 作为步进值来递增变量（<b>i</b>）。</p> <div class="example"> <h2 class="example">实例</h2> <div class="example_code notranslate"> &lt;html&gt;<br> &lt;body&gt;<br><br> &lt;script type="text/vbscript"&gt;<br> For i = 0 To 5<br> document.write("The number is " &amp; i &amp; "&lt;br /&gt;")<br> Next<br> &lt;/script&gt;<br><br> &lt;/body&gt;<br> &lt;/html&gt;</div> <br><a target="_blank" title="javascript:if(confirm('http://www.w3csol.cc/try/try.php?filename=trysvg_polyline2  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/try.php?filename=trysvg_polyline2'" href="http://www.w3cschool.cc/try/try.php?filename=vbdemo_fornext" class="tryitbtn">尝试一下 ?</a> </div> <h3>Step 关键词</h3> <p>通过 <b> Step</b> 关键词，您可以规定计数变量递增或递减的步进值。</p> <p>在下面的实例中，计数变量（<b>i</b>）每次循环的递增步进值为 2。</p> <div class="code notranslate"><div> For i=2 To 10 Step 2<br> some code<br> Next </div></div> <p>如果要递减计数变量，您就必须使用负的 <b>Step</b> 值。并且必须规定小于开始值的结束值。</p> <p>在下面的实例中，计数变量（<b>i</b>）每次循环的递减步进值为 2。</p> <div class="code notranslate"><div> For i=10 To 2 Step -2<br> some code<br> Next </div></div> <h3>退出 For...Next</h3> <p>您可以通过 Exit For 关键词退出 For...Next 语句。</p> <div class="code notranslate"><div> For i=1 To 10<br> If i=5 Then Exit For<br> some code<br> Next </div></div> <hr> <h2>For Each...Next 循环</h2> <p><b>For Each...Next</b> 针对集合中的每个项目或者数组中的每个元素来重复运行某段代码。</p> <div class="example"> <h2 class="example">实例</h2> <div class="example_code notranslate"> &lt;html&gt;<br> &lt;body&gt;<br><br> &lt;script type="text/vbscript"&gt;<br> Dim cars(2)<br> cars(0)="Volvo"<br> cars(1)="Saab"<br> cars(2)="BMW"<br><br> For Each x In cars<br> document.write(x &amp; "&lt;br /&gt;")<br> Next<br> &lt;/script&gt;<br><br> &lt;/body&gt;<br> &lt;/html&gt;</div> <br><a target="_blank" title="javascript:if(confirm('http://www.w3csol.cc/try/try.php?filename=trysvg_path  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/try.php?filename=trysvg_path'" href="http://www.w3cschool.cc/try/try.php?filename=vbdemo_foreach" class="tryitbtn">尝试一下 ?</a> </div> <br><hr> <h2>Do...Loop</h2> <p> 如果你不知道重复多少次，可以使用 Do...Loop 语句。</p> <p> Do...Loop 语句重复执行某段代码直到条件是 true 或条件变成 true。 </p> <h3>重复执行代码直到条件是 true</h3> <p> 您可以使用 While 关键字来检查 Do... Loop 语句的条件。 </p> <div class="code notranslate"><div> Do While i&gt;10<br> some code<br> Loop </div></div> <p>如果 <b> i</b> 等于 9，上述循环内的代码将终止执行。</p> <div class="code notranslate"><div> Do<br> some code<br> Loop While i&gt;10 </div></div> <p> 这个循环内的代码将被执行至少一次，即使 <b> i</b> 小于 10。 </p> <h3>重复执行代码直到条件变成 true</h3> <p> 您可以使用 Until 关键字来检查 Do...Loop 语句的条件。 </p> <div class="code notranslate"><div> Do Until i=10<br> some code<br> Loop </div></div> <p> 如果 <b> i</b> 等于 10，上述循环内的代码将终止执行。 </p> <div class="code notranslate"><div> Do<br> some code<br> Loop Until i=10 </div></div> <p>这个循环内的代码将被执行至少一次，即使 <b> i</b> 等于 10。</p> <h3>退出 Do...Loop</h3> <p> 您可以通过 Exit Do 关键词退出 Do...Loop 语句。 </p> <div class="code notranslate"><div> Do Until i=10<br> i=i-1<br> If i&lt;10 Then Exit Do<br> Loop </div></div> <p> 这个循环内的代码，只要 <b>i</b> 不为 10 且 <b>i</b> 大于 10 时都将被执行。 </p> <hr> <div class="tryit_ex"> <img src="../images/tryitimg.gif" href="http://www.w3cschool.cc/images/tryitimg.gif" width="40" height="46px" alt="实例s"><h2>更多实例（仅适用于 IE）</h2> </div> <p> <a target="_blank" title="javascript:if(confirm('http://www.w3csol.cc/try/try.php?filename=trysvg_path2  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/try.php?filename=trysvg_path2'" href="http://www.w3cschool.cc/try/try.php?filename=vbdemo_fornext2">循环遍历标题</a><br> 如何循环遍历 html 中的六个标题。 </p> <p> <a target="_blank" title="javascript:if(confirm('http://www.w3csol.cc/try/try.php?filename=trysvg_text  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/try.php?filename=trysvg_text'" href="http://www.w3cschool.cc/try/try.php?filename=vbdemo_dowhile">Do...While loop</a><br> 如何做一个简单的 <b>Do...While</b> 循环。 </p> <br> </div> <div class="chapter"> <div class="prev">&laquo; <a href="vbscript-conditionals.html" href="http://www.w3cschool.cc/vbscript/vbscript-conditionals.html" rel="prev"> VBScript 条件语句</a></div> <div class="next"><a href="vbscript-summary.html" href="http://www.w3cschool.cc/vbscript/vbscript-summary.html" rel="next">VBScript 总结</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/vbscript/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/vbscript/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

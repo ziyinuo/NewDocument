@@ -1,0 +1,330 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>Ruby 多线程 | w3cschool菜鸟教程</title> <link rel='prev' title='Ruby Web Services 应用 &#8211; SOAP4R' href="ruby-web-services.html"/> <link rel='next' title='Python IDE' href="/python/python-ide.html"/> <link rel='canonical' href='http://www.w3cschool.cc/ruby/ruby-multithreading.html'/> <meta name="keywords" content="Ruby 多线程"> <meta name="description" content="Ruby 多线程 每个正在系统上运行的程序都是一个进程。每个进程包含一到多个线程。 线程是程序中一个单一的顺序控制流程，在单个程序中同时运行多个线程完成不同的工作,称为多线程。 Ruby 中我们可以通过 Thread 类来创建多线程，Ruby的线程是一个轻量级的，可以以高效的方式来实现并行的代码。 创建 Ruby 线程 要启动一个新的线程，只需要调用 Thread.new 即可: # 线程 #1 代码部分 Thread.new { .."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>Ruby 教程</strong></h2> <a target="_top" title="Ruby 教程" href="ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html"> Ruby 教程 </a> <a target="_top" title="Ruby 简介" href="ruby-intro.html" href="http://www.w3cschool.cc/ruby/ruby-intro.html"> Ruby 简介 </a> <a target="_top" title="Ruby 环境" href="ruby-environment.html" href="http://www.w3cschool.cc/ruby/ruby-environment.html"> Ruby 环境 </a> <a target="_top" title="Ruby 安装 &#8211; Unix" href="ruby-installation-unix.html" href="http://www.w3cschool.cc/ruby/ruby-installation-unix.html"> Ruby 安装 - Unix </a> <a target="_top" title="Ruby 安装 &#8211; Windows" href="ruby-installation-windows.html" href="http://www.w3cschool.cc/ruby/ruby-installation-windows.html"> Ruby 安装 - Windows </a> <a target="_top" title="Ruby 命令行选项" href="ruby-command-line-options.html" href="http://www.w3cschool.cc/ruby/ruby-command-line-options.html"> Ruby 命令行选项 </a> <a target="_top" title="Ruby 环境变量" href="ruby-environment-variables.html" href="http://www.w3cschool.cc/ruby/ruby-environment-variables.html"> Ruby 环境变量 </a> <a target="_top" title="Ruby 语法" href="ruby-syntax.html" href="http://www.w3cschool.cc/ruby/ruby-syntax.html"> Ruby 语法 </a> <a target="_top" title="Ruby 类和对象" href="ruby-class.html" href="http://www.w3cschool.cc/ruby/ruby-class.html"> Ruby 类和对象 </a> <a target="_top" title="Ruby 类案例" href="ruby-class-case-study.html" href="http://www.w3cschool.cc/ruby/ruby-class-case-study.html"> Ruby 类案例 </a> <a target="_top" title="Ruby 变量" href="ruby-variable.html" href="http://www.w3cschool.cc/ruby/ruby-variable.html"> Ruby 变量 </a> <a target="_top" title="Ruby 运算符" href="ruby-operator.html" href="http://www.w3cschool.cc/ruby/ruby-operator.html"> Ruby 运算符 </a> <a target="_top" title="Ruby 注释" href="ruby-comment.html" href="http://www.w3cschool.cc/ruby/ruby-comment.html"> Ruby 注释 </a> <a target="_top" title="Ruby 判断" href="ruby-decision.html" href="http://www.w3cschool.cc/ruby/ruby-decision.html"> Ruby 判断 </a> <a target="_top" title="Ruby 循环" href="ruby-loop.html" href="http://www.w3cschool.cc/ruby/ruby-loop.html"> Ruby 循环 </a> <a target="_top" title="Ruby 方法" href="ruby-method.html" href="http://www.w3cschool.cc/ruby/ruby-method.html"> Ruby 方法 </a> <a target="_top" title="Ruby 块" href="ruby-block.html" href="http://www.w3cschool.cc/ruby/ruby-block.html"> Ruby 块 </a> <a target="_top" title="Ruby 模块（Module）" href="ruby-module.html" href="http://www.w3cschool.cc/ruby/ruby-module.html"> Ruby 模块（Module） </a> <a target="_top" title="Ruby 字符串（String）" href="ruby-string.html" href="http://www.w3cschool.cc/ruby/ruby-string.html"> Ruby 字符串（String） </a> <a target="_top" title="Ruby 数组（Array）" href="ruby-array.html" href="http://www.w3cschool.cc/ruby/ruby-array.html"> Ruby 数组（Array） </a> <a target="_top" title="Ruby 哈希（Hash）" href="ruby-hash.html" href="http://www.w3cschool.cc/ruby/ruby-hash.html"> Ruby 哈希（Hash） </a> <a target="_top" title="Ruby 日期 &#038; 时间（Date &#038; Time）" href="ruby-date-time.html" href="http://www.w3cschool.cc/ruby/ruby-date-time.html"> Ruby 日期 & 时间 </a> <a target="_top" title="Ruby 范围（Range）" href="ruby-range.html" href="http://www.w3cschool.cc/ruby/ruby-range.html"> Ruby 范围（Range） </a> <a target="_top" title="Ruby 迭代器" href="ruby-iterators.html" href="http://www.w3cschool.cc/ruby/ruby-iterators.html"> Ruby 迭代器 </a> <a target="_top" title="Ruby 文件的输入与输出" href="ruby-input-output.html" href="http://www.w3cschool.cc/ruby/ruby-input-output.html"> Ruby 文件的输入与输出 </a> <a target="_top" title="Ruby File 类和方法" href="ruby-file-methods.html" href="http://www.w3cschool.cc/ruby/ruby-file-methods.html"> Ruby File 类和方法 </a> <a target="_top" title="Ruby Dir 类和方法" href="ruby-dir-methods.html" href="http://www.w3cschool.cc/ruby/ruby-dir-methods.html"> Ruby Dir 类和方法 </a> <a target="_top" title="Ruby 异常" href="ruby-exceptions.html" href="http://www.w3cschool.cc/ruby/ruby-exceptions.html"> Ruby 异常 </a> <br><h2 class="left"><span class="left_h2">Ruby</span> 高级教程</h2> <a target="_top" title="Ruby 面向对象" href="ruby-object-oriented.html" href="http://www.w3cschool.cc/ruby/ruby-object-oriented.html"> Ruby 面向对象 </a> <a target="_top" title="Ruby 正则表达式" href="ruby-regular-expressions.html" href="http://www.w3cschool.cc/ruby/ruby-regular-expressions.html"> Ruby 正则表达式 </a> <a target="_top" title="Ruby 数据库访问 &#8211; DBI 教程" href="ruby-database-access.html" href="http://www.w3cschool.cc/ruby/ruby-database-access.html"> Ruby 数据库访问 - DBI 教程 </a> <a target="_top" title="Ruby CGI 编程" href="ruby-cgi.html" href="http://www.w3cschool.cc/ruby/ruby-cgi.html"> Ruby CGI 编程 </a> <a target="_top" title="Ruby CGI方法" href="ruby-cgi-methods.html" href="http://www.w3cschool.cc/ruby/ruby-cgi-methods.html"> Ruby CGI方法 </a> <a target="_top" title="Ruby CGI Cookies" href="ruby-cgi-cookies.html" href="http://www.w3cschool.cc/ruby/ruby-cgi-cookies.html"> Ruby CGI Cookies </a> <a target="_top" title="Ruby CGI Sessions" href="ruby-cgi-sessions.html" href="http://www.w3cschool.cc/ruby/ruby-cgi-sessions.html"> Ruby CGI Sessions </a> <a target="_top" title="Ruby 发送邮件 &#8211; SMTP" href="ruby-sending-email.html" href="http://www.w3cschool.cc/ruby/ruby-sending-email.html"> Ruby 发送邮件 - SMTP </a> <a target="_top" title="Ruby Socket 编程" href="ruby-socket-programming.html" href="http://www.w3cschool.cc/ruby/ruby-socket-programming.html"> Ruby Socket 编程 </a> <a target="_top" title="Ruby XML, XSLT 和 XPath 教程" href="ruby-xml-xslt-xpath.html" href="http://www.w3cschool.cc/ruby/ruby-xml-xslt-xpath.html"> Ruby XML, XSLT 和 XPath 教程 </a> <a target="_top" title="Ruby Web Services 应用 &#8211; SOAP4R" href="ruby-web-services.html" href="http://www.w3cschool.cc/ruby/ruby-web-services.html"> Ruby Web Services </a> <a target="_top" title="Ruby 多线程" href="ruby-multithreading.html" href="http://www.w3cschool.cc/ruby/ruby-multithreading.html"> Ruby 多线程 </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="ruby-web-services.html" href="http://www.w3cschool.cc/ruby/ruby-web-services.html" rel="prev"> Ruby Web Services 应用 &#8211; SOAP4R</a></div> <div class="next"></div> </div> <div id="content"> <h1>Ruby 多线程</h1> <p>每个正在系统上运行的程序都是一个进程。每个进程包含一到多个线程。</p> <p>线程是程序中一个单一的顺序控制流程，在单个程序中同时运行多个线程完成不同的工作,称为多线程。</p> <p>Ruby 中我们可以通过 Thread 类来创建多线程，Ruby的线程是一个轻量级的，可以以高效的方式来实现并行的代码。</p> <hr> <h2>创建 Ruby 线程</h2> <p>要启动一个新的线程，只需要调用 Thread.new 即可:</p> <pre>
+# 线程 #1 代码部分
+Thread.new {
+  # 线程 #2 执行代码
+}
+# 线程 #1 执行代码
+</pre> <h3>实例</h3> <p>以下实例展示了如何在Ruby程序中使用多线程：</p> <pre>
+#!/usr/bin/ruby
+
+def func1
+   i=0
+   while i&lt;=2
+      puts "func1 at: #{Time.now}"
+      sleep(2)
+      i=i+1
+   end
+end
+
+def func2
+   j=0
+   while j&lt;=2
+      puts "func2 at: #{Time.now}"
+      sleep(1)
+      j=j+1
+   end
+end
+
+puts "Started At #{Time.now}"
+t1=Thread.new{func1()}
+t2=Thread.new{func2()}
+t1.join
+t2.join
+puts "End at #{Time.now}"
+</pre> <p>以上代码执行结果为：</p> <pre>
+Started At Wed May 14 08:21:54 -0700 2014
+func1 at: Wed May 14 08:21:54 -0700 2014
+func2 at: Wed May 14 08:21:54 -0700 2014
+func2 at: Wed May 14 08:21:55 -0700 2014
+func1 at: Wed May 14 08:21:56 -0700 2014
+func2 at: Wed May 14 08:21:56 -0700 2014
+func1 at: Wed May 14 08:21:58 -0700 2014
+End at Wed May 14 08:22:00 -0700 2014
+</pre> <h2>线程生命周期</h2> <p>1、线程的创建可以使用Thread.new,同样可以以同样的语法使用Thread.start 或者Thread.fork这三个方法来创建线程。</p> <p>2、创建线程后无需启动，线程会自动执行。</p> <p>3、Thread 类定义了一些方法来操控线程。线程执行Thread.new中的代码块。</p> <p>4、线程代码块中最后一个语句是线程的值，可以通过线程的方法来调用，如果线程执行完毕，则返回线程值，否则不返回值直到线程执行完毕。</p> <p>5、Thread.current 方法返回表示当前线程的对象。 Thread.main 方法返回主线程。</p> <p>6、通过 Thread.Join 方法来执行线程，这个方法会挂起主线程，直到当前线程执行完毕。</p> <hr><h2>线程状态</h2> <p>线程有5种状态：</p> <table class="reference"> <tbody><tr><th style="width:50%">线程状态</th><th>返回值</th></tr> <tr><td>Runnable</td><td>run</td></tr> <tr><td>Sleeping</td><td>Sleeping</td></tr> <tr><td>Aborting</td><td>aborting</td></tr> <tr><td>Terminated normally</td><td>false </td></tr> <tr><td>Terminated with exception</td><td>nil </td></tr> </tbody></table> <hr> <h2>线程和异常</h2> <p>当某线程发生异常，且没有被rescue捕捉到时，该线程通常会被无警告地终止。但是，若有其它线程因为Thread#join的关系一直等待该线程的话，则等待的线程同样会被引发相同的异常。 </p> <pre>
+begin
+  t = Thread.new do
+    Thread.pass    # 主线程确实在等join
+    raise "unhandled exception"
+  end
+  t.join
+rescue
+  p $!  # =&gt; "unhandled exception"
+end
+</pre> <p>使用下列3个方法，就可以让解释器在某个线程因异常而终止时中断运行。</p> <ul> <li>启动脚本时指定<b>-d</b>选项，并以调试模时运行。</li> <li>用<code>Thread.abort_on_exception</code>设置标志。</li> <li>使用<code>Thread#abort_on_exception</code>对指定的线程设定标志。</li> </ul> <p>当使用上述3种方法之一后，整个解释器就会被中断。</p> <pre>
+t = Thread.new { ... }
+t.abort_on_exception = true
+</pre> <hr> <h2>线程同步控制</h2> <p>在Ruby中，提供三种实现同步的方式，分别是：</p> <p>1. 通过Mutex类实现线程同步</p> <p>2. 监管数据交接的Queue类实现线程同步</p> <p>3. 使用ConditionVariable实现同步控制</p> <h3>通过Mutex类实现线程同步</h3> <p>通过Mutex类实现线程同步控制，如果在多个线程钟同时需要一个程序变量，可以将这个变量部分使用lock锁定。 代码如下：</p> <pre>
+#encoding:gbk
+require "thread"
+puts "Synchronize Thread"
+
+@num=200
+@mutex=Mutex.new
+
+def buyTicket(num)
+	@mutex.lock
+		if @num&gt;=num
+			@num=@num-num
+			puts "you have successfully bought #{num} tickets"
+		else
+			puts "sorry,no enough tickets"
+		end
+	@mutex.unlock
+end
+
+ticket1=Thread.new 10 do
+	10.times do |value|
+	ticketNum=15
+	buyTicket(ticketNum)
+	sleep 0.01
+	end
+end
+
+ticket2=Thread.new 10 do
+	10.times do |value|
+	ticketNum=20
+	buyTicket(ticketNum)
+	sleep 0.01
+	end
+end
+
+sleep 1
+ticket1.join
+ticket2.join
+
+</pre> <p>输出结果如下：</p> <pre>
+Synchronize Thread
+you have successfully bought 15 tickets
+you have successfully bought 20 tickets
+you have successfully bought 15 tickets
+you have successfully bought 20 tickets
+you have successfully bought 15 tickets
+you have successfully bought 20 tickets
+you have successfully bought 15 tickets
+you have successfully bought 20 tickets
+you have successfully bought 15 tickets
+you have successfully bought 20 tickets
+you have successfully bought 15 tickets
+sorry,no enough tickets
+sorry,no enough tickets
+sorry,no enough tickets
+sorry,no enough tickets
+sorry,no enough tickets
+sorry,no enough tickets
+sorry,no enough tickets
+sorry,no enough tickets
+sorry,no enough tickets
+</pre> <p>除了使用lock锁定变量，还可以使用try_lock锁定变量，还可以使用Mutex.synchronize同步对某一个变量的访问。</p> <h3>监管数据交接的Queue类实现线程同步</h3> <p> Queue类就是表示一个支持线程的队列，能够同步对队列末尾进行访问。不同的线程可以使用统一个对类，但是不用担心这个队列中的数据是否能够同步，另外使用SizedQueue类能够限制队列的长度 </p><p>SizedQueue类能够非常便捷的帮助我们开发线程同步的应用程序，应为只要加入到这个队列中，就不用关心线程的同步问题。 </p> <p>经典的生产者消费者问题：</p> <pre>
+#encoding:gbk
+require "thread"
+puts "SizedQuee Test"
+
+queue = Queue.new
+
+producer = Thread.new do
+	10.times do |i|
+		sleep rand(i) # 让线程睡眠一段时间
+		queue &lt;&lt; i
+		puts "#{i} produced"
+	end
+end
+
+consumer = Thread.new do
+	10.times do |i|
+		value = queue.pop
+		sleep rand(i/2)
+		puts "consumed #{value}"
+	end
+end
+
+consumer.join
+</pre> <p>程序的输出：</p> <pre>
+SizedQuee Test
+0 produced
+1 produced
+consumed 0
+2 produced
+consumed 1
+consumed 2
+3 produced
+consumed 34 produced
+
+consumed 4
+5 produced
+consumed 5
+6 produced
+consumed 6
+7 produced
+consumed 7
+8 produced
+9 produced
+consumed 8
+consumed 9
+</pre> <h3>使用ConditionVariable实现同步控制</h3> <p>使用 ConditonVariable进行同步控制，能够在一些致命的资源竞争部分挂起线程直到有可用的资源为止。</p> <pre>
+#encoding:gbk
+require "thread"
+puts "thread synchronize by ConditionVariable"
+
+mutex = Mutex.new
+resource = ConditionVariable.new
+
+a = Thread.new {
+	mutex.synchronize {
+		# 这个线程目前需要resource这个资源
+		resource.wait(mutex) 
+		puts "get resource"
+	}
+}
+
+b = Thread.new {
+	mutex.synchronize {
+		#线程b完成对resourece资源的使用并释放resource
+		resource.signal
+	}
+}
+
+a.join
+puts "complete"
+</pre> <p>mutex 是声明的一个资源，然后通过ConditionVariable来控制申请和释放这个资源。</p><p> b 线程完成了某些工作之后释放资源resource.signal,这样a线程就可以获得一个mutex资源然后进行执行。 执行结果： </p> <pre>
+thread synchronize by ConditionVariable
+get resource
+complete
+</pre> <hr> <h2>线程类方法</h2> <p>完整的 Thread（线程） 类方法如下：</p> <table class="reference"> <tbody><tr><th style="width:5%">序号</th><th>方法描述</th></tr> <tr><td>1</td><td><b>Thread.abort_on_exception</b><br>若其值为真的话，一旦某线程因异常而终止时，整个解释器就会被中断。它的默认值是假，也就是说，在通常情况下，若某线程发生异常且该异常未被Thread#join等检测到时，该线程会被无警告地终止。</td></tr> <tr><td>2</td><td><b>Thread.abort_on_exception=</b><br>如果设置为 <i>true</i>, 一旦某线程因异常而终止时，整个解释器就会被中断。返回新的状态</td></tr> <tr><td>3</td><td><b>Thread.critical</b><br>返回布尔值。</td></tr> <tr><td>4</td><td><b>Thread.critical=</b><br>当其值为true时，将不会进行线程切换。若当前线程挂起(stop)或有信号(signal)干预时，其值将自动变为false。</td></tr> <tr><td>5</td><td><b>Thread.current</b><br>返回当前运行中的线程(当前线程)。</td></tr> <tr><td>6</td><td><b>Thread.exit</b><br>终止当前线程的运行。返回当前线程。若当前线程是唯一的一个线程时，将使用exit(0)来终止它的运行。</td></tr> <tr><td>7</td><td><b>Thread.fork { block }</b><br>与 Thread.new 一样生成线程。</td></tr> <tr><td>8</td><td><b>Thread.kill( aThread )</b><br>终止线程的运行.</td></tr> <tr><td>9</td><td><b>Thread.list</b><br>返回处于运行状态或挂起状态的活线程的数组。</td></tr> <tr><td>10</td><td><b>Thread.main</b><br>返回主线程。</td></tr> <tr><td>11</td><td><b>Thread.new( [ arg ]* ) {| args | block }</b><br>生成线程,并开始执行。数会被原封不动地传递给块. 这就可以在启动线程的同时,将值传递给该线程所固有的局部变量。</td></tr> <tr><td>12</td><td><b>Thread.pass</b><br>将运行权交给其他线程. 它不会改变运行中的线程的状态,而是将控制权交给其他可运行的线程(显式的线程调度)。</td></tr> <tr><td>13</td><td><b>Thread.start( [ args ]* ) {| args | block }</b><br>生成线程,并开始执行。数会被原封不动地传递给块. 这就可以在启动线程的同时,将值传递给该线程所固有的局部变量。</td></tr> <tr><td>14</td><td><b>Thread.stop</b><br>将当前线程挂起,直到其他线程使用run方法再次唤醒该线程。</td></tr> </tbody></table> <hr> <h2>线程实例化方法</h2> <p>以下实例调用了线程实例化方法 join：</p> <pre>
+#!/usr/bin/ruby
+
+thr = Thread.new do   # 实例化
+   puts "In second thread"
+   raise "Raise exception"
+end
+thr.join   # 调用实例化方法 join
+</pre> <p>以下是完整实例化方法列表：</p> <table class="reference"> <tbody><tr><th style="width:5%">序号</th><th>方法描述</th></tr> <tr><td>1</td><td><b>thr[ name ]</b><br>取出线程内与name相对应的固有数据。 name可以是字符串或符号。 若没有与name相对应的数据时, 返回nil。</td></tr> <tr><td>2</td><td><b>thr[ name ] =</b><br>设置线程内name相对应的固有数据的值， name可以是字符串或符号。 若设为nil时, 将删除该线程内对应数据。</td></tr> <tr><td>3</td><td><b>thr.abort_on_exception</b><br>返回布尔值。</td></tr> <tr><td>4</td><td><b>thr.abort_on_exception=</b><br>若其值为true的话，一旦某线程因异常而终止时，整个解释器就会被中断。</td></tr> <tr><td>5</td><td><b>thr.alive?</b><br>若线程是"活"的,就返回true。</td></tr> <tr><td>6</td><td><b>thr.exit</b><br>终止线程的运行。返回self。</td></tr> <tr><td>7</td><td><b>thr.join</b><br>挂起当前线程,直到self线程终止运行为止. 若self因异常而终止时, 将会当前线程引发同样的异常。</td></tr> <tr><td>8</td><td><b>thr.key?</b><br>若与name相对应的线程固有数据已经被定义的话,就返回true</td></tr> <tr><td>9</td><td><b>thr.kill</b><br>类似于 <i>Thread.exit</i> 。</td></tr> <tr><td>10</td><td><b>thr.priority</b><br>返回线程的优先度. 优先度的默认值为0. 该值越大则优先度越高.</td></tr> <tr><td>11</td><td><b>thr.priority=</b><br>设定线程的优先度. 也可以将其设定为负数.</td></tr> <tr><td>12</td><td><b>thr.raise( anException )</b><br>在该线程内强行引发异常.</td></tr> <tr><td>13</td><td><b>thr.run</b><br>重新启动被挂起(stop)的线程. 与wakeup不同的是,它将立即进行线程的切换. 若对死进程使用该方法时, 将引发ThreadError异常.</td></tr> <tr><td>14</td><td><b>thr.safe_level</b><br>返回self 的安全等级. 当前线程的safe_level与$SAFE相同.</td></tr> <tr><td>15</td><td><b>thr.status</b><br>使用字符串"run"、"sleep"或"aborting" 来表示活线程的状态. 若某线程是正常终止的话,就返回false. 若因异常而终止的话,就返回nil。</td></tr> <tr><td>16</td><td><b>thr.stop?</b><br>若线程处于终止状态(dead)或被挂起(stop)时,返回true.</td></tr> <tr><td>17</td><td><b>thr.value</b><br>一直等到self线程终止运行(等同于join)后,返回该线程的块的返回值. 若在线程的运行过程中发生了异常, 就会再次引发该异常.</td></tr> <tr><td>18</td><td><b>thr.wakeup</b><br>把被挂起(stop)的线程的状态改为可执行状态(run), 若对死线程执行该方法时,将会引发ThreadError异常。</td></tr> </tbody></table> </div> <div class="chapter"> <div class="prev">&laquo; <a href="ruby-web-services.html" href="http://www.w3cschool.cc/ruby/ruby-web-services.html" rel="prev"> Ruby Web Services 应用 &#8211; SOAP4R</a></div> <div class="next"></div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/ruby/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/ruby/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

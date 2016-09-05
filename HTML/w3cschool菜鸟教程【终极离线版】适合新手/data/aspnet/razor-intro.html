@@ -1,0 +1,131 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>ASP.NET Razor 标记 | w3cschool菜鸟教程</title> <link rel='prev' title='ASP.NET WebPages 帮助器参考手册' href="webpages-ref-helpers.html"/> <link rel='next' title='ASP.NET Razor 语法' href="razor-syntax.html"/> <link rel='canonical' href='http://www.w3cschool.cc/aspnet/razor-intro.html'/> <meta name="keywords" content="ASP.NET Razor 标记"> <meta name="description" content="ASP.NET Razor - 标记 Razor 不是一种编程语言。它是服务器端的标记语言。 什么是 Razor？ Razor 是一种标记语法，可以让您将基于服务器的代码（Visual Basic 和 C#）嵌入到网页中。 基于服务器的代码可以在网页传送给浏览器时，创建动态 Web 内容。当一个网页被请求时，服务器在返回页面给浏览器之前先执行页面中的基于服务器的代码。通过服务器的运行，代码能执行复杂的任务，比如进入数据库。 Raz.."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="../ruby/ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>ASP.NET 教程</strong></h2> <a target="_top" title="ASP.NET 教程" href="aspnet-tutorial.html" href="http://www.w3cschool.cc/aspnet/aspnet-tutorial.html"> ASP.NET 教程 </a> <a target="_top" title="ASP.NET" href="aspnet.html" href="http://www.w3cschool.cc/aspnet/aspnet.html"> ASP.NET 简介 </a> <br><h2 class="left"><span class="left_h2">WP 教程</span></h2> <a target="_top" title="ASP.NET Web Pages 教程" href="webpages-intro.html" href="http://www.w3cschool.cc/aspnet/webpages-intro.html"> WebPages 简介 </a> <a target="_top" title="ASP.NET Web Pages Razor" href="webpages-razor.html" href="http://www.w3cschool.cc/aspnet/webpages-razor.html"> WebPages Razor </a> <a target="_top" title="ASP.NET Web Pages 布局" href="webpages-layout.html" href="http://www.w3cschool.cc/aspnet/webpages-layout.html"> WebPages 布局 </a> <a target="_top" title="ASP.NET Web Pages 文件夹" href="webpages-folders.html" href="http://www.w3cschool.cc/aspnet/webpages-folders.html"> WebPages 文件夹 </a> <a target="_top" title="ASP.NET Web Pages 全局文件" href="webpages-global.html" href="http://www.w3cschool.cc/aspnet/webpages-global.html"> WebPages 全局 </a> <a target="_top" title="ASP.NET Web Pages HTML 表单" href="webpages-forms.html" href="http://www.w3cschool.cc/aspnet/webpages-forms.html"> WebPages 表单 </a> <a target="_top" title="ASP.NET Web Pages 对象" href="webpages-objects.html" href="http://www.w3cschool.cc/aspnet/webpages-objects.html"> WebPages 对象 </a> <a target="_top" title="ASP.NET Web Pages 文件" href="webpages-files.html" href="http://www.w3cschool.cc/aspnet/webpages-files.html"> WebPages 文件 </a> <a target="_top" title="ASP.NET Web Pages 帮助器" href="webpages-helpers.html" href="http://www.w3cschool.cc/aspnet/webpages-helpers.html"> WebPages 帮助器 </a> <a target="_top" title="ASP.NET Web Pages WebGrid" href="webpages-webgrid.html" href="http://www.w3cschool.cc/aspnet/webpages-webgrid.html"> WebPages WebGrid </a> <a target="_top" title="ASP.NET Web Pages 图表" href="webpages-chart.html" href="http://www.w3cschool.cc/aspnet/webpages-chart.html"> WebPages 图表 </a> <a target="_top" title="ASP.NET Web Pages Email" href="webpages-email.html" href="http://www.w3cschool.cc/aspnet/webpages-email.html"> WebPages Email </a> <a target="_top" title="ASP.NET Web Pages PHP" href="webpages-php.html" href="http://www.w3cschool.cc/aspnet/webpages-php.html"> WebPages PHP </a> <a target="_top" title="ASP.NET Web Pages &#8211; 发布" href="webpages-publish.html" href="http://www.w3cschool.cc/aspnet/webpages-publish.html"> WebPages 发布 </a> <a target="_top" title="ASP.NET Web 的 C# 和 VB 实例" href="webpages-examples.html" href="http://www.w3cschool.cc/aspnet/webpages-examples.html"> WebPages 实例 </a> <br><h2 class="left"><span class="left_h2">WP 参考手册</span></h2> <a target="_top" title="ASP.NET Web Pages 类参考手册" href="webpages-ref-classes.html" href="http://www.w3cschool.cc/aspnet/webpages-ref-classes.html"> WebPages 类 </a> <a target="_top" title="ASP.NET Web Pages WebSecurity 参考手册" href="webpages-ref-websecurity.html" href="http://www.w3cschool.cc/aspnet/webpages-ref-websecurity.html"> WebPages 安全 </a> <a target="_top" title="ASP.NET Web Pages Database 参考手册" href="webpages-ref-database.html" href="http://www.w3cschool.cc/aspnet/webpages-ref-database.html"> WebPages 数据库 </a> <a target="_top" title="ASP.NET Web Pages WebMail 参考手册" href="webpages-ref-webmail.html" href="http://www.w3cschool.cc/aspnet/webpages-ref-webmail.html"> WebPages 邮局 </a> <a target="_top" title="ASP.NET WebPages 帮助器参考手册" href="webpages-ref-helpers.html" href="http://www.w3cschool.cc/aspnet/webpages-ref-helpers.html"> WebPages 帮助器 </a> <br><h2 class="left"><span class="left_h2">ASP.NET Razor</span></h2> <a target="_top" title="ASP.NET Razor 标记" href="razor-intro.html" href="http://www.w3cschool.cc/aspnet/razor-intro.html"> Razor 简介 </a> <a target="_top" title="ASP.NET Razor 语法" href="razor-syntax.html" href="http://www.w3cschool.cc/aspnet/razor-syntax.html"> Razor 语法 </a> <a target="_top" title="ASP.NET Razor C# 变量" href="razor-cs-variables.html" href="http://www.w3cschool.cc/aspnet/razor-cs-variables.html"> Razor C# 变量 </a> <a target="_top" title="ASP.NET Razor C# 循环和数组" href="razor-cs-loops.html" href="http://www.w3cschool.cc/aspnet/razor-cs-loops.html"> Razor C# 循环 </a> <a target="_top" title="ASP.NET Razor C# 逻辑" href="razor-cs-logic.html" href="http://www.w3cschool.cc/aspnet/razor-cs-logic.html"> Razor C# 逻辑 </a> <a target="_top" title="ASP.NET Razor VB 变量" href="razor-vb-variables.html" href="http://www.w3cschool.cc/aspnet/razor-vb-variables.html"> Razor VB 变量 </a> <a target="_top" title="ASP.NET Razor VB 循环和数组" href="razor-vb-loops.html" href="http://www.w3cschool.cc/aspnet/razor-vb-loops.html"> Razor VB 循环 </a> <a target="_top" title="ASP.NET Razor VB 逻辑" href="razor-vb-logic.html" href="http://www.w3cschool.cc/aspnet/razor-vb-logic.html"> Razor VB 逻辑 </a> <br><h2 class="left"><span class="left_h2">ASP.NET MVC</span></h2> <a target="_top" title="ASP.NET MVC 简介" href="mvc-intro.html" href="http://www.w3cschool.cc/aspnet/mvc-intro.html"> MVC 简介 </a> <a target="_top" title="ASP.NET MVC Web 应用程序" href="mvc-app.html" href="http://www.w3cschool.cc/aspnet/mvc-app.html"> MVC 应用程序 </a> <a target="_top" title="ASP.NET MVC 文件夹" href="mvc-folders.html" href="http://www.w3cschool.cc/aspnet/mvc-folders.html"> MVC 文件夹 </a> <a target="_top" title="ASP.NET MVC 页面和布局" href="mvc-layout.html" href="http://www.w3cschool.cc/aspnet/mvc-layout.html"> MVC 布局 </a> <a target="_top" title="ASP.NET MVC 控制器" href="mvc-controllers.html" href="http://www.w3cschool.cc/aspnet/mvc-controllers.html"> MVC 控制器 </a> <a target="_top" title="ASP.NET MVC 视图" href="mvc-views.html" href="http://www.w3cschool.cc/aspnet/mvc-views.html"> MVC 视图 </a> <a target="_top" title="ASP.NET MVC 数据库" href="mvc-database.html" href="http://www.w3cschool.cc/aspnet/mvc-database.html"> MVC 数据库 </a> <a target="_top" title="ASP.NET MVC 模型" href="mvc-models.html" href="http://www.w3cschool.cc/aspnet/mvc-models.html"> MVC 模型 </a> <a target="_top" title="ASP.NET MVC 安全" href="mvc-security.html" href="http://www.w3cschool.cc/aspnet/mvc-security.html"> MVC 安全 </a> <a target="_top" title="ASP.NET MVC HTML 帮助器" href="mvc-htmlhelpers.html" href="http://www.w3cschool.cc/aspnet/mvc-htmlhelpers.html"> MVC HTML 帮助器 </a> <a target="_top" title="ASP.NET MVC &#8211; 发布" href="mvc-publish.html" href="http://www.w3cschool.cc/aspnet/mvc-publish.html"> MVC 发布 </a> <a target="_top" title="ASP.NET MVC 参考手册" href="mvc-reference.html" href="http://www.w3cschool.cc/aspnet/mvc-reference.html"> MVC 参考手册 </a> <br><h2 class="left"><span class="left_h2">WF 教程</span></h2> <a target="_top" title="ASP.NET Web Forms 教程" href="aspnet-intro.html" href="http://www.w3cschool.cc/aspnet/aspnet-intro.html"> WebForms 简介 </a> <a target="_top" title="ASP.NET Web 页面" href="aspnet-pages.html" href="http://www.w3cschool.cc/aspnet/aspnet-pages.html"> WebForms 页面 </a> <a target="_top" title="ASP.NET 服务器控件" href="aspnet-controls.html" href="http://www.w3cschool.cc/aspnet/aspnet-controls.html"> WebForms 控件 </a> <a target="_top" title="ASP.NET 事件句柄" href="aspnet-events.html" href="http://www.w3cschool.cc/aspnet/aspnet-events.html"> WebForms 事件 </a> <a target="_top" title="ASP.NET Web 表单" href="aspnet-forms.html" href="http://www.w3cschool.cc/aspnet/aspnet-forms.html"> WebForms 表单 </a> <a target="_top" title="ASP.NET ViewState" href="aspnet-viewstate.html" href="http://www.w3cschool.cc/aspnet/aspnet-viewstate.html"> WebForms ViewState </a> <a target="_top" title="ASP.NET TextBox 控件" href="aspnet-textbox.html" href="http://www.w3cschool.cc/aspnet/aspnet-textbox.html"> WebForms TextBox </a> <a target="_top" title="ASP.NET Button 控件" href="aspnet-button.html" href="http://www.w3cschool.cc/aspnet/aspnet-button.html"> WebForms Button </a> <a target="_top" title="ASP.NET 数据绑定" href="aspnet-databinding.html" href="http://www.w3cschool.cc/aspnet/aspnet-databinding.html"> WebForms 数据绑定 </a> <a target="_top" title="ASP.NET ArrayList" href="aspnet-arraylist.html" href="http://www.w3cschool.cc/aspnet/aspnet-arraylist.html"> WebForms ArrayList </a> <a target="_top" title="ASP.NET Hashtable" href="aspnet-hashtable.html" href="http://www.w3cschool.cc/aspnet/aspnet-hashtable.html"> WebForms Hashtable </a> <a target="_top" title="ASP.NET SortedList" href="aspnet-sortedlist.html" href="http://www.w3cschool.cc/aspnet/aspnet-sortedlist.html"> WebForms SortedList </a> <a target="_top" title="ASP.NET XML 数据绑定" href="aspnet-xml.html" href="http://www.w3cschool.cc/aspnet/aspnet-xml.html"> WebForms XML 文件 </a> <a target="_top" title="ASP.NET Repeater 控件" href="aspnet-repeater.html" href="http://www.w3cschool.cc/aspnet/aspnet-repeater.html"> WebForms Repeater </a> <a target="_top" title="ASP.NET DataList 控件" href="aspnet-datalist.html" href="http://www.w3cschool.cc/aspnet/aspnet-datalist.html"> WebForms DataList </a> <a target="_top" title="ASP.NET 数据库连接" href="aspnet-dbconnection.html" href="http://www.w3cschool.cc/aspnet/aspnet-dbconnection.html"> WebForms 数据库连接 </a> <a target="_top" title="ASP.NET 母版页" href="aspnet-masterpages.html" href="http://www.w3cschool.cc/aspnet/aspnet-masterpages.html"> WebForms 母版页 </a> <a target="_top" title="ASP.NET 导航" href="aspnet-navigation.html" href="http://www.w3cschool.cc/aspnet/aspnet-navigation.html"> WebForms 导航 </a> <a target="_top" title="ASP.NET 实例" href="aspnet-examples.html" href="http://www.w3cschool.cc/aspnet/aspnet-examples.html"> WebForms 实例 </a> <br><h2 class="left"><span class="left_h2">WF 参考手册</span></h2> <a target="_top" title="ASP.NET HTML 服务器控件" href="aspnet-ref-htmlcontrols.html" href="http://www.w3cschool.cc/aspnet/aspnet-ref-htmlcontrols.html"> WebForms HTML </a> <a target="_top" title="ASP.NET Web 服务器控件" href="aspnet-ref-webcontrols.html" href="http://www.w3cschool.cc/aspnet/aspnet-ref-webcontrols.html"> WebForms Controls </a> <a target="_top" title="ASP.NET Validation 服务器控件" href="aspnet-ref-validationcontrols.html" href="http://www.w3cschool.cc/aspnet/aspnet-ref-validationcontrols.html"> WebForms Validation </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="webpages-ref-helpers.html" href="http://www.w3cschool.cc/aspnet/webpages-ref-helpers.html" rel="prev"> ASP.NET WebPages 帮助器参考手册</a></div> <div class="next"><a href="razor-syntax.html" href="http://www.w3cschool.cc/aspnet/razor-syntax.html" rel="next">ASP.NET Razor 语法</a> &raquo;</div> </div> <div id="content"> <h1>ASP.NET Razor <span class="color_h1">- 标记</span> </h1> <hr> <p class="intro">Razor 不是一种编程语言。它是服务器端的标记语言。</p> <hr> <h2>什么是 Razor？</h2> <p>Razor 是一种标记语法，可以让您将基于服务器的代码（Visual Basic 和 C#）嵌入到网页中。</p> <p>基于服务器的代码可以在网页传送给浏览器时，创建动态 Web 内容。当一个网页被请求时，服务器在返回页面给浏览器之前先执行页面中的基于服务器的代码。通过服务器的运行，代码能执行复杂的任务，比如进入数据库。</p> <p>Razor 是基于 ASP.NET 的，是为创建 Web 应用程序而设计的。它具有传统 ASP.NET 的功能，但更容易使用并且更容易学习。<br></p> <hr> <h2>Razor 语法</h2> <p>Razor 使用了与 PHP 和经典 ASP 相似的语法。</p> <p>Razor：</p> <div class="code notranslate"><div> &lt;ul&gt;<br>@for (int i = 0; i &lt; 10; i++) {<br>&lt;li&gt;@i&lt;/li&gt;<br>}<br>&lt;/ul&gt;</div></div> <p>PHP：</p> <div class="code notranslate"><div> &lt;ul&gt;<br>&lt;?php <br>for ($i = 0; $i &lt; 10; $i++) {<br>echo("&lt;li&gt;$i&lt;/li&gt;");<br>} <br>?&gt;<br>&lt;/ul&gt;</div></div> <p>Web Forms（经典 ASP）：</p> <div class="code notranslate"><div> &lt;ul&gt;<br>&lt;% for (int i = 0; i &lt; 10; i++) { %&gt;<br>&lt;li&gt;&lt;% =i %&gt;&lt;/li&gt;<br>&lt;% } %&gt;<br> &lt;/ul&gt; </div></div> <br><hr> <h2>Razor 帮助器</h2> <p>ASP.NET 帮助器是通过几行简单的 Razor 代码即可访问的组件。</p> <p>您可以使用 Razor 语法构建自己的帮助器，或者使用内建的 ASP.NET 帮助器。</p> <p>下面是一些有用的 Razor 帮助器的简短说明：</p> <ul> <li>Web Grid（Web 网格）</li> <li>Web Graphics（Web 图形）</li> <li>Google Analytics（Google 分析）</li> <li>Facebook Integration（Facebook 集成）</li> <li>Twitter Integration（Twitter 集成）</li> <li>Sending Email（发送电子邮件）</li> <li>Validation（验证）</li> </ul> <hr> <h2>Razor 编程语言</h2> <p>Razor 支持 C# (C sharp) 和 VB (Visual Basic)。</p> <br> </div> <div class="chapter"> <div class="prev">&laquo; <a href="webpages-ref-helpers.html" href="http://www.w3cschool.cc/aspnet/webpages-ref-helpers.html" rel="prev"> ASP.NET WebPages 帮助器参考手册</a></div> <div class="next"><a href="razor-syntax.html" href="http://www.w3cschool.cc/aspnet/razor-syntax.html" rel="next">ASP.NET Razor 语法</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/aspnet/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/aspnet/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

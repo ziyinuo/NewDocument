@@ -1,0 +1,131 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>地图 API Map() 构造器 | w3cschool菜鸟教程</title> <link rel='prev' title='Google 地图参考手册' href="google-maps-ref.html"/> <link rel='next' title='XSL-FO footnote 对象' href="/xslfo/obj-footnote.html"/> <link rel='canonical' href='http://www.w3cschool.cc/googleapi/ref-map.html'/> <meta name="keywords" content="地图 API Map() 构造器"> <meta name="description" content="地图 API Map() 构造器 实例 创建一个 Google 地图: var map=new google.maps.Map(document.getElementById(&#039;googleMap&#039;),mapOpt); 尝试一下 ? 定义和用法 Map() 构造器创建了一个新的地图并插入到指定的HTML元素中（&amp;lt;div&amp;gt; 元素)。 语法 new google.maps.M.."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="../ruby/ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>Google 地图 API 教程</strong></h2> <a target="_top" title="Google API 教程" href="googleapi-tutorial.html" href="http://www.w3cschool.cc/googleapi/googleapi-tutorial.html"> Google API 教程 </a> <a target="_top" title="Google 地图 API" href="google-maps-api-key.html" href="http://www.w3cschool.cc/googleapi/google-maps-api-key.html"> Google 地图 API </a> <a target="_top" title="Google 地图基础" href="google-maps-basic.html" href="http://www.w3cschool.cc/googleapi/google-maps-basic.html"> Google 地图基础 </a> <a target="_top" title="Google 地图叠加层" href="google-maps-overlays.html" href="http://www.w3cschool.cc/googleapi/google-maps-overlays.html"> Google 地图叠加层 </a> <a target="_top" title="Google 地图事件" href="google-maps-events.html" href="http://www.w3cschool.cc/googleapi/google-maps-events.html"> Google 地图事件 </a> <a target="_top" title="Google 地图控件集" href="google-maps-controls.html" href="http://www.w3cschool.cc/googleapi/google-maps-controls.html"> Google 地图控件集 </a> <a target="_top" title="Google 地图类型" href="google-maps-types.html" href="http://www.w3cschool.cc/googleapi/google-maps-types.html"> Google 地图类型 </a> <a target="_top" title="Google 地图参考手册" href="google-maps-ref.html" href="http://www.w3cschool.cc/googleapi/google-maps-ref.html"> Google 地图参考手册 </a> <a target="_top" title="地图 API Map() 构造器" href="ref-map.html" href="http://www.w3cschool.cc/googleapi/ref-map.html"> 地图 API Map() 构造器 </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="google-maps-ref.html" href="http://www.w3cschool.cc/googleapi/google-maps-ref.html" rel="prev"> Google 地图参考手册</a></div> <div class="next"><a title="javascript:if(confirm('http://www.w3cschool.cc/googleapi/pr-border-right-style.html  \n\n?????????? Teleport Ultra ????, ??? ??????, ???????????, ?????????????  \n\n?????????????????'))window.location='http://www.w3cschool.cc/googleapi/pr-border-right-style.html'" href="http://www.w3cschool.cc/googleapi/ref-mapoptions.html" rel="next">地图 API MapOptions 对象</a> &raquo;</div> </div> <div id="content"> <h1>地图 API <span class="color_h1">Map()</span> 构造器</h1> <br><div class="example"> <h2 class="example">实例</h2> <p class="example">创建一个 Google 地图:</p> <div class="example_code notranslate"> var map=new google.maps.Map(document.getElementById("googleMap"),mapOpt);</div> <br><a target="_blank" class="tryitbtn" title="javascript:if(confirm('http://www.w3csol.cc/try/pr-border-right-width.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/pr-border-right-width.html'" href="http://www.w3cschool.cc/try/try.php?filename=tryhtml_ref_map">尝试一下 ?</a> </div> <hr> <h2>定义和用法</h2> <p>Map() 构造器创建了一个新的地图并插入到指定的HTML元素中（&lt;div&gt; 元素)。</p> <hr> <h2>语法</h2> <div class="code notranslate"><div> new google.maps.Map(<i>HTMLElement</i>,<i>MapOptions</i>)</div></div> <h2>参数值</h2> <table class="reference notranslate"> <tbody> <tr> <th align="left" width="20%">参数</th> <th align="left" width="80%">描述</th> </tr> <tr> <td><i>HTMLElement</i></td> <td>规定要把地图放置在那个 HTML 元素中。</td> </tr> <tr> <td><i><a title="javascript:if(confirm('http://www.w3cschool.cc/googleapi/pr-border-right-style.html  \n\n?????????? Teleport Ultra ????, ??? ??????, ???????????, ?????????????  \n\n?????????????????'))window.location='http://www.w3cschool.cc/googleapi/pr-border-right-style.html'" href="http://www.w3cschool.cc/googleapi/ref-mapoptions.html">MapOptions</a></i></td> <td>带有地图初始化变量/选项的 MapOptions 对象。</td> </tr> </tbody> </table> <hr/> <h2> Map() 的方法</h2> <table class="reference notranslate" id="table3"> <tbody> <tr> <th align="left" width="30%">方法</th> <th align="left" width="25%">返回值</th> <th align="left" width="55%">描述</th> </tr> <tr> <td>fitBounds(<i>LatLngBounds</i>)</td> <td>None</td> <td>设置要包含给定边界的视口。</td> </tr> <tr> <td><a title="javascript:if(confirm('http://www.w3cschool.cc/googleapi/pr-border-spacing.html  \n\n?????????? Teleport Ultra ????, ??? ??????, ???????????, ?????????????  \n\n?????????????????'))window.location='http://www.w3cschool.cc/googleapi/pr-border-spacing.html'" href="http://www.w3cschool.cc/googleapi/ref-getbounds.html">getBounds()</a></td> <td><i>LatLng,LatLng </i></td> <td>返回当前视口的西南纬度/经度和东北纬度/经度。</td> </tr> <tr> <td><a title="javascript:if(confirm('http://www.w3cschool.cc/googleapi/pr-border-style.html  \n\n?????????? Teleport Ultra ????, ??? ??????, ???????????, ?????????????  \n\n?????????????????'))window.location='http://www.w3cschool.cc/googleapi/pr-border-style.html'" href="http://www.w3cschool.cc/googleapi/ref-getcenter.html">getCenter()</a></td> <td><i>LatLng</i></td> <td>返回地图的中心的纬度/经度。</td> </tr> <tr> <td><a title="javascript:if(confirm('http://www.w3cschool.cc/googleapi/pr-border-top.html  \n\n?????????? Teleport Ultra ????, ??? ??????, ???????????, ?????????????  \n\n?????????????????'))window.location='http://www.w3cschool.cc/googleapi/pr-border-top.html'" href="http://www.w3cschool.cc/googleapi/ref-getdiv.html">getDiv()</a></td> <td><i>Node</i></td> <td>返回包含地图的 DOM 对象。</td> </tr> <tr> <td><a title="javascript:if(confirm('http://www.w3cschool.cc/googleapi/pr-border-top-color.html  \n\n?????????? Teleport Ultra ????, ??? ??????, ???????????, ?????????????  \n\n?????????????????'))window.location='http://www.w3cschool.cc/googleapi/pr-border-top-color.html'" href="http://www.w3cschool.cc/googleapi/ref-getheading.html">getHeading()</a></td> <td><i>number</i></td> <td>返回航拍图像的罗盘航向（支持 SATELLITE 和 HYBRID 地图类型）。</td> </tr> <tr> <td><a title="javascript:if(confirm('http://www.w3cschool.cc/googleapi/css3-pr-border-top-left-radius.html  \n\n?????????? Teleport Ultra ????, ??? ??????, ???????????, ?????????????  \n\n?????????????????'))window.location='http://www.w3cschool.cc/googleapi/css3-pr-border-top-left-radius.html'" href="http://www.w3cschool.cc/googleapi/ref-getmaptypeid.html">getMapTypeId()</a></td> <td>HYBRID ROADMAP SATELLITE TERRAIN</td> <td>返回当前地图类型。</td> </tr> <tr> <td>getProjection()</td> <td><i>Projection</i></td> <td>返回当前 Projection（投影）。</td> </tr> <tr> <td>getStreetView()</td> <td><i>StreetViewPanorama</i></td> <td>返回绑定到地图的默认的 StreetViewPanorama。</td> </tr> <tr> <td>getTilt()</td> <td><i>number</i></td> <td>返回航拍图像的入射角度数（支持 SATELLITE 和 HYBRID 地图类型）。</td> </tr> <tr> <td><a title="javascript:if(confirm('http://www.w3cschool.cc/googleapi/css3-pr-border-top-right-radius.html  \n\n?????????? Teleport Ultra ????, ??? ??????, ???????????, ?????????????  \n\n?????????????????'))window.location='http://www.w3cschool.cc/googleapi/css3-pr-border-top-right-radius.html'" href="http://www.w3cschool.cc/googleapi/ref-getzoom.html">getZoom()</a></td> <td><i>number</i></td> <td>返回地图的当前缩放级别。</td> </tr> <tr> <td>panBy(<i>xnumber,ynumber</i>)</td> <td>None</td> <td>通过以像素计的给定距离改变地图的中心。</td> </tr> <tr> <td>panTo(<i>LatLng</i>)</td> <td>None</td> <td>改变地图的中心为给定的 LatLng。</td> </tr> <tr> <td>panToBounds(<i>LatLngBounds</i>)</td> <td>None</td> <td>将地图平移所需的最小距离以包含给定的 LatLngBounds。</td> </tr> <tr> <td>setCenter(<i>LatLng</i>)</td> <td>None</td> <td></td> </tr> <tr> <td>setHeading(<i>number</i>)</td> <td>None</td> <td>设置航拍图像的罗盘方向（以度为单位进行测量），基本方向为北方。</td> </tr> <tr> <td><a title="javascript:if(confirm('http://www.w3cschool.cc/googleapi/pr-border-top-style.html  \n\n?????????? Teleport Ultra ????, ??? ??????, ???????????, ?????????????  \n\n?????????????????'))window.location='http://www.w3cschool.cc/googleapi/pr-border-top-style.html'" href="http://www.w3cschool.cc/googleapi/ref-setmaptypeid.html">setMapTypeId(<i>MapTypeId</i>)</a></td> <td>None</td> <td>改变要显示的地图类型。</td> </tr> <tr> <td>setOptions(<i>MapOptions</i>)</td> <td>None</td> <td></td> </tr> <tr> <td>setStreetView(<i>StreetViewPanorama</i>)</td> <td>None</td> <td>绑定一个 StreetViewPanorama 到地图上。</td> </tr> <tr> <td>setTilt(<i>number</i>)</td> <td>None</td> <td>设置航拍图像的入射角度数（支持 SATELLITE 和 HYBRID 地图类型）。</td> </tr> <tr> <td>setZoom(<i>number</i>)</td> <td>None</td> <td></td> </tr> </tbody> </table> <h2> Map() 的属性</h2> <table class="reference notranslate" id="table4"> <tbody> <tr> <th align="left" width="30%">属性</th> <th align="left" width="25%">类型</th> <th align="left" width="55%">描述</th> </tr> <tr> <td>controls</td> <td><i>Array.&lt;MVCArray.&lt;Node&gt;&gt;</i></td> <td>要附加到地图上的额外控件。</td> </tr> <tr> <td>mapTypes</td> <td><i>MapTypeRegistry</i></td> <td>按字符串 ID 划分的 MapType 实例的注册表。</td> </tr> <tr> <td>overlayMapTypes</td> <td><i>MVCArray.&lt;MapType&gt;</i></td> <td>要叠加的额外地图类型。</td> </tr> </tbody> </table> <h2> Map() 的事件</h2> <table class="reference notranslate" id="table5"> <tbody> <tr> <th align="left" width="30%">事件</th> <th align="left" width="25%">参数</th> <th align="left" width="55%">描述</th> </tr> <tr> <td>bounds_changed</td> <td>None</td> <td>当可视区域范围更改时会触发此事件。</td> </tr> <tr> <td>center_changed</td> <td>None</td> <td>当地图 center（中心）属性更改时会触发此事件。</td> </tr> <tr> <td>click</td> <td><i>MouseEvent</i></td> <td>当用户点击地图（但不是点击标记或信息窗口）时会触发此事件。</td> </tr> <tr> <td>dblclick</td> <td><i>MouseEvent</i></td> <td>当用户双击地图时会触发此事件。请注意，触发此事件前还会触发点击事件。</td> </tr> <tr> <td>drag</td> <td>None</td> <td>当用户拖动地图时会反复触发此事件。</td> </tr> <tr> <td>dragend</td> <td>None</td> <td>当用户停止拖动地图时会触发此事件。</td> </tr> <tr> <td>dragstart</td> <td>None</td> <td>当用户开始拖动地图时会触发此事件。</td> </tr> <tr> <td>heading_changed</td> <td>None</td> <td>当地图 heading（方向）属性更改时会触发此事件。</td> </tr> <tr> <td>idle</td> <td>None</td> <td>当地图在平移或缩放之后变为闲置状态时会触发此事件。</td> </tr> <tr> <td>maptypeid_changed</td> <td>None</td> <td>当 mapTypeId 属性更改时会触发此事件。</td> </tr> <tr> <td>mousemove</td> <td><i>MouseEvent</i></td> <td>只要用户的鼠标在地图容器上移动，就会触发此事件。</td> </tr> <tr> <td>mouseout</td> <td><i>MouseEvent</i></td> <td>当用户的鼠标从地图容器上退出时会触发此事件。</td> </tr> <tr> <td>mouseover</td> <td><i>MouseEvent</i></td> <td>当用户的鼠标进入地图容器时会触发此事件。</td> </tr> <tr> <td>projection_changed</td> <td>None</td> <td>当投影更改时会触发此事件。</td> </tr> <tr> <td>resize</td> <td>None</td> <td>当地图（div）更改尺寸时会触发此事件。</td> </tr> <tr> <td>rightclick</td> <td><i>MouseEvent</i></td> <td>当用户右击地图时会触发此事件。</td> </tr> <tr> <td>tilesloaded</td> <td>None</td> <td>当可见图块载入完成后会触发此事件。</td> </tr> <tr> <td>tilt_changed</td> <td>None</td> <td>当地图 tilt（倾斜）属性更改时会触发此事件。</td> </tr> <tr> <td>zoom_changed</td> <td>None</td> <td>当地图 zoom（缩放）属性更改时会触发此事件。</td> </tr> </tbody> </table> &nbsp; </div> <div class="chapter"> <div class="prev">&laquo; <a href="google-maps-ref.html" href="http://www.w3cschool.cc/googleapi/google-maps-ref.html" rel="prev"> Google 地图参考手册</a></div> <div class="next"><a title="javascript:if(confirm('http://www.w3cschool.cc/googleapi/pr-border-right-style.html  \n\n?????????? Teleport Ultra ????, ??? ??????, ???????????, ?????????????  \n\n?????????????????'))window.location='http://www.w3cschool.cc/googleapi/pr-border-right-style.html'" href="http://www.w3cschool.cc/googleapi/ref-mapoptions.html" rel="next">地图 API MapOptions 对象</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/googleapi/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/googleapi/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

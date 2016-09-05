@@ -1,0 +1,271 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>Servlet 数据库访问 | w3cschool菜鸟教程</title> <link rel='prev' title='Servlet Session 跟踪' href="servlet-session-tracking.html"/> <link rel='next' title='Servlet 文件上传' href="servlet-file-uploading.html"/> <link rel='canonical' href='http://www.w3cschool.cc/servlet/servlet-database-access.html'/> <meta name="keywords" content="Servlet 数据库访问"> <meta name="description" content="Servlet 数据库访问 本教程假定您已经了解了 JDBC 应用程序的工作方式。在您开始学习 Servlet 数据库访问之前，请确保您已经有适当的 JDBC 环境设置和数据库。 从基本概念下手，让我们来创建一个简单的表，并在表中创建几条记录。 创建数据库表 在测试数据库 TEST 中创建 Employees 表，请按以下步骤进行： 步骤 1： 打开命令行提示符（Command Prompt），并更改进入到安装目录，如下所示： .."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="../ruby/ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>Servlet 教程</strong></h2> <a target="_top" title="Servlet 教程" href="servlet-tutorial.html" href="http://www.w3cschool.cc/servlet/servlet-tutorial.html"> Servlet 教程 </a> <a target="_top" title="Servlet 简介" href="servlet-intro.html" href="http://www.w3cschool.cc/servlet/servlet-intro.html"> Servlet 简介 </a> <a target="_top" title="Servlet 环境设置" href="servlet-environment-setup.html" href="http://www.w3cschool.cc/servlet/servlet-environment-setup.html"> Servlet 环境设置 </a> <a target="_top" title="Servlet 生命周期" href="servlet-life-cycle.html" href="http://www.w3cschool.cc/servlet/servlet-life-cycle.html"> Servlet 生命周期 </a> <a target="_top" title="Servlet 实例" href="servlet-first-example.html" href="http://www.w3cschool.cc/servlet/servlet-first-example.html"> Servlet 实例 </a> <a target="_top" title="Servlet 表单数据" href="servlet-form-data.html" href="http://www.w3cschool.cc/servlet/servlet-form-data.html"> Servlet 表单数据 </a> <a target="_top" title="Servlet 客户端 HTTP 请求" href="servlet-client-request.html" href="http://www.w3cschool.cc/servlet/servlet-client-request.html"> Servlet 客户端 HTTP 请求 </a> <a target="_top" title="Servlet 服务器 HTTP 响应" href="servlet-server-response.html" href="http://www.w3cschool.cc/servlet/servlet-server-response.html"> Servlet 服务器 HTTP 响应 </a> <a target="_top" title="Servlet HTTP 状态码" href="servlet-http-status-codes.html" href="http://www.w3cschool.cc/servlet/servlet-http-status-codes.html"> Servlet HTTP 状态码 </a> <a target="_top" title="Servlet 编写过滤器" href="servlet-writing-filters.html" href="http://www.w3cschool.cc/servlet/servlet-writing-filters.html"> Servlet 编写过滤器 </a> <a target="_top" title="Servlet 异常处理" href="servlet-exception-handling.html" href="http://www.w3cschool.cc/servlet/servlet-exception-handling.html"> Servlet 异常处理 </a> <a target="_top" title="Servlet Cookies 处理" href="servlet-cookies-handling.html" href="http://www.w3cschool.cc/servlet/servlet-cookies-handling.html"> Servlet Cookies 处理 </a> <a target="_top" title="Servlet Session 跟踪" href="servlet-session-tracking.html" href="http://www.w3cschool.cc/servlet/servlet-session-tracking.html"> Servlet Session 跟踪 </a> <a target="_top" title="Servlet 数据库访问" href="servlet-database-access.html" href="http://www.w3cschool.cc/servlet/servlet-database-access.html"> Servlet 数据库访问 </a> <a target="_top" title="Servlet 文件上传" href="servlet-file-uploading.html" href="http://www.w3cschool.cc/servlet/servlet-file-uploading.html"> Servlet 文件上传 </a> <a target="_top" title="Servlet 处理日期" href="servlet-handling-date.html" href="http://www.w3cschool.cc/servlet/servlet-handling-date.html"> Servlet 处理日期 </a> <a target="_top" title="Servlet 网页重定向" href="servlet-page-redirect.html" href="http://www.w3cschool.cc/servlet/servlet-page-redirect.html"> Servlet 网页重定向 </a> <a target="_top" title="Servlet 点击计数器" href="servlet-hits-counter.html" href="http://www.w3cschool.cc/servlet/servlet-hits-counter.html"> Servlet 点击计数器 </a> <a target="_top" title="Servlet 自动刷新页面" href="servlet-auto-refresh.html" href="http://www.w3cschool.cc/servlet/servlet-auto-refresh.html"> Servlet 自动刷新页面 </a> <a target="_top" title="Servlet 发送电子邮件" href="servlet-sending-email.html" href="http://www.w3cschool.cc/servlet/servlet-sending-email.html"> Servlet 发送电子邮件 </a> <a target="_top" title="Servlet 包" href="servlet-packaging.html" href="http://www.w3cschool.cc/servlet/servlet-packaging.html"> Servlet 包 </a> <a target="_top" title="Servlet 调试" href="servlet-debugging.html" href="http://www.w3cschool.cc/servlet/servlet-debugging.html"> Servlet 调试 </a> <a target="_top" title="Servlet 国际化" href="servlet-internationalization.html" href="http://www.w3cschool.cc/servlet/servlet-internationalization.html"> Servlet 国际化 </a> <br><h2 class="left">Servlet <span class="left_h2">其他</span></h2> <a target="_top" title="Servlet 有用的资源" href="servlet-useful-resources.html" href="http://www.w3cschool.cc/servlet/servlet-useful-resources.html"> Servlet 有用的资源 </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="servlet-session-tracking.html" href="http://www.w3cschool.cc/servlet/servlet-session-tracking.html" rel="prev"> Servlet Session 跟踪</a></div> <div class="next"><a href="servlet-file-uploading.html" href="http://www.w3cschool.cc/servlet/servlet-file-uploading.html" rel="next">Servlet 文件上传</a> &raquo;</div> </div> <div id="content"> <h1>Servlet <span class="color_h1">数据库访问</span></h1> <div class="tutintro"> <p>本教程假定您已经了解了 JDBC 应用程序的工作方式。在您开始学习 Servlet 数据库访问之前，请确保您已经有适当的 JDBC 环境设置和数据库。</p> <p>从基本概念下手，让我们来创建一个简单的表，并在表中创建几条记录。</p> </div> <h2 class="tutheader">创建数据库表</h2> <p>在测试数据库 <b>TEST</b> 中创建 <b>Employees</b> 表，请按以下步骤进行：</p> <h2>步骤 1：</h2> <p>打开<b>命令行提示符（Command Prompt）</b>，并更改进入到安装目录，如下所示：</p> <pre class="prettyprint">
+C:\&gt;
+C:\&gt;cd Program Files\MySQL\bin
+C:\Program Files\MySQL\bin&gt;
+</pre> <h2>步骤 2：</h2> <p>登录到数据库，如下所示：</p> <pre class="prettyprint">
+C:\Program Files\MySQL\bin&gt;mysql -u root -p
+Enter password: ********
+mysql&gt;
+</pre> <h2>步骤 3：</h2> <p>在测试数据库 <b>TEST</b> 中创建 <b>Employee</b> 表，如下所示：</p> <pre class="prettyprint">
+mysql&gt; use TEST;
+mysql&gt; create table Employees
+    (
+     id int not null,
+     age int not null,
+     first varchar (255),
+     last varchar (255)
+    );
+Query OK, 0 rows affected (0.08 sec)
+mysql&gt;
+</pre> <h2 class="tutheader">创建数据记录</h2> <p>最后，在 Employee 表中创建几条记录，如下所示：</p> <pre class="prettyprint">
+mysql&gt; INSERT INTO Employees VALUES (100, 18, 'Zara', 'Ali');
+Query OK, 1 row affected (0.05 sec)
+ 
+mysql&gt; INSERT INTO Employees VALUES (101, 25, 'Mahnaz', 'Fatma');
+Query OK, 1 row affected (0.00 sec)
+ 
+mysql&gt; INSERT INTO Employees VALUES (102, 30, 'Zaid', 'Khan');
+Query OK, 1 row affected (0.00 sec)
+ 
+mysql&gt; INSERT INTO Employees VALUES (103, 28, 'Sumit', 'Mittal');
+Query OK, 1 row affected (0.00 sec)
+ 
+mysql&gt;
+</pre> <h2 class="tutheader">访问数据库</h2> <p>下面的实例演示了如何使用 Servlet 访问 TEST 数据库。</p> <pre class="prettyprint">
+// 加载必需的库
+import java.io.*;
+import java.util.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.sql.*;
+ 
+public class DatabaseAccess extends HttpServlet{
+    
+  public void doGet(HttpServletRequest request,
+                    HttpServletResponse response)
+            throws ServletException, IOException
+  {
+      // JDBC 驱动器名称和数据库的 URL
+      static final String JDBC_DRIVER="com.mysql.jdbc.Driver";  
+      static final String DB_URL="jdbc:mysql://localhost/TEST";
+
+      //  数据库的凭据
+      static final String USER = "root";
+      static final String PASS = "password";
+
+      // 设置响应内容类型
+      response.setContentType("text/html");
+      PrintWriter out = response.getWriter();
+      String title = "数据库结果";
+      String docType =
+        "&lt;!doctype html public \"-//w3c//dtd html 4.0 " +
+         "transitional//en\"&gt;\n";
+         out.println(docType +
+         "&lt;html&gt;\n" +
+         "&lt;head&gt;&lt;title&gt;" + title + "&lt;/title&gt;&lt;/head&gt;\n" +
+         "&lt;body bgcolor=\"#f0f0f0\"&gt;\n" +
+         "&lt;h1 align=\"center\"&gt;" + title + "&lt;/h1&gt;\n");
+      try{
+         // 注册 JDBC 驱动器
+         Class.forName("com.mysql.jdbc.Driver");
+
+         // 打开一个连接
+         conn = DriverManager.getConnection(DB_URL,USER,PASS);
+
+         // 执行 SQL 查询
+         stmt = conn.createStatement();
+         String sql;
+         sql = "SELECT id, first, last, age FROM Employees";
+         ResultSet rs = stmt.executeQuery(sql);
+
+         // 从结果集中提取数据
+         while(rs.next()){
+            // 根据列名称检索
+            int id  = rs.getInt("id");
+            int age = rs.getInt("age");
+            String first = rs.getString("first");
+            String last = rs.getString("last");
+
+            // 显示值
+            out.println("ID: " + id + "&lt;br&gt;");
+            out.println(", Age: " + age + "&lt;br&gt;");
+            out.println(", First: " + first + "&lt;br&gt;");
+            out.println(", Last: " + last + "&lt;br&gt;");
+         }
+         out.println("&lt;/body&gt;&lt;/html&gt;");
+
+         // 清理环境
+         rs.close();
+         stmt.close();
+         conn.close();
+      }catch(SQLException se){
+         // 处理 JDBC 错误
+         se.printStackTrace();
+      }catch(Exception e){
+         // 处理 Class.forName 错误
+         e.printStackTrace();
+      }finally{
+         // 最后是用于关闭资源的块
+         try{
+            if(stmt!=null)
+               stmt.close();
+         }catch(SQLException se2){
+         }// 我们不能做什么
+         try{
+            if(conn!=null)
+            conn.close();
+         }catch(SQLException se){
+            se.printStackTrace();
+         }//end finally try
+      } //end try
+   }
+} 
+</pre> <p>现在让我们来编译上面的 Servlet，并在 web.xml 文件中创建以下条目：</p> <pre class="prettyprint">
+....
+ &lt;servlet&gt;
+     &lt;servlet-name&gt;DatabaseAccess&lt;/servlet-name&gt;
+     &lt;servlet-class&gt;DatabaseAccess&lt;/servlet-class&gt;
+ &lt;/servlet&gt;
+ 
+ &lt;servlet-mapping&gt;
+     &lt;servlet-name&gt;DatabaseAccess&lt;/servlet-name&gt;
+     &lt;url-pattern&gt;/DatabaseAccess&lt;/url-pattern&gt;
+ &lt;/servlet-mapping&gt;
+....
+</pre> <p>现在调用这个 Servlet，输入链接：http://localhost:8080/DatabaseAccess，将显示以下响应结果：</p> <pre class="prettyprint">
+&lt;h1 align="center"&gt;数据库结果&lt;/h1&gt;
+ID: 100, Age: 18, First: Zara, Last: Ali
+ID: 101, Age: 25, First: Mahnaz, Last: Fatma
+ID: 102, Age: 30, First: Zaid, Last: Khan
+ID: 103, Age: 28, First: Sumit, Last: Mittal
+</pre> </div> <div class="chapter"> <div class="prev">&laquo; <a href="servlet-session-tracking.html" href="http://www.w3cschool.cc/servlet/servlet-session-tracking.html" rel="prev"> Servlet Session 跟踪</a></div> <div class="next"><a href="servlet-file-uploading.html" href="http://www.w3cschool.cc/servlet/servlet-file-uploading.html" rel="next">Servlet 文件上传</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/servlet/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/servlet/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

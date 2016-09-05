@@ -1,0 +1,131 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>CSS3 边框（Borders） | w3cschool菜鸟教程</title> <link rel='prev' title='CSS3 简介' href="css3-intro.html"/> <link rel='next' title='PHP 异常处理' href="/php/php-exception.html"/> <link rel='canonical' href='http://www.w3cschool.cc/css3/css3-borders.html'/> <meta name="keywords" content="CSS3 边框（Borders）"> <meta name="description" content="CSS3 边框（Borders） CSS3 Borders 用CSS3，你可以创建圆角边框，添加阴影框，并作为边界的形象而不使用设计程序，如Photoshop。 在本章中，您将了解以下的边框属性： border-radius box-shadow border-image 浏览器支持 属性 浏览器支持 border-radius box-shado.."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="../ruby/ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>CSS3 教程</strong></h2> <a target="_top" title="CSS3 教程" href="css3-tutorial.html" href="http://www.w3cschool.cc/css3/css3-tutorial.html"> CSS3 教程 </a> <a target="_top" title="CSS3 简介" href="css3-intro.html" href="http://www.w3cschool.cc/css3/css3-intro.html"> CSS3 简介 </a> <a target="_top" title="CSS3 边框（Borders）" href="css3-borders.html" href="http://www.w3cschool.cc/css3/css3-borders.html"> CSS3 边框（Borders） </a> <a target="_top" title="CSS3 背景" href="css3-backgrounds.html" href="http://www.w3cschool.cc/css3/css3-backgrounds.html"> CSS3 背景 </a> <a target="_top" href="css3-gradients.html" href="http://www.w3cschool.cc/css3/css3-gradients.html"> CSS3 渐变 </a> <a target="_top" title="CSS3 文本效果" href="css3-text-effects.html" href="http://www.w3cschool.cc/css3/css3-text-effects.html"> CSS3 文本效果 </a> <a target="_top" title="CSS3 字体" href="css3-fonts.html" href="http://www.w3cschool.cc/css3/css3-fonts.html"> CSS3 字体 </a> <a target="_top" title="CSS3 2D 转换" href="css3-2dtransforms.html" href="http://www.w3cschool.cc/css3/css3-2dtransforms.html"> CSS3 2D 转换 </a> <a target="_top" title="CSS3 3D 转换" href="css3-3dtransforms.html" href="http://www.w3cschool.cc/css3/css3-3dtransforms.html"> CSS3 3D 转换 </a> <a target="_top" title="CSS3 过渡" href="css3-transitions.html" href="http://www.w3cschool.cc/css3/css3-transitions.html"> CSS3 过渡 </a> <a target="_top" title="CSS3 动画" href="css3-animations.html" href="http://www.w3cschool.cc/css3/css3-animations.html"> CSS3 动画 </a> <a target="_top" title="CSS3 多列" href="css3-multiple-columns.html" href="http://www.w3cschool.cc/css3/css3-multiple-columns.html"> CSS3 多列 </a> <a target="_top" title="CSS3 用户界面" href="css3-user-interface.html" href="http://www.w3cschool.cc/css3/css3-user-interface.html"> CSS3 用户界面 </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="css3-intro.html" href="http://www.w3cschool.cc/css3/css3-intro.html" rel="prev"> CSS3 简介</a></div> <div class="next"><a href="css3-backgrounds.html" href="http://www.w3cschool.cc/css3/css3-backgrounds.html" rel="next">CSS3 背景</a> &raquo;</div> </div> <div id="content"> <h1>CSS3 <span class="color_h1">边框（Borders）</span> </h1> <div> <h2>CSS3 Borders</h2> <p>用CSS3，你可以创建圆角边框，添加阴影框，并作为边界的形象而不使用设计程序，如Photoshop。</p> <p>在本章中，您将了解以下的边框属性：</p> <ul> <li>border-radius</li> <li>box-shadow</li> <li>border-image</li> </ul> </div> <h2>浏览器支持</h2> <table class="browsersupport"> <tr> <th>属性</th> <th colspan="5">浏览器支持</th> </tr> <tr> <td class="bsProperty">border-radius</td> <td class="bsIE"></td> <td class="bsFirefox"></td> <td class="bsChrome"></td> <td class="bsSafari"></td> <td class="bsOpera"></td> </tr> <tr> <td class="bsProperty">box-shadow</td> <td class="bsIE"></td> <td class="bsFirefox"></td> <td class="bsChrome"></td> <td class="bsSafari"></td> <td class="bsOpera"></td> </tr> <tr> <td class="bsProperty">border-image</td> <td class="bsNoIE"></td> <td class="bsFirefox"></td> <td class="bsChrome"></td> <td class="bsSafari"></td> <td class="bsPreOpera"></td> </tr> </table> <p>Internet Explorer 9+ 支持 border-radius 和 box-shadow.</p> <p>Firefox, Chrome, 和 Safari 支持所有最新的 border 属性.</p> <p><strong>注意：</strong> 前缀是-webkit-的Safari支持阴影边框。</p> <p>前缀是-o-的Opera支持边框图像。</p> <hr> <h2>CSS3 圆角</h2> <p>在CSS2中添加圆角棘手。我们不得不在每个角落使用不同的图像。</p> <p>在CSS3中，很容易创建圆角。</p> <p>在CSS3中border-radius属性被用于创建圆角：</p> <div id="rounded_borders">这是圆角边框！</div> <br><div class="example"> <img style="float:right" src="../images/compatible_opera2020.gif" href="http://www.w3cschool.cc/images/compatible_opera2020.gif" align="middle" title="Opera" alt="Opera" width="20" height="20"><img style="float:right" src="../images/compatible_safari2020.gif" href="http://www.w3cschool.cc/images/compatible_safari2020.gif" align="middle" title="Safari" alt="Safari" width="20" height="20"><img style="float:right" src="../images/compatible_chrome2020.gif" href="http://www.w3cschool.cc/images/compatible_chrome2020.gif" align="middle" title="Chrome" alt="Chrome" width="20" height="20"><img style="float:right" src="../images/compatible_firefox2020.gif" href="http://www.w3cschool.cc/images/compatible_firefox2020.gif" align="middle" title="Firefox" alt="Firefox" width="20" height="20"><img style="float:right" src="../images/compatible_ie2020.gif" href="http://www.w3cschool.cc/images/compatible_ie2020.gif" align="middle" title="Internet Explorer" alt="Internet Explorer" width="20" height="20"><h2 class="example">实例</h2> <p>在div中添加圆角元素：</p> <div class="example_code notranslate"> div<br> {<br> border:2px solid;<br> border-radius:25px;<br> } </div> <br><a target="_blank" class="tryitbtn" title="javascript:if(confirm('http://www.w3csol.cc/try/js-events.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/js-events.html'" href="http://www.w3cschool.cc/try/try.php?filename=trycss3_border-radius">尝试一下 ?</a> </div> <br><hr> <h2>CSS3盒阴影</h2> <p>CSS3中的box-shadow属性被用来添加阴影:</p> <div id="boxshadow"></div> <br><div class="example"> <img style="float:right" src="../images/compatible_opera2020.gif" href="http://www.w3cschool.cc/images/compatible_opera2020.gif" align="middle" title="Opera" alt="Opera" width="20" height="20"><img style="float:right" src="../images/compatible_safari2020.gif" href="http://www.w3cschool.cc/images/compatible_safari2020.gif" align="middle" title="Safari" alt="Safari" width="20" height="20"><img style="float:right" src="../images/compatible_chrome2020.gif" href="http://www.w3cschool.cc/images/compatible_chrome2020.gif" align="middle" title="Chrome" alt="Chrome" width="20" height="20"><img style="float:right" src="../images/compatible_firefox2020.gif" href="http://www.w3cschool.cc/images/compatible_firefox2020.gif" align="middle" title="Firefox" alt="Firefox" width="20" height="20"><img style="float:right" src="../images/compatible_ie2020.gif" href="http://www.w3cschool.cc/images/compatible_ie2020.gif" align="middle" title="Internet Explorer" alt="Internet Explorer" width="20" height="20"><h2 class="example">实例</h2> <p>在div中添加box-shadow属性</p> <div class="example_code notranslate"> div<br> {<br> box-shadow: 10px 10px 5px #888888;<br> } </div> <br><a target="_blank" class="tryitbtn" title="javascript:if(confirm('http://www.w3csol.cc/try/js-operators.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/js-operators.html'" href="http://www.w3cschool.cc/try/try.php?filename=trycss3_box-shadow">尝试一下 ?</a> </div> <br><hr> <h2>CSS3边界图片</h2> <p>有了CSS3的border-image属性，你可以使用图像创建一个边框： </p> <div id="border_image">border-image属性允许你指定一个图片作为边框！ 用于创建上文边框的原始图像：</div> <p>在div中使用图片创建边框:</p> <img src="../images/js-comparisons.html" href="http://www.w3cschool.cc/images/border.png" alt="Border" height="81" width="81"><br><br><div class="example"> <img style="float:right" src="../images/compatible_opera2020.gif" href="http://www.w3cschool.cc/images/compatible_opera2020.gif" align="middle" title="Opera" alt="Opera" width="20" height="20"><img style="float:right" src="../images/compatible_safari2020.gif" href="http://www.w3cschool.cc/images/compatible_safari2020.gif" align="middle" title="Safari" alt="Safari" width="20" height="20"><img style="float:right" src="../images/compatible_chrome2020.gif" href="http://www.w3cschool.cc/images/compatible_chrome2020.gif" align="middle" title="Chrome" alt="Chrome" width="20" height="20"><img style="float:right" src="../images/compatible_firefox2020.gif" href="http://www.w3cschool.cc/images/compatible_firefox2020.gif" align="middle" title="Firefox" alt="Firefox" width="20" height="20"><img style="float:right" src="../html/html5-audio.html" href="http://www.w3cschool.cc/images/incompatible_ie2020.gif" align="middle" title="Internet Explorer" alt="Internet Explorer" width="20" height="20"><h2 class="example">实例</h2> <p>在div中使用图片创建边框</p> <div class="example_code notranslate"> div<br> {<br> border-image:url(border.png) 30 30 round;<br> -webkit-border-image:url(border.png) 30 30 round; /* Safari 5 and older */<br> -o-border-image:url(border.png) 30 30 round; /* Opera */<br> } </div> <br><a target="_blank" class="tryitbtn" title="javascript:if(confirm('http://www.w3csol.cc/try/js-loop-for.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/js-loop-for.html'" href="http://www.w3cschool.cc/try/try.php?filename=trycss3_border-image">尝试一下 ?</a> </div> <br><hr> <h2>新边框属性</h2> <table class="reference"> <tbody><tr> <th width="30%" align="left">属性</th> <th width="65%" align="left">说明</th> <th width="5%" align="left">CSS</th> </tr> <tr> <td><a href="../cssref/css3-pr-border-image.html" href="http://www.w3cschool.cc/cssref/css3-pr-border-image.html">border-image</a></td> <td>设置所有边框图像的速记属性。</td> <td>3</td> </tr> <tr> <td><a href="../cssref/css3-pr-border-radius.html" href="http://www.w3cschool.cc/cssref/css3-pr-border-radius.html">border-radius</a></td> <td>一个用于设置所有四个边框- *-半径属性的速记属性</td> <td>3</td> </tr> <tr> <td><a href="../cssref/css3-pr-box-shadow.html" href="http://www.w3cschool.cc/cssref/css3-pr-box-shadow.html">box-shadow</a></td> <td>附加一个或多个下拉框的阴影</td> <td>3</td> </tr> </tbody></table> </div> <div class="chapter"> <div class="prev">&laquo; <a href="css3-intro.html" href="http://www.w3cschool.cc/css3/css3-intro.html" rel="prev"> CSS3 简介</a></div> <div class="next"><a href="css3-backgrounds.html" href="http://www.w3cschool.cc/css3/css3-backgrounds.html" rel="next">CSS3 背景</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/css3/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/css3/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

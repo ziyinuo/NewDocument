@@ -1,0 +1,398 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>Ruby 数据库访问 &#8211; DBI 教程 | w3cschool菜鸟教程</title> <link rel='prev' title='Ruby 正则表达式' href="ruby-regular-expressions.html"/> <link rel='next' title='Ruby DBI Read 操作' href="ruby-dbi-read.html"/> <link rel='canonical' href='http://www.w3cschool.cc/ruby/ruby-database-access.html'/> <meta name="keywords" content="Ruby 数据库访问 &#8211; DBI 教程"> <meta name="description" content="Ruby 数据库访问 - DBI 教程 本章节将向您讲解如何使用 Ruby 访问数据库。Ruby DBI 模块为 Ruby 脚本提供了类似于 Perl DBI 模块的独立于数据库的接口。 DBI 即 Database independent interface，代表了 Ruby 独立于数据库的接口。DBI 在 Ruby 代码与底层数据库之间提供了一个抽象层，允许您简单地实现数据库切换。它定义了一系列方法、变量和规范，提供了一个独立于.."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>Ruby 教程</strong></h2> <a target="_top" title="Ruby 教程" href="ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html"> Ruby 教程 </a> <a target="_top" title="Ruby 简介" href="ruby-intro.html" href="http://www.w3cschool.cc/ruby/ruby-intro.html"> Ruby 简介 </a> <a target="_top" title="Ruby 环境" href="ruby-environment.html" href="http://www.w3cschool.cc/ruby/ruby-environment.html"> Ruby 环境 </a> <a target="_top" title="Ruby 安装 &#8211; Unix" href="ruby-installation-unix.html" href="http://www.w3cschool.cc/ruby/ruby-installation-unix.html"> Ruby 安装 - Unix </a> <a target="_top" title="Ruby 安装 &#8211; Windows" href="ruby-installation-windows.html" href="http://www.w3cschool.cc/ruby/ruby-installation-windows.html"> Ruby 安装 - Windows </a> <a target="_top" title="Ruby 命令行选项" href="ruby-command-line-options.html" href="http://www.w3cschool.cc/ruby/ruby-command-line-options.html"> Ruby 命令行选项 </a> <a target="_top" title="Ruby 环境变量" href="ruby-environment-variables.html" href="http://www.w3cschool.cc/ruby/ruby-environment-variables.html"> Ruby 环境变量 </a> <a target="_top" title="Ruby 语法" href="ruby-syntax.html" href="http://www.w3cschool.cc/ruby/ruby-syntax.html"> Ruby 语法 </a> <a target="_top" title="Ruby 类和对象" href="ruby-class.html" href="http://www.w3cschool.cc/ruby/ruby-class.html"> Ruby 类和对象 </a> <a target="_top" title="Ruby 类案例" href="ruby-class-case-study.html" href="http://www.w3cschool.cc/ruby/ruby-class-case-study.html"> Ruby 类案例 </a> <a target="_top" title="Ruby 变量" href="ruby-variable.html" href="http://www.w3cschool.cc/ruby/ruby-variable.html"> Ruby 变量 </a> <a target="_top" title="Ruby 运算符" href="ruby-operator.html" href="http://www.w3cschool.cc/ruby/ruby-operator.html"> Ruby 运算符 </a> <a target="_top" title="Ruby 注释" href="ruby-comment.html" href="http://www.w3cschool.cc/ruby/ruby-comment.html"> Ruby 注释 </a> <a target="_top" title="Ruby 判断" href="ruby-decision.html" href="http://www.w3cschool.cc/ruby/ruby-decision.html"> Ruby 判断 </a> <a target="_top" title="Ruby 循环" href="ruby-loop.html" href="http://www.w3cschool.cc/ruby/ruby-loop.html"> Ruby 循环 </a> <a target="_top" title="Ruby 方法" href="ruby-method.html" href="http://www.w3cschool.cc/ruby/ruby-method.html"> Ruby 方法 </a> <a target="_top" title="Ruby 块" href="ruby-block.html" href="http://www.w3cschool.cc/ruby/ruby-block.html"> Ruby 块 </a> <a target="_top" title="Ruby 模块（Module）" href="ruby-module.html" href="http://www.w3cschool.cc/ruby/ruby-module.html"> Ruby 模块（Module） </a> <a target="_top" title="Ruby 字符串（String）" href="ruby-string.html" href="http://www.w3cschool.cc/ruby/ruby-string.html"> Ruby 字符串（String） </a> <a target="_top" title="Ruby 数组（Array）" href="ruby-array.html" href="http://www.w3cschool.cc/ruby/ruby-array.html"> Ruby 数组（Array） </a> <a target="_top" title="Ruby 哈希（Hash）" href="ruby-hash.html" href="http://www.w3cschool.cc/ruby/ruby-hash.html"> Ruby 哈希（Hash） </a> <a target="_top" title="Ruby 日期 &#038; 时间（Date &#038; Time）" href="ruby-date-time.html" href="http://www.w3cschool.cc/ruby/ruby-date-time.html"> Ruby 日期 & 时间 </a> <a target="_top" title="Ruby 范围（Range）" href="ruby-range.html" href="http://www.w3cschool.cc/ruby/ruby-range.html"> Ruby 范围（Range） </a> <a target="_top" title="Ruby 迭代器" href="ruby-iterators.html" href="http://www.w3cschool.cc/ruby/ruby-iterators.html"> Ruby 迭代器 </a> <a target="_top" title="Ruby 文件的输入与输出" href="ruby-input-output.html" href="http://www.w3cschool.cc/ruby/ruby-input-output.html"> Ruby 文件的输入与输出 </a> <a target="_top" title="Ruby File 类和方法" href="ruby-file-methods.html" href="http://www.w3cschool.cc/ruby/ruby-file-methods.html"> Ruby File 类和方法 </a> <a target="_top" title="Ruby Dir 类和方法" href="ruby-dir-methods.html" href="http://www.w3cschool.cc/ruby/ruby-dir-methods.html"> Ruby Dir 类和方法 </a> <a target="_top" title="Ruby 异常" href="ruby-exceptions.html" href="http://www.w3cschool.cc/ruby/ruby-exceptions.html"> Ruby 异常 </a> <br><h2 class="left"><span class="left_h2">Ruby</span> 高级教程</h2> <a target="_top" title="Ruby 面向对象" href="ruby-object-oriented.html" href="http://www.w3cschool.cc/ruby/ruby-object-oriented.html"> Ruby 面向对象 </a> <a target="_top" title="Ruby 正则表达式" href="ruby-regular-expressions.html" href="http://www.w3cschool.cc/ruby/ruby-regular-expressions.html"> Ruby 正则表达式 </a> <a target="_top" title="Ruby 数据库访问 &#8211; DBI 教程" href="ruby-database-access.html" href="http://www.w3cschool.cc/ruby/ruby-database-access.html"> Ruby 数据库访问 - DBI 教程 </a> <a target="_top" title="Ruby CGI 编程" href="ruby-cgi.html" href="http://www.w3cschool.cc/ruby/ruby-cgi.html"> Ruby CGI 编程 </a> <a target="_top" title="Ruby CGI方法" href="ruby-cgi-methods.html" href="http://www.w3cschool.cc/ruby/ruby-cgi-methods.html"> Ruby CGI方法 </a> <a target="_top" title="Ruby CGI Cookies" href="ruby-cgi-cookies.html" href="http://www.w3cschool.cc/ruby/ruby-cgi-cookies.html"> Ruby CGI Cookies </a> <a target="_top" title="Ruby CGI Sessions" href="ruby-cgi-sessions.html" href="http://www.w3cschool.cc/ruby/ruby-cgi-sessions.html"> Ruby CGI Sessions </a> <a target="_top" title="Ruby 发送邮件 &#8211; SMTP" href="ruby-sending-email.html" href="http://www.w3cschool.cc/ruby/ruby-sending-email.html"> Ruby 发送邮件 - SMTP </a> <a target="_top" title="Ruby Socket 编程" href="ruby-socket-programming.html" href="http://www.w3cschool.cc/ruby/ruby-socket-programming.html"> Ruby Socket 编程 </a> <a target="_top" title="Ruby XML, XSLT 和 XPath 教程" href="ruby-xml-xslt-xpath.html" href="http://www.w3cschool.cc/ruby/ruby-xml-xslt-xpath.html"> Ruby XML, XSLT 和 XPath 教程 </a> <a target="_top" title="Ruby Web Services 应用 &#8211; SOAP4R" href="ruby-web-services.html" href="http://www.w3cschool.cc/ruby/ruby-web-services.html"> Ruby Web Services </a> <a target="_top" title="Ruby 多线程" href="ruby-multithreading.html" href="http://www.w3cschool.cc/ruby/ruby-multithreading.html"> Ruby 多线程 </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="ruby-regular-expressions.html" href="http://www.w3cschool.cc/ruby/ruby-regular-expressions.html" rel="prev"> Ruby 正则表达式</a></div> <div class="next"><a title="javascript:if(confirm('http://www.w3cschool.cc/ruby/try.php?filename=tryjs_continue  \n\n?????????? Teleport Ultra ????, ??? ??????, ???????????, ?????????????  \n\n?????????????????'))window.location='http://www.w3cschool.cc/ruby/try.php?filename=tryjs_continue'" href="http://www.w3cschool.cc/ruby/ruby-dbi-read.html" rel="next">Ruby DBI Read 操作</a> &raquo;</div> </div> <div id="content"> <h1>Ruby <span class="color_h1">数据库访问 - DBI 教程</span></h1> <div class="tutintro"> <p>本章节将向您讲解如何使用 Ruby 访问数据库。<i>Ruby DBI</i> 模块为 Ruby 脚本提供了类似于 Perl DBI 模块的独立于数据库的接口。</p> <p>DBI 即 Database independent interface，代表了 Ruby 独立于数据库的接口。DBI 在 Ruby 代码与底层数据库之间提供了一个抽象层，允许您简单地实现数据库切换。它定义了一系列方法、变量和规范，提供了一个独立于数据库的一致的数据库接口。</p> <p>DBI 可与下列进行交互：</p> <ul class="list"> <li>ADO (ActiveX Data Objects)</li> <li>DB2</li> <li>Frontbase</li> <li>mSQL</li> <li>MySQL</li> <li>ODBC</li> <li>Oracle</li> <li>OCI8 (Oracle)</li> <li>PostgreSQL</li> <li>Proxy/Server</li> <li>SQLite</li> <li>SQLRelay</li> </ul> </div> <h2 class="tutheader">DBI 应用架构</h2> <p>DBI 独立于任何在后台中可用的数据库。无论您使用的是 Oracle、MySQL、Informix，您都可以使用 DBI。下面的架构图清晰地说明了这点。</p> <img src="../wp-content/uploads/2014/05/try.php-filename=tryjs_object_for_in" href="http://www.w3cschool.cc/wp-content/uploads/2014/05/ruby_dbi.jpg" alt="Ruby DBI 架构"/> <p>Ruby DBI 一般的架构使用两个层：</p> <ul class="list"> <li>数据库接口（DBI）层。该层是独立于数据库，并提供了一系列公共访问方法，方法的使用不分数据库服务器类型。</li> <li>数据库驱动（DBD）层。该层是依赖于数据库，不同的驱动提供了对不同的数据库引擎的访问。MySQL、PostgreSQL、InterBase、Oracle 等分别使用不同的驱动。每个驱动都负责解释来自 DBI 层的请求，并把这些请求映射为适用于给定类型的数据库服务器的请求。</li> </ul> <h2 class="tutheader">先决条件</h2> <p>如果您想要编写 Ruby 脚本来访问 MySQL 数据库，您需要先安装 Ruby MySQL 模块。</p> <p>该模块是一个 DBD，可从 <a title="javascript:if(confirm('http://www.tmtm.org/en/mysql/ruby/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://www.tmtm.org/en/mysql/ruby/'" tppabs="http://www.tmtm.org/en/mysql/ruby/" target="_blank">http://www.tmtm.org/en/mysql/ruby/</a> 上下载。</p> <h2 class="tutheader">获取并安装 Ruby/DBI</h2> <p>您可以从下面的链接下载并安装 Ruby DBI 模块：</p> <table class="reference notranslate"> <tr><td> <a title="javascript:if(confirm('http://rubyforge.org/projects/ruby-dbi/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://rubyforge.org/projects/ruby-dbi/'" tppabs="http://rubyforge.org/projects/ruby-dbi/" target="_blank">http://rubyforge.org/projects/ruby-dbi/</a> </td></tr> </table> <p>在开始安装之前，请确保您拥有 root 权限。现在，请安装下面的步骤进行安装：</p> <h2>步骤 1</h2> <pre class="prettyprint">
+$ tar zxf dbi-0.2.0.tar.gz
+</pre> <h2>步骤 2</h2> <p>进入目录 <i>dbi-0.2.0</i>，在目录中使用 <i>setup.rb</i> 脚本进行配置。最常用的配置命令是 config 参数后不跟任何参数。该命令默认配置为安装所有的驱动。</p> <pre class="prettyprint">
+$ ruby setup.rb config
+</pre> <p>更具体地，您可以使用 --with 选项来列出了您要使用的特定部分。例如，如果只想配置主要的 DBI 模块和 MySQL DBD 层驱动，请输入下面的命令：</p> <pre class="prettyprint">
+$ ruby setup.rb config --with=dbi,dbd_mysql
+</pre> <h2>步骤 3</h2> <p>最后一步是建立驱动器，使用下面命令进行安装：</p> <pre class="prettyprint">
+$ ruby setup.rb setup
+$ ruby setup.rb install
+</pre> <h2 class="tutheader">数据库连接</h2> <p>假设我们使用的是 MySQL 数据库，在连接数据库之前，请确保：</p> <ul class="list"> <li>您已经创建了一个数据库 TESTDB。</li> <li>您已经在 TESTDB 中创建了表 EMPLOYEE。</li> <li>该表带有字段 FIRST_NAME、LAST_NAME、AGE、SEX 和 INCOME。</li> <li>设置用户 ID "testuser" 和密码 "test123" 来访问 TESTDB</li> <li>已经在您的机器上正确地安装了 Ruby 模块 DBI。</li> <li>您已经看过 MySQL 教程，理解了 MySQL 基础操作。</p> </li> </ul> <p>下面是连接 MySQL 数据库 "TESTDB" 的实例：</p> <pre class="prettyprint">
+#!/usr/bin/ruby -w
+
+require "dbi"
+
+begin
+     # 连接到 MySQL 服务器
+     dbh = DBI.connect("DBI:Mysql:TESTDB:localhost", 
+	                    "testuser", "test123")
+     # 获取服务器版本字符串，并显示
+     row = dbh.select_one("SELECT VERSION()")
+     puts "Server version: " + row[0]
+rescue DBI::DatabaseError =&gt; e
+     puts "An error occurred"
+     puts "Error code:    #{e.err}"
+     puts "Error message: #{e.errstr}"
+ensure
+     # 断开与服务器的连接
+     dbh.disconnect if dbh
+end
+</pre> <p>当运行这段脚本时，将会在 Linux 机器上产生以下结果。</p> <pre class="prettyprint">
+Server version: 5.0.45
+</pre> <p>如果建立连接时带有数据源，则返回数据库句柄（Database Handle），并保存到 <b>dbh</b> 中以便后续使用，否则 <b>dbh</b> 将被设置为 nil 值，<i>e.err</i> 和 <i>e::errstr</i> 分别返回错误代码和错误字符串。</p> <p>最后，在退出这段程序之前，请确保关闭数据库连接，释放资源。</p> <h2 class="tutheader">INSERT 操作</h2> <p>当您想要在数据库表中创建记录时，需要用到 INSERT 操作。</p> <p>一旦建立了数据库连接，我们就可以准备使用 <b>do</b> 方法或 <b>prepare</b> 和 <b>execute</b> 方法创建表或创建插入数据表中的记录。</p> <h2>使用 do 语句</h2> <p>不返回行的语句可通过调用 <b>do</b> 数据库处理方法。该方法带有一个语句字符串参数，并返回该语句所影响的行数。</p> <pre class="prettyprint">
+dbh.do("DROP TABLE IF EXISTS EMPLOYEE")
+dbh.do("CREATE TABLE EMPLOYEE (
+     FIRST_NAME  CHAR(20) NOT NULL,
+     LAST_NAME  CHAR(20),
+     AGE INT,  
+     SEX CHAR(1),
+     INCOME FLOAT )" );
+</pre> <p>同样地，您可以执行 SQL <i>INSERT</i> 语句来创建记录插入 EMPLOYEE 表中。</p> <pre class="prettyprint">
+#!/usr/bin/ruby -w
+
+require "dbi"
+
+begin
+     # 连接到 MySQL 服务器
+     dbh = DBI.connect("DBI:Mysql:TESTDB:localhost", 
+	                    "testuser", "test123")
+     dbh.do( "INSERT INTO EMPLOYEE(FIRST_NAME,
+                   LAST_NAME, 
+                   AGE, 
+		   SEX, 
+		   INCOME)
+          VALUES ('Mac', 'Mohan', 20, 'M', 2000)" )
+     puts "Record has been created"
+     dbh.commit
+rescue DBI::DatabaseError =&gt; e
+     puts "An error occurred"
+     puts "Error code:    #{e.err}"
+     puts "Error message: #{e.errstr}"
+     dbh.rollback
+ensure
+     # 断开与服务器的连接
+     dbh.disconnect if dbh
+end
+</pre> <h2>使用 <i>prepare</i> 和 <i>execute</i></h2> <p>您可以使用 DBI 的 <i>prepare</i> 和 <i>execute</i> 方法来执行 Ruby 代码中的 SQL 语句。</p> <p>创建记录的步骤如下：</p> <ul class="list"> <li>准备带有 INSERT 语句的 SQL 语句。这将通过使用 <b>prepare</b> 方法来完成。</li> <li>执行 SQL 查询，从数据库中选择所有的结果。这将通过使用 <b>execute</b> 方法来完成。</li> <li>释放语句句柄。这将通过使用 <b>finish</b> API 来完成。</li> <li>如果一切进展顺利，则 <b>commit</b> 该操作，否则您可以 <b>rollback</b> 完成交易。</li> </ul> <p>下面是使用这两种方法的语法：</p> <pre class="prettyprint">
+sth = dbh.prepare(statement)
+sth.execute
+   ... zero or more SQL operations ...
+sth.finish
+</pre> <p>这两种方法可用于传 <b>bind</b> 值给 SQL 语句。有时候被输入的值可能未事先给出，在这种情况下，则会用到绑定值。使用问号（<b>?</b>）替代实际值，实际值通过 execute() API 来传递。</p> <p>下面的实例在 EMPLOYEE 表中创建了两个记录：</p> <pre class="prettyprint">
+#!/usr/bin/ruby -w
+
+require "dbi"
+
+begin
+     # 连接到 MySQL 服务器
+     dbh = DBI.connect("DBI:Mysql:TESTDB:localhost", 
+	                    "testuser", "test123")
+     sth = dbh.prepare( "INSERT INTO EMPLOYEE(FIRST_NAME,
+                   LAST_NAME, 
+                   AGE, 
+ 		   SEX, 
+		   INCOME)
+                   VALUES (?, ?, ?, ?, ?)" )
+     sth.execute('John', 'Poul', 25, 'M', 2300)
+     sth.execute('Zara', 'Ali', 17, 'F', 1000)
+     sth.finish
+     dbh.commit
+     puts "Record has been created"
+rescue DBI::DatabaseError =&gt; e
+     puts "An error occurred"
+     puts "Error code:    #{e.err}"
+     puts "Error message: #{e.errstr}"
+     dbh.rollback
+ensure
+     # 断开与服务器的连接
+     dbh.disconnect if dbh
+end
+</pre> <p>如果同时使用多个 INSERT，那么先准备一个语句，然后在一个循环中多次执行它要比通过循环每次调用 do 有效率得多。</p> <h2 class="tutheader">READ 操作</h2> <p>对任何数据库的 READ 操作是指从数据库中获取有用的信息。</p> <p>一旦建立了数据库连接，我们就可以准备查询数据库。我们可以使用 <b>do</b> 方法或 <b>prepare</b> 和 <b>execute</b> 方法从数据库表中获取值。</p> <p>获取记录的步骤如下：</p> <ul class="list"> <li>基于所需的条件准备 SQL 查询。这将通过使用 <b>prepare</b> 方法来完成。</li> <li>执行 SQL 查询，从数据库中选择所有的结果。这将通过使用 <b>execute</b> 方法来完成。</li> <li>逐一获取结果，并输出这些结果。这将通过使用 <b>fetch</b> 方法来完成。</li> <li>释放语句句柄。这将通过使用 <b>finish</b> 方法来完成。</li> </ul> <p>下面的实例从 EMPLOYEE 表中查询所有工资（salary）超过 1000 的记录。</p> <pre class="prettyprint">
+#!/usr/bin/ruby -w
+
+require "dbi"
+
+begin
+     # 连接到 MySQL 服务器
+     dbh = DBI.connect("DBI:Mysql:TESTDB:localhost", 
+	                    "testuser", "test123")
+     sth = dbh.prepare("SELECT * FROM EMPLOYEE 
+                        WHERE INCOME &gt; ?")
+     sth.execute(1000)
+
+     sth.fetch do |row|
+        printf "First Name: %s, Last Name : %s\n", row[0], row[1]
+        printf "Age: %d, Sex : %s\n", row[2], row[3]
+        printf "Salary :%d \n\n", row[4]
+     end
+     sth.finish
+rescue DBI::DatabaseError =&gt; e
+     puts "An error occurred"
+     puts "Error code:    #{e.err}"
+     puts "Error message: #{e.errstr}"
+ensure
+     # 断开与服务器的连接
+     dbh.disconnect if dbh
+end
+</pre> <p>这将产生以下结果：</p> <pre class="prettyprint">
+First Name: Mac, Last Name : Mohan
+Age: 20, Sex : M
+Salary :2000
+
+First Name: John, Last Name : Poul
+Age: 25, Sex : M
+Salary :2300
+</pre> <h3>还有很多从数据库获取记录的方法，如果您感兴趣，可以查看 <a title="javascript:if(confirm('http://www.w3cschool.cc/ruby/try.php?filename=tryjs_continue  \n\n?????????? Teleport Ultra ????, ??? ??????, ???????????, ?????????????  \n\n?????????????????'))window.location='http://www.w3cschool.cc/ruby/try.php?filename=tryjs_continue'" href="http://www.w3cschool.cc/ruby/ruby-dbi-read.html" title="Ruby DBI Read 操作"><b>Ruby DBI Read 操作</b></a>。</h3> <h2 class="tutheader">Update 操作</h2> <p>对任何数据库的 UPDATE 操作是指更新数据库中一个或多个已有的记录。下面的实例更新 SEX 为 'M' 的所有记录。在这里，我们将把所有男性的 AGE 增加一岁。这将分为三步：</p> <ul class="list"> <li>基于所需的条件准备 SQL 查询。这将通过使用 <b>prepare</b> 方法来完成。</li> <li>执行 SQL 查询，从数据库中选择所有的结果。这将通过使用 <b>execute</b> 方法来完成。</li> <li>释放语句句柄。这将通过使用 <b>finish</b> 方法来完成。</li> <li>如果一切进展顺利，则 <b>commit</b> 该操作，否则您可以 <b>rollback</b> 完成交易。</li> </ul> <pre class="prettyprint">
+#!/usr/bin/ruby -w
+
+require "dbi"
+
+begin
+     # 连接到 MySQL 服务器
+     dbh = DBI.connect("DBI:Mysql:TESTDB:localhost", 
+	                    "testuser", "test123")
+     sth = dbh.prepare("UPDATE EMPLOYEE SET AGE = AGE + 1
+                        WHERE SEX = ?")
+     sth.execute('M')
+     sth.finish
+     dbh.commit
+rescue DBI::DatabaseError =&gt; e
+     puts "An error occurred"
+     puts "Error code:    #{e.err}"
+     puts "Error message: #{e.errstr}"
+     dbh.rollback
+ensure
+     # 断开与服务器的连接
+     dbh.disconnect if dbh
+end
+</pre> <h2 class="tutheader">DELETE 操作</h2> <p>当您想要从数据库中删除记录时，需要用到 DELETE 操作。下面的实例从 EMPLOYEE 中删除 AGE 超过 20 的所有记录。该操作的步骤如下：</p> <ul class="list"> <li>基于所需的条件准备 SQL 查询。这将通过使用 <b>prepare</b> 方法来完成。</li> <li>执行 SQL 查询，从数据库中删除所需的记录。这将通过使用 <b>execute</b> 方法来完成。</li> <li>释放语句句柄。这将通过使用 <b>finish</b> 方法来完成。</li> <li>如果一切进展顺利，则 <b>commit</b> 该操作，否则您可以 <b>rollback</b> 完成交易。</li> </ul> <pre class="prettyprint">
+#!/usr/bin/ruby -w
+
+require "dbi"
+
+begin
+     # 连接到 MySQL 服务器
+     dbh = DBI.connect("DBI:Mysql:TESTDB:localhost", 
+	                    "testuser", "test123")
+     sth = dbh.prepare("DELETE FROM EMPLOYEE 
+                        WHERE AGE &gt; ?")
+     sth.execute(20)
+     sth.finish
+     dbh.commit
+rescue DBI::DatabaseError =&gt; e
+     puts "An error occurred"
+     puts "Error code:    #{e.err}"
+     puts "Error message: #{e.errstr}"
+     dbh.rollback
+ensure
+     # 断开与服务器的连接
+     dbh.disconnect if dbh
+end
+</pre> <h2 class="tutheader">执行事务</h2> <p>事务是一种确保交易一致性的机制。事务应具有下列四种属性：</p> <ul class="list"> <li><b>原子性（Atomicity）：</b>事务的原子性指的是，事务中包含的程序作为数据库的逻辑工作单位，它所做的对数据修改操作要么全部执行，要么完全不执行。</li> <li><b>一致性（Consistency）：</b>事务的一致性指的是在一个事务执行之前和执行之后数据库都必须处于一致性状态。假如数据库的状态满足所有的完整性约束，就说该数据库是一致的。 </li> <li><b>隔离性（Isolation）：</b>事务的隔离性指并发的事务是相互隔离的，即一个事务内部的操作及正在操作的数据必须封锁起来，不被其它企图进行修改的事务看到。</li> <li><b>持久性（Durability）：</b>事务的持久性意味着当系统或介质发生故障时，确保已提交事务的更新不能丢失。即一旦一个事务提交，它对数据库中数据的改变应该是永久性的，耐得住任何数据库系统故障。持久性通过数据库备份和恢复来保证。</li> </ul> <p>DBI 提供了两种执行事务的方法。一种是 <i>commit</i> 或 <i>rollback</i> 方法，用于提交或回滚事务。还有一种是 <i>transaction</i> 方法，可用于实现事务。接下来我们来介绍这两种简单的实现事务的方法：</p> <h2>方法 I</h2> <p>第一种方法使用 DBI 的 <i>commit</i> 和 <i>rollback</i> 方法来显式地提交或取消事务：</p> <pre class="prettyprint">
+   dbh['AutoCommit'] = false # 设置自动提交为 false.
+   begin
+     dbh.do("UPDATE EMPLOYEE SET AGE = AGE+1 
+             WHERE FIRST_NAME = 'John'")
+     dbh.do("UPDATE EMPLOYEE SET AGE = AGE+1 
+             WHERE FIRST_NAME = 'Zara'")
+     dbh.commit
+   rescue
+     puts "transaction failed"
+     dbh.rollback
+   end
+   dbh['AutoCommit'] = true
+</pre> <h2>方法 II</h2> <p>第二种方法使用 <i>transaction</i> 方法。这个方法相对简单些，因为它需要一个包含构成事务语句的代码块。<i>transaction</i> 方法执行块，然后根据块是否执行成功，自动调用 <i>commit</i> 或 <i>rollback</i>：</p> <pre class="prettyprint">
+   dbh['AutoCommit'] = false # 设置自动提交为 false
+   dbh.transaction do |dbh|
+     dbh.do("UPDATE EMPLOYEE SET AGE = AGE+1 
+             WHERE FIRST_NAME = 'John'")
+     dbh.do("UPDATE EMPLOYEE SET AGE = AGE+1 
+             WHERE FIRST_NAME = 'Zara'")
+   end
+   dbh['AutoCommit'] = true
+</pre> <h2 class="tutheader">COMMIT 操作</h2> <p>Commit 是一种标识数据库已完成更改的操作，在这个操作后，所有的更改都不可恢复。</p> <p>下面是一个调用 <b>commit</b> 方法的简单实例。</p> <pre class="prettyprint">
+     dbh.commit
+</pre> <h2 class="tutheader">ROLLBACK 操作</h2> <p>如果您不满意某个或某几个更改，您想要完全恢复这些更改，则使用 <b>rollback</b> 方法。</p> <p>下面是一个调用 <b>rollback</b> 方法的简单实例。</p> <pre class="prettyprint">
+     dbh.rollback
+</pre> <h2 class="tutheader">断开数据库</h2> <p>如需断开数据库连接，请使用 disconnect API。</p> <pre class="prettyprint">
+    dbh.disconnect
+</pre> <p>如果用户通过 disconnect 方法关闭了数据库连接，DBI 会回滚所有未完成的事务。但是，不需要依赖于任何 DBI 的实现细节，您的应用程序就能很好地显式调用 commit 或 rollback。</p> <h2 class="tutheader">处理错误</h2> <p>有许多不同的错误来源。比如在执行 SQL 语句时的语法错误，或者是连接失败，又或者是对一个已经取消的或完成的语句句柄调用 fetch 方法。</p> <p>如果某个 DBI 方法失败，DBI 会抛出异常。DBI 方法会抛出任何类型的异常，但是最重要的两种异常类是 <i>DBI::InterfaceError</i> 和 <i>DBI::DatabaseError</i>。</p> <p>这些类的 Exception 对象有 <i>err</i>、<i>errstr</i> 和 <i>state</i> 三种属性，分表代表了错误号、一个描述性的错误字符串和一个标准的错误代码。属性具体说明如下：</p> <ul class="list"> <li><b>err：</b>返回所发生的错误的整数表示法，如果 DBD 不支持则返回 <i>nil</i>。例如，Oracle DBD 返回 <i>ORA-XXXX</i> 错误消息的数字部分。</li> <li><b>errstr：</b>返回所发生的错误的字符串表示法。</li> <li><b>state：</b>返回所发生的错误的 SQLSTATE 代码。SQLSTATE 是五字符长度的字符串。大多数的 DBD 并不支持它，所以会返回 nil。</li> </ul> <p>在上面的实例中您已经看过下面的代码：</p> <pre class="prettyprint">
+rescue DBI::DatabaseError =&gt; e
+     puts "An error occurred"
+     puts "Error code:    #{e.err}"
+     puts "Error message: #{e.errstr}"
+     dbh.rollback
+ensure
+     # 断开与服务器的连接
+     dbh.disconnect if dbh
+end
+</pre> <p>为了获取脚本执行时有关脚本执行内容的调试信息，您可以启用跟踪。为此，您必须首先下载 dbi/trace 模块，然后调用控制跟踪模式和输出目的地的 <i>trace</i> 方法：</p> <pre class="prettyprint">
+require "dbi/trace"
+..............
+
+trace(mode, destination)
+</pre> <p>mode 的值可以是 0（off）、1、2 或 3，destination 的值应该是一个 IO 对象。默认值分别是 2 和 STDERR。</p> <h2 class="tutheader">方法的代码块</h2> <p>有一些创建句柄的方法。这些方法通过代码块调用。使用带有方法的代码块的优点是，它们为代码块提供了句柄作为参数，当块终止时会自动清除句柄。下面是一些实例，有助于理解这个概念。</p> <ul class="list"> <li><b>DBI.connect ：</b>该方法生成一个数据库句柄，建议在块的末尾调用 <i>disconnect</i> 来断开数据库。</li> <li><b>dbh.prepare ：</b>该方法生成一个语句句柄，建议在块的末尾调用 <i>finish</i>。在块内，您必须调用 <i>execute</i> 方法来执行语句。</li> <li><b>dbh.execute ：</b>该方法与 dbh.prepare 类似，但是 dbh.execute 不需要在块内调用 execute 方法。语句句柄会自动执行。</li> </ul> <h2>实例 1</h2> <p><b>DBI.connect</b> 可带有一个代码块，向它传递数据库句柄，且会在块的末尾自动断开句柄。</p> <pre class="prettyprint">
+dbh = DBI.connect("DBI:Mysql:TESTDB:localhost", 
+	               "testuser", "test123") do |dbh|
+</pre> <h2>实例 2</h2> <p><b>dbh.prepare</b> 可带有一个代码块，向它传递语句句柄，且会在块的末尾自动调用 finish。</p> <pre class="prettyprint">
+dbh.prepare("SHOW DATABASES") do |sth|
+       sth.execute
+       puts "Databases: " + sth.fetch_all.join(", ")
+end
+</pre> <h2>实例 3</h2> <p><b>dbh.execute</b> 可带有一个代码块，向它传递语句句柄，且会在块的末尾自动调用 finish。</p> <pre class="prettyprint">
+dbh.execute("SHOW DATABASES") do |sth|
+   puts "Databases: " + sth.fetch_all.join(", ")
+end
+</pre> <p>DBI <i>transaction</i> 方法也可带有一个代码块，这在上面的章节中已经讲解过了。</p> <h2 class="tutheader">特定驱动程序的函数和属性</h2> <p>DBI 让数据库驱动程序提供了额外的特定数据库的函数，这些函数可被用户通过任何 Handle 对象的 <i>func</i> 方法进行调用。</p> <p>使用 <b>[]=</b> or <b>[]</b> 方法可以设置或获取特定驱动程序的属性。</p> <p>DBD::Mysql 实现了下列特定驱动程序的函数：</p> <table class="reference notranslate"> <tr><th style="width:5%">序号</th><th>函数 & 描述</th></tr> <tr><td>1</td><td><b>dbh.func(:createdb, db_name)</b><br/>创建一个新的数据库。</td></tr> <tr><td>2</td><td><b>dbh.func(:dropdb, db_name)</b><br/>删除一个数据库。</td></tr> <tr><td>3</td><td><b>dbh.func(:reload)</b><br/>执行重新加载操作。</td></tr> <tr><td>4</td><td><b>dbh.func(:shutdown)</b><br/>关闭服务器。</td></tr> <tr><td>5</td><td><b>dbh.func(:insert_id) => Fixnum</b><br/>返回该连接的最近 AUTO_INCREMENT 值。</td></tr> <tr><td>6</td><td><b>dbh.func(:client_info) => String</b><br/>根据版本返回 MySQL 客户端信息。</td></tr> <tr><td>7</td><td><b>dbh.func(:client_version) => Fixnum </b><br/>根据版本返回客户端信息。这与 :client_info 类似，但是它会返回一个 fixnum，而不是返回字符串。</td></tr> <tr><td>8</td><td><b>dbh.func(:host_info) => String</b><br/>返回主机信息。</td></tr> <tr><td>9</td><td><b>dbh.func(:proto_info) => Fixnum</b><br/>返回用于通信的协议。</td></tr> <tr><td>10</td><td><b>dbh.func(:server_info) => String </b><br/>根据版本返回 MySQL 服务器端信息。</td></tr> <tr><td>11</td><td><b>dbh.func(:stat) => Stringb><br/>返回数据库的当前状态。</td></tr> <tr><td>12</td><td><b>dbh.func(:thread_id) => Fixnum</b><br/>返回当前线程的 ID。</td></tr> </table> <h2>实例</h2> <pre class="prettyprint">
+#!/usr/bin/ruby
+
+require "dbi"
+begin
+   # 连接到 MySQL 服务器
+   dbh = DBI.connect("DBI:Mysql:TESTDB:localhost", 
+	                    "testuser", "test123") 
+   puts dbh.func(:client_info)
+   puts dbh.func(:client_version)
+   puts dbh.func(:host_info)
+   puts dbh.func(:proto_info)
+   puts dbh.func(:server_info)
+   puts dbh.func(:thread_id)
+   puts dbh.func(:stat)
+rescue DBI::DatabaseError =&gt; e
+   puts "An error occurred"
+   puts "Error code:    #{e.err}"
+   puts "Error message: #{e.errstr}"
+ensure
+   dbh.disconnect if dbh
+end
+</pre> <p>这将产生以下结果：</p> <pre class="prettyprint">
+5.0.45
+50045
+Localhost via UNIX socket
+10
+5.0.45
+150621
+Uptime: 384981  Threads: 1  Questions: 1101078  Slow queries: 4 \
+Opens: 324  Flush tables: 1  Open tables: 64  \
+Queries per second avg: 2.860
+</pre> </div> <div class="chapter"> <div class="prev">&laquo; <a href="ruby-regular-expressions.html" href="http://www.w3cschool.cc/ruby/ruby-regular-expressions.html" rel="prev"> Ruby 正则表达式</a></div> <div class="next"><a title="javascript:if(confirm('http://www.w3cschool.cc/ruby/try.php?filename=tryjs_continue  \n\n?????????? Teleport Ultra ????, ??? ??????, ???????????, ?????????????  \n\n?????????????????'))window.location='http://www.w3cschool.cc/ruby/try.php?filename=tryjs_continue'" href="http://www.w3cschool.cc/ruby/ruby-dbi-read.html" rel="next">Ruby DBI Read 操作</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/ruby/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/ruby/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

@@ -1,0 +1,131 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>AJAX &#8211; 向服务器发送请求 | w3cschool菜鸟教程</title> <link rel='prev' title='AJAX XMLHttpRequest 服务器响应' href="ajax-xmlhttprequest-response.html"/> <link rel='next' title='HTML DOM Style lineHeight 属性' href="/jsref/prop-style-lineheight.html"/> <link rel='canonical' href='http://www.w3cschool.cc/ajax/ajax-xmlhttprequest-send.html'/> <meta name="keywords" content="AJAX &#8211; 向服务器发送请求"> <meta name="description" content="AJAX - 向服务器发送请求请求 XMLHttpRequest 对象用于和服务器交换数据。 向服务器发送请求 如需将请求发送到服务器，我们使用 XMLHttpRequest 对象的 open() 和 send() 方法： xmlhttp.open(&#039;GET&#039;,&#039;ajax_info.txt&#039;,true); xmlhttp.send(); 方法 描述 open(method,url.."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="../ruby/ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>Ajax 教程</strong></h2> <a target="_top" title="AJAX 教程" href="ajax-tutorial.html" href="http://www.w3cschool.cc/ajax/ajax-tutorial.html"> AJAX 教程 </a> <a target="_top" title="AJAX 简介" href="ajax-intro.html" href="http://www.w3cschool.cc/ajax/ajax-intro.html"> AJAX 简介 </a> <a target="_top" title="AJAX 实例" href="ajax-example.html" href="http://www.w3cschool.cc/ajax/ajax-example.html"> AJAX 实例 </a> <a target="_top" title="AJAX 创建 XMLHttpRequest 对象" href="ajax-xmlhttprequest-create.html" href="http://www.w3cschool.cc/ajax/ajax-xmlhttprequest-create.html"> XHR 创建对象 </a> <a target="_top" title="AJAX &#8211; 向服务器发送请求" href="ajax-xmlhttprequest-send.html" href="http://www.w3cschool.cc/ajax/ajax-xmlhttprequest-send.html"> XHR 请求 </a> <a target="_top" title="AJAX XMLHttpRequest 服务器响应" href="ajax-xmlhttprequest-response.html" href="http://www.w3cschool.cc/ajax/ajax-xmlhttprequest-response.html"> XHR 响应 </a> <a target="_top" title="AJAX &#8211; onreadystatechange 事件" href="ajax-xmlhttprequest-onreadystatechange.html" href="http://www.w3cschool.cc/ajax/ajax-xmlhttprequest-onreadystatechange.html"> XHR readyState </a> <a target="_top" title="AJAX ASP/PHP" href="ajax-asp-php.html" href="http://www.w3cschool.cc/ajax/ajax-asp-php.html"> AJAX ASP/PHP </a> <a target="_top" title="AJAX 数据库" href="ajax-database.html" href="http://www.w3cschool.cc/ajax/ajax-database.html"> AJAX 数据库 </a> <a target="_top" title="AJAX XML" href="ajax-xmlfile.html" href="http://www.w3cschool.cc/ajax/ajax-xmlfile.html"> AJAX XML </a> <a target="_top" title="AJAX 实例" href="ajax-examples.html" href="http://www.w3cschool.cc/ajax/ajax-examples.html"> AJAX 实例 </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="ajax-xmlhttprequest-response.html" href="http://www.w3cschool.cc/ajax/ajax-xmlhttprequest-response.html" rel="prev"> AJAX XMLHttpRequest 服务器响应</a></div> <div class="next"><a href="ajax-xmlhttprequest-create.html" href="http://www.w3cschool.cc/ajax/ajax-xmlhttprequest-create.html" rel="next">AJAX 创建 XMLHttpRequest 对象</a> &raquo;</div> </div> <div id="content"> <h1>AJAX - 向服务器发送请求<span class="color_h1">请求</span></h1> <hr> <p class="intro">XMLHttpRequest 对象用于和服务器交换数据。</p> <hr> <h2>向服务器发送请求</h2> <p>如需将请求发送到服务器，我们使用 XMLHttpRequest 对象的 open() 和 send() 方法：</p> <div class="code notranslate"><div> xmlhttp.open("GET","ajax_info.txt",true);<br> xmlhttp.send();</div></div> <br><table class="reference"> <tbody><tr> <th style="width:40%;">方法</th> <th>描述</th> </tr> <tr> <td>open(<i>method</i>,<i>url</i>,<i>async</i>)</td> <td> <p>规定请求的类型、URL 以及是否异步处理请求。</p> <ul class="listintable"> <li><i>method</i>：请求的类型；GET 或 POST</li> <li><i>url</i>：文件在服务器上的位置</li> <li><i>async</i>：true（异步）或 false（同步）</li> </ul> </td> </tr> <tr> <td>send(<i>string</i>)</td> <td> <p>将请求发送到服务器。</p> <ul class="listintable"> <li><i>string</i>：仅用于 POST 请求</li> </ul> </td> </tr> </tbody></table> <br><hr> <h2>GET 还是 POST？</h2> <p>与 POST 相比，GET 更简单也更快，并且在大部分情况下都能用。</p> <p>然而，在以下情况中，请使用 POST 请求：</p> <ul> <li>无法使用缓存文件（更新服务器上的文件或数据库）</li> <li>向服务器发送大量数据（POST 没有数据量限制）</li> <li>发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠</li> </ul> <hr> <h2>GET 请求</h2> <p>一个简单的 GET 请求：</p> <div class="example"> <h2 class="example">实例</h2> <div class="example_code notranslate"> xmlhttp.open("GET","demo_get.html",true);<br> xmlhttp.send();</div> <br><a target="_blank" class="tryitbtn" title="javascript:if(confirm('http://www.w3csol.cc/try/css3-pr-animation-duration.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/css3-pr-animation-duration.html'" href="http://www.w3cschool.cc/try/try.php?filename=tryajax_get">尝试一下 ?</a> </div> <p>在上面的例子中，您可能得到的是缓存的结果。</p> <p>为了避免这种情况，请向 URL 添加一个唯一的 ID：</p> <div class="example"> <h2 class="example">实例</h2> <div class="example_code notranslate"> xmlhttp.open("GET","demo_get.html?t=" + Math.random(),true);<br> xmlhttp.send();</div> <br><a target="_blank" class="tryitbtn" title="javascript:if(confirm('http://www.w3csol.cc/try/css3-pr-animation-fill-mode.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/css3-pr-animation-fill-mode.html'" href="http://www.w3cschool.cc/try/try.php?filename=tryajax_get_unique">尝试一下 ?</a> </div> <p>如果您希望通过 GET 方法发送信息，请向 URL 添加信息：</p> <div class="example"> <h2 class="example">实例</h2> <div class="example_code notranslate"> xmlhttp.open("GET","demo_get2.html?fname=Henry&amp;lname=Ford",true);<br> xmlhttp.send();</div> <br><a target="_blank" class="tryitbtn" title="javascript:if(confirm('http://www.w3csol.cc/try/css3-pr-animation-iteration-count.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/css3-pr-animation-iteration-count.html'" href="http://www.w3cschool.cc/try/try.php?filename=tryajax_get2">尝试一下 ?</a> </div> <br><hr> <h2>POST 请求</h2> <p>一个简单 POST 请求：</p> <div class="example"> <h2 class="example">实例</h2> <div class="example_code notranslate"> xmlhttp.open("POST","demo_post.html",true);<br> xmlhttp.send();</div> <br><a target="_blank" class="tryitbtn" title="javascript:if(confirm('http://www.w3csol.cc/try/css3-pr-animation-name.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/css3-pr-animation-name.html'" href="http://www.w3cschool.cc/try/try.php?filename=tryajax_post">尝试一下 ?</a> </div> <p>如果需要像 HTML 表单那样 POST 数据，请使用 setRequestHeader() 来添加 HTTP 头。然后在 send() 方法中规定您希望发送的数据：</p> <div class="example"> <h2 class="example">实例</h2> <div class="example_code notranslate"> xmlhttp.open("POST","ajax_test.html",true);<br> xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");<br> xmlhttp.send("fname=Henry&amp;lname=Ford");</div> <br><a target="_blank" class="tryitbtn" title="javascript:if(confirm('http://www.w3csol.cc/try/css3-pr-animation-play-state.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/css3-pr-animation-play-state.html'" href="http://www.w3cschool.cc/try/try.php?filename=tryajax_post2">尝试一下 ?</a> </div> <br><table class="reference notranslate"> <tr> <th align="left" width="40%">方法</th> <th align="left" width="60%">描述</th> </tr> <tr> <td>setRequestHeader(<i>header,value</i>)</td> <td> <p>向请求添加 HTTP 头。</p> <ul class="listintable"> <li><i>header</i>: 规定头的名称</li> <li><i>value</i>: 规定头的值</li> </ul> </td> </tr> </table> <br><hr> <h2>url - 服务器上的文件</h2> <p>open() 方法的 <i>url</i> 参数是服务器上文件的地址：</p> <div class="code notranslate"><div> xmlhttp.open("GET","ajax_test.html",true);</div></div> <p>该文件可以是任何类型的文件，比如 .txt 和 .xml，或者服务器脚本文件，比如 .asp 和 .php （在传回响应之前，能够在服务器上执行任务）。</p> <hr> <h2>异步 - True 或 False？</h2> <p>AJAX 指的是异步 JavaScript 和 XML（Asynchronous JavaScript and XML）。</p> <p>XMLHttpRequest 对象如果要用于 AJAX 的话，其 open() 方法的 async 参数必须设置为 true：</p> <div class="code notranslate"><div> xmlhttp.open("GET","ajax_test.html",true);</div></div> <p>对于 web 开发人员来说，发送异步请求是一个巨大的进步。很多在服务器执行的任务都相当费时。AJAX 出现之前，这可能会引起应用程序挂起或停止。</p> <p>通过 AJAX，JavaScript 无需等待服务器的响应，而是：</p> <ul> <li>在等待服务器响应时执行其他脚本</li> <li>当响应就绪后对响应进行处理</li> </ul> <hr> <h2>Async=true</h2> <p>当使用 async=true 时，请规定在响应处于 onreadystatechange 事件中的就绪状态时执行的函数：</p> <div class="example"> <h2 class="example">实例</h2> <div class="example_code notranslate"> xmlhttp.onreadystatechange=function()<br> ? {<br> ? if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)<br> ??? {<br> ??? document.getElementById("myDiv").innerHTML=xmlhttp.responseText;<br> ??? }<br> ? }<br> xmlhttp.open("GET","ajax_info.txt",true);<br> xmlhttp.send();</div> <br><a target="_blank" class="tryitbtn" title="javascript:if(confirm('http://www.w3csol.cc/try/try.php?filename=tryajax_first  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/try.php?filename=tryajax_first'" href="http://www.w3cschool.cc/try/try.php?filename=tryajax_first">尝试一下 ?</a> </div> <p>您将在稍后的章节学习更多有关 onreadystatechange 的内容。</p> <hr> <h2>Async = false</h2> <p>如需使用 async=false，请将 open() 方法中的第三个参数改为 false：</p> <pre>xmlhttp.open(&amp;quot;GET&amp;quot;,&amp;quot;test1.txt&amp;quot;,false);</pre> <p>我们不推荐使用 async=false，但是对于一些小型的请求，也是可以的。</p> <p>请记住，JavaScript 会等到服务器响应就绪才继续执行。如果服务器繁忙或缓慢，应用程序会挂起或停止。</p> <p><b>注意：</b>当您使用 async=false 时，请不要编写 onreadystatechange 函数 - 把代码放到 send() 语句后面即可：</p> <div class="example"> <h2 class="example">实例</h2> <div class="example_code notranslate"> xmlhttp.open("GET","ajax_info.txt",false);<br> xmlhttp.send();<br> document.getElementById("myDiv").innerHTML=xmlhttp.responseText;</div> <br><a target="_blank" class="tryitbtn" title="javascript:if(confirm('http://www.w3csol.cc/try/css3-pr-animation-timing-function.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/css3-pr-animation-timing-function.html'" href="http://www.w3cschool.cc/try/try.php?filename=tryajax_asyncfalse">尝试一下 ?</a> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="ajax-xmlhttprequest-response.html" href="http://www.w3cschool.cc/ajax/ajax-xmlhttprequest-response.html" rel="prev"> AJAX XMLHttpRequest 服务器响应</a></div> <div class="next"><a href="ajax-xmlhttprequest-create.html" href="http://www.w3cschool.cc/ajax/ajax-xmlhttprequest-create.html" rel="next">AJAX 创建 XMLHttpRequest 对象</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/ajax/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/ajax/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

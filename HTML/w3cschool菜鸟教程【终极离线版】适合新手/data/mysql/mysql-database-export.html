@@ -1,0 +1,195 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>MySQL 导出数据 | w3cschool菜鸟教程</title> <link rel='prev' title='jQuery Autocomplete' href="/jquery/jquery-plugin-autocomplete.html"/> <link rel='next' title='MySQL 导入数据' href="mysql-database-import.html"/> <link rel='canonical' href='http://www.w3cschool.cc/mysql/mysql-database-export.html'/> <meta name="keywords" content="MySQL 导出数据"> <meta name="description" content="MySQL 导出数据 MySQL中你可以使用SELECT...INTO OUTFILE语句来简单的导出数据到文本文件上。 使用 SELECT ... INTO OUTFILE 语句导出数据 以下实例中我们将数据表 tutorials_tbl 数据导出到 /tmp/tutorials.txt 文件中: mysql&gt; SELECT * FROM tutorials_tbl -&gt; INTO OUTFILE &.."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="../ruby/ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>MySQL 教程</strong></h2> <a target="_top" title="MySQL 教程" href="mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html"> MySQL 教程 </a> <a target="_top" title="MySQL 安装" href="mysql-install.html" href="http://www.w3cschool.cc/mysql/mysql-install.html"> MySQL 安装 </a> <a target="_top" title="MySQL 管理" href="mysql-administration.html" href="http://www.w3cschool.cc/mysql/mysql-administration.html"> MySQL 管理 </a> <a target="_top" title="MySQL PHP 语法" href="mysql-php-syntax.html" href="http://www.w3cschool.cc/mysql/mysql-php-syntax.html"> MySQL PHP 语法 </a> <a target="_top" title="MySQL 连接" href="mysql-connection.html" href="http://www.w3cschool.cc/mysql/mysql-connection.html"> MySQL 连接 </a> <a target="_top" title="MySQL 创建数据库" href="mysql-create-database.html" href="http://www.w3cschool.cc/mysql/mysql-create-database.html"> MySQL 创建数据库 </a> <a target="_top" title="MySQL 删除数据库" href="mysql-drop-database.html" href="http://www.w3cschool.cc/mysql/mysql-drop-database.html"> MySQL 删除数据库 </a> <a target="_top" title="MySQL 选择数据库" href="mysql-select-database.html" href="http://www.w3cschool.cc/mysql/mysql-select-database.html"> MySQL 选择数据库 </a> <a target="_top" title="MySQL 数据类型" href="mysql-data-types.html" href="http://www.w3cschool.cc/mysql/mysql-data-types.html"> MySQL 数据类型 </a> <a target="_top" title="MySQL 创建数据表" href="mysql-create-tables.html" href="http://www.w3cschool.cc/mysql/mysql-create-tables.html"> MySQL 创建数据表 </a> <a target="_top" title="MySQL 删除数据表" href="mysql-drop-tables.html" href="http://www.w3cschool.cc/mysql/mysql-drop-tables.html"> MySQL 删除数据表 </a> <a target="_top" title="MySQL 插入数据" href="mysql-insert-query.html" href="http://www.w3cschool.cc/mysql/mysql-insert-query.html"> MySQL 插入数据 </a> <a target="_top" title="MySQL 查询数据" href="mysql-select-query.html" href="http://www.w3cschool.cc/mysql/mysql-select-query.html"> MySQL 查询数据 </a> <a target="_top" title="MySQL where 子句" href="mysql-where-clause.html" href="http://www.w3cschool.cc/mysql/mysql-where-clause.html"> MySQL where 子句 </a> <a target="_top" title="MySQL UPDATE 查询" href="mysql-update-query.html" href="http://www.w3cschool.cc/mysql/mysql-update-query.html"> MySQL UPDATE 查询 </a> <a target="_top" title="MySQL DELETE 语句" href="mysql-delete-query.html" href="http://www.w3cschool.cc/mysql/mysql-delete-query.html"> MySQL DELETE 语句 </a> <a target="_top" title="MySQL LIKE 子句" href="mysql-like-clause.html" href="http://www.w3cschool.cc/mysql/mysql-like-clause.html"> MySQL LIKE 子句 </a> <a target="_top" title="MySQL 排序" href="mysql-order-by.html" href="http://www.w3cschool.cc/mysql/mysql-order-by.html"> MySQL 排序 </a> <a target="_top" title="Mysql Join的使用" href="mysql-join.html" href="http://www.w3cschool.cc/mysql/mysql-join.html"> Mysql Join的使用 </a> <a target="_top" title="MySQL NULL 值处理" href="mysql-null.html" href="http://www.w3cschool.cc/mysql/mysql-null.html"> MySQL NULL 值处理 </a> <a target="_top" title="MySQL 正则表达式" href="mysql-regexp.html" href="http://www.w3cschool.cc/mysql/mysql-regexp.html"> MySQL 正则表达式 </a> <a target="_top" title="MySQL 事务" href="mysql-transaction.html" href="http://www.w3cschool.cc/mysql/mysql-transaction.html"> MySQL 事务 </a> <a target="_top" title="MySQL ALTER命令" href="mysql-alter.html" href="http://www.w3cschool.cc/mysql/mysql-alter.html"> MySQL ALTER命令 </a> <a target="_top" title="MySQL 索引" href="mysql-index.html" href="http://www.w3cschool.cc/mysql/mysql-index.html"> MySQL 索引 </a> <a target="_top" title="MySQL 临时表" href="mysql-temporary-tables.html" href="http://www.w3cschool.cc/mysql/mysql-temporary-tables.html"> MySQL 临时表 </a> <a target="_top" title="MySQL 复制表" href="mysql-clone-tables.html" href="http://www.w3cschool.cc/mysql/mysql-clone-tables.html"> MySQL 复制表 </a> <a target="_top" title="MySQL 元数据" href="mysql-database-info.html" href="http://www.w3cschool.cc/mysql/mysql-database-info.html"> MySQL 元数据 </a> <a target="_top" title="MySQL 序列使用" href="mysql-using-sequences.html" href="http://www.w3cschool.cc/mysql/mysql-using-sequences.html"> MySQL 序列使用 </a> <a target="_top" title="MySQL 处理重复数据" href="mysql-handling-duplicates.html" href="http://www.w3cschool.cc/mysql/mysql-handling-duplicates.html"> MySQL 处理重复数据 </a> <a target="_top" title="MySQL 及 SQL 注入" href="mysql-sql-injection.html" href="http://www.w3cschool.cc/mysql/mysql-sql-injection.html"> MySQL 及 SQL 注入 </a> <a target="_top" title="MySQL 导出数据" href="mysql-database-export.html" href="http://www.w3cschool.cc/mysql/mysql-database-export.html"> MySQL 导出数据 </a> <a target="_top" title="MySQL 导入数据" href="mysql-database-import.html" href="http://www.w3cschool.cc/mysql/mysql-database-import.html"> MySQL 导入数据 </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="mysql-sql-injection.html" href="http://www.w3cschool.cc/mysql/mysql-sql-injection.html" rel="prev"> MySQL 及 SQL 注入</a></div> <div class="next"><a href="mysql-database-import.html" href="http://www.w3cschool.cc/mysql/mysql-database-import.html" rel="next">MySQL 导入数据</a> &raquo;</div> </div> <div id="content"> <h1>MySQL 导出数据</h1> <p> MySQL中你可以使用<strong>SELECT...INTO OUTFILE</strong>语句来简单的导出数据到文本文件上。 </p> <hr> <h2> 使用 SELECT ... INTO OUTFILE 语句导出数据</h2> <p>以下实例中我们将数据表 tutorials_tbl 数据导出到 /tmp/tutorials.txt 文件中: </p> <pre>
+mysql&gt; SELECT * FROM tutorials_tbl 
+    -&gt; INTO OUTFILE '/tmp/tutorials.txt';
+</pre> <p>你可以通过命令选项来设置数据输出的指定格式，以下实例为导出 CSV 格式：</p> <pre>
+mysql&gt; SELECT * FROM passwd INTO OUTFILE '/tmp/tutorials.txt'
+    -&gt; FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+    -&gt; LINES TERMINATED BY '\r\n';
+</pre> <p> 在下面的例子中，生成一个文件，各值用逗号隔开。这种格式可以被许多程序使用。</p> <pre>
+SELECT a,b,a+b INTO OUTFILE '/tmp/result.text'
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+FROM test_table;
+</pre> <h3>SELECT ... INTO OUTFILE 语句有以下属性:</h3> <ul> <li> LOAD DATA INFILE是SELECT ... INTO OUTFILE的逆操作，SELECT句法。为了将一个数据库的数据写入一个文件，使用SELECT ... INTO OUTFILE，为了将文件读回数据库，使用LOAD DATA INFILE。 </li> <li> SELECT...INTO OUTFILE 'file_name'形式的SELECT可以把被选择的行写入一个文件中。该文件被创建到服务器主机上，因此您必须拥有FILE权限，才能使用此语法。 </li> <li> 输出不能是一个已存在的文件。防止文件数据被篡改。 </li> <li>你需要有一个登陆服务器的账号来检索文件。否则 SELECT ... INTO OUTFILE 不会起任何作用。</li> <li> 在UNIX中，该文件被创建后是可读的，权限由MySQL服务器所拥有。这意味着，虽然你就可以读取该文件，但可能无法将其删除。 </li> </ul> <hr> <h2>导出表作为原始数据</h2> <p> mysqldump是mysql用于转存储数据库的实用程序。它主要产生一个SQL脚本，其中包含从头重新创建数据库所必需的命令CREATE TABLE INSERT等。</p> </p>使用mysqldump导出数据需要使用 --tab 选项来指定导出文件指定的目录，该目标必须是可写的。</p> <p>以下实例将数据表 tutorials_tbl 导出到 /tmp 目录中：</p> <pre>
+$ mysqldump -u root -p --no-create-info \
+            --tab=/tmp TUTORIALS tutorials_tbl
+password ******
+</pre> <hr> <h2>导出SQL格式的数据</h2> <p>导出SQL格式的数据到指定文件，如下所示：</p> <pre>
+$ mysqldump -u root -p TUTORIALS tutorials_tbl &gt; dump.txt
+password ******
+</pre> <p>以上命令创建的文件内容如下： </p> <pre>
+-- MySQL dump 8.23
+--
+-- Host: localhost    Database: TUTORIALS
+---------------------------------------------------------
+-- Server version       3.23.58
+
+--
+-- Table structure for table `tutorials_tbl`
+--
+
+CREATE TABLE tutorials_tbl (
+  tutorial_id int(11) NOT NULL auto_increment,
+  tutorial_title varchar(100) NOT NULL default '',
+  tutorial_author varchar(40) NOT NULL default '',
+  submission_date date default NULL,
+  PRIMARY KEY  (tutorial_id),
+  UNIQUE KEY AUTHOR_INDEX (tutorial_author)
+) TYPE=MyISAM;
+
+--
+-- Dumping data for table `tutorials_tbl`
+--
+
+INSERT INTO tutorials_tbl 
+       VALUES (1,'Learn PHP','John Poul','2007-05-24');
+INSERT INTO tutorials_tbl 
+       VALUES (2,'Learn MySQL','Abdul S','2007-05-24');
+INSERT INTO tutorials_tbl 
+       VALUES (3,'JAVA Tutorial','Sanjay','2007-05-06');
+</pre> <p>如果你需要导出整个数据库的数据，可以使用以下命令：</p> <pre>
+$ mysqldump -u root -p TUTORIALS &gt; database_dump.txt
+password ******
+</pre> <p>如果需要备份所有数据库，可以使用以下命令：</p> <pre>
+$ mysqldump -u root -p --all-databases &gt; database_dump.txt
+password ******
+</pre> <p> --all-databases 选项在 MySQL 3.23.12 及以后版本加入。</p> <p>该方法可用于实现数据库的备份策略。</p> <hr> <h2>将数据表及数据库拷贝至其他主机</h2> <p>如果你需要将数据拷贝至其他的 MySQL 服务器上, 你可以在 mysqldump 命令中指定数据库名及数据表。</p> <p>在源主机上执行以下命令，将数据备份至 dump.txt 文件中: </p> <pre>
+$ mysqldump -u root -p database_name table_name &gt; dump.txt
+password *****
+</pre> <p>如果完整备份数据库，则无需使用特定的表名称。 <p>如果你需要将备份的数据库导入到MySQL服务器中，可以使用以下命令，使用以下命令你需要确认数据库已经创建：</p> <pre>
+$ mysql -u root -p database_name &lt; dump.txt
+password *****
+</pre> <pre>你也可以使用以下命令将导出的数据直接导入到远程的服务器上，但请确保两台服务器是相通的，是可以相互访问的：&lt;/p&gt;
+$ mysqldump -u root -p database_name \
+       | mysql -h other-host.com database_name
+</pre> <p>以上命令中使用了管道来将导出的数据导入到指定的远程主机上。</p> </div> <div class="chapter"> <div class="prev">&laquo; <a href="mysql-sql-injection.html" href="http://www.w3cschool.cc/mysql/mysql-sql-injection.html" rel="prev"> MySQL 及 SQL 注入</a></div> <div class="next"><a href="mysql-database-import.html" href="http://www.w3cschool.cc/mysql/mysql-database-import.html" rel="next">MySQL 导入数据</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/mysql/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/mysql/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

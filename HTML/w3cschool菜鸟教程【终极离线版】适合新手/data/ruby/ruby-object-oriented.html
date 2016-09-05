@@ -1,0 +1,552 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>Ruby 面向对象 | w3cschool菜鸟教程</title> <link rel='prev' title='HTML DOM MenuItem 对象' href="/jsref/dom-obj-menuitem.html"/> <link rel='next' title='Ruby 正则表达式' href="ruby-regular-expressions.html"/> <link rel='canonical' href='http://www.w3cschool.cc/ruby/ruby-object-oriented.html'/> <meta name="keywords" content="Ruby 面向对象"> <meta name="description" content="Ruby 面向对象 Ruby 是纯面向对象的语言，Ruby 中的一切都是以对象的形式出现。Ruby 中的每个值都是一个对象，即使是最原始的东西：字符串、数字，甚至连 true 和 false 都是对象。类本身也是一个对象，是 Class 类的一个实例。本章将向您讲解所有与 Ruby 面向对象相关的主要功能。 类用于指定对象的形式，它结合了数据表示法和方法，把数据整理成一个整齐的包。类中的数据和方法被称为类的成员。 Ruby 类定.."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>Ruby 教程</strong></h2> <a target="_top" title="Ruby 教程" href="ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html"> Ruby 教程 </a> <a target="_top" title="Ruby 简介" href="ruby-intro.html" href="http://www.w3cschool.cc/ruby/ruby-intro.html"> Ruby 简介 </a> <a target="_top" title="Ruby 环境" href="ruby-environment.html" href="http://www.w3cschool.cc/ruby/ruby-environment.html"> Ruby 环境 </a> <a target="_top" title="Ruby 安装 &#8211; Unix" href="ruby-installation-unix.html" href="http://www.w3cschool.cc/ruby/ruby-installation-unix.html"> Ruby 安装 - Unix </a> <a target="_top" title="Ruby 安装 &#8211; Windows" href="ruby-installation-windows.html" href="http://www.w3cschool.cc/ruby/ruby-installation-windows.html"> Ruby 安装 - Windows </a> <a target="_top" title="Ruby 命令行选项" href="ruby-command-line-options.html" href="http://www.w3cschool.cc/ruby/ruby-command-line-options.html"> Ruby 命令行选项 </a> <a target="_top" title="Ruby 环境变量" href="ruby-environment-variables.html" href="http://www.w3cschool.cc/ruby/ruby-environment-variables.html"> Ruby 环境变量 </a> <a target="_top" title="Ruby 语法" href="ruby-syntax.html" href="http://www.w3cschool.cc/ruby/ruby-syntax.html"> Ruby 语法 </a> <a target="_top" title="Ruby 类和对象" href="ruby-class.html" href="http://www.w3cschool.cc/ruby/ruby-class.html"> Ruby 类和对象 </a> <a target="_top" title="Ruby 类案例" href="ruby-class-case-study.html" href="http://www.w3cschool.cc/ruby/ruby-class-case-study.html"> Ruby 类案例 </a> <a target="_top" title="Ruby 变量" href="ruby-variable.html" href="http://www.w3cschool.cc/ruby/ruby-variable.html"> Ruby 变量 </a> <a target="_top" title="Ruby 运算符" href="ruby-operator.html" href="http://www.w3cschool.cc/ruby/ruby-operator.html"> Ruby 运算符 </a> <a target="_top" title="Ruby 注释" href="ruby-comment.html" href="http://www.w3cschool.cc/ruby/ruby-comment.html"> Ruby 注释 </a> <a target="_top" title="Ruby 判断" href="ruby-decision.html" href="http://www.w3cschool.cc/ruby/ruby-decision.html"> Ruby 判断 </a> <a target="_top" title="Ruby 循环" href="ruby-loop.html" href="http://www.w3cschool.cc/ruby/ruby-loop.html"> Ruby 循环 </a> <a target="_top" title="Ruby 方法" href="ruby-method.html" href="http://www.w3cschool.cc/ruby/ruby-method.html"> Ruby 方法 </a> <a target="_top" title="Ruby 块" href="ruby-block.html" href="http://www.w3cschool.cc/ruby/ruby-block.html"> Ruby 块 </a> <a target="_top" title="Ruby 模块（Module）" href="ruby-module.html" href="http://www.w3cschool.cc/ruby/ruby-module.html"> Ruby 模块（Module） </a> <a target="_top" title="Ruby 字符串（String）" href="ruby-string.html" href="http://www.w3cschool.cc/ruby/ruby-string.html"> Ruby 字符串（String） </a> <a target="_top" title="Ruby 数组（Array）" href="ruby-array.html" href="http://www.w3cschool.cc/ruby/ruby-array.html"> Ruby 数组（Array） </a> <a target="_top" title="Ruby 哈希（Hash）" href="ruby-hash.html" href="http://www.w3cschool.cc/ruby/ruby-hash.html"> Ruby 哈希（Hash） </a> <a target="_top" title="Ruby 日期 &#038; 时间（Date &#038; Time）" href="ruby-date-time.html" href="http://www.w3cschool.cc/ruby/ruby-date-time.html"> Ruby 日期 & 时间 </a> <a target="_top" title="Ruby 范围（Range）" href="ruby-range.html" href="http://www.w3cschool.cc/ruby/ruby-range.html"> Ruby 范围（Range） </a> <a target="_top" title="Ruby 迭代器" href="ruby-iterators.html" href="http://www.w3cschool.cc/ruby/ruby-iterators.html"> Ruby 迭代器 </a> <a target="_top" title="Ruby 文件的输入与输出" href="ruby-input-output.html" href="http://www.w3cschool.cc/ruby/ruby-input-output.html"> Ruby 文件的输入与输出 </a> <a target="_top" title="Ruby File 类和方法" href="ruby-file-methods.html" href="http://www.w3cschool.cc/ruby/ruby-file-methods.html"> Ruby File 类和方法 </a> <a target="_top" title="Ruby Dir 类和方法" href="ruby-dir-methods.html" href="http://www.w3cschool.cc/ruby/ruby-dir-methods.html"> Ruby Dir 类和方法 </a> <a target="_top" title="Ruby 异常" href="ruby-exceptions.html" href="http://www.w3cschool.cc/ruby/ruby-exceptions.html"> Ruby 异常 </a> <br><h2 class="left"><span class="left_h2">Ruby</span> 高级教程</h2> <a target="_top" title="Ruby 面向对象" href="ruby-object-oriented.html" href="http://www.w3cschool.cc/ruby/ruby-object-oriented.html"> Ruby 面向对象 </a> <a target="_top" title="Ruby 正则表达式" href="ruby-regular-expressions.html" href="http://www.w3cschool.cc/ruby/ruby-regular-expressions.html"> Ruby 正则表达式 </a> <a target="_top" title="Ruby 数据库访问 &#8211; DBI 教程" href="ruby-database-access.html" href="http://www.w3cschool.cc/ruby/ruby-database-access.html"> Ruby 数据库访问 - DBI 教程 </a> <a target="_top" title="Ruby CGI 编程" href="ruby-cgi.html" href="http://www.w3cschool.cc/ruby/ruby-cgi.html"> Ruby CGI 编程 </a> <a target="_top" title="Ruby CGI方法" href="ruby-cgi-methods.html" href="http://www.w3cschool.cc/ruby/ruby-cgi-methods.html"> Ruby CGI方法 </a> <a target="_top" title="Ruby CGI Cookies" href="ruby-cgi-cookies.html" href="http://www.w3cschool.cc/ruby/ruby-cgi-cookies.html"> Ruby CGI Cookies </a> <a target="_top" title="Ruby CGI Sessions" href="ruby-cgi-sessions.html" href="http://www.w3cschool.cc/ruby/ruby-cgi-sessions.html"> Ruby CGI Sessions </a> <a target="_top" title="Ruby 发送邮件 &#8211; SMTP" href="ruby-sending-email.html" href="http://www.w3cschool.cc/ruby/ruby-sending-email.html"> Ruby 发送邮件 - SMTP </a> <a target="_top" title="Ruby Socket 编程" href="ruby-socket-programming.html" href="http://www.w3cschool.cc/ruby/ruby-socket-programming.html"> Ruby Socket 编程 </a> <a target="_top" title="Ruby XML, XSLT 和 XPath 教程" href="ruby-xml-xslt-xpath.html" href="http://www.w3cschool.cc/ruby/ruby-xml-xslt-xpath.html"> Ruby XML, XSLT 和 XPath 教程 </a> <a target="_top" title="Ruby Web Services 应用 &#8211; SOAP4R" href="ruby-web-services.html" href="http://www.w3cschool.cc/ruby/ruby-web-services.html"> Ruby Web Services </a> <a target="_top" title="Ruby 多线程" href="ruby-multithreading.html" href="http://www.w3cschool.cc/ruby/ruby-multithreading.html"> Ruby 多线程 </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="ruby-exceptions.html" href="http://www.w3cschool.cc/ruby/ruby-exceptions.html" rel="prev"> Ruby 异常</a></div> <div class="next"><a href="ruby-regular-expressions.html" href="http://www.w3cschool.cc/ruby/ruby-regular-expressions.html" rel="next">Ruby 正则表达式</a> &raquo;</div> </div> <div id="content"> <h1>Ruby <span class="color_h1">面向对象</span></h1> <div class="tutintro"> <p>Ruby 是纯面向对象的语言，Ruby 中的一切都是以对象的形式出现。Ruby 中的每个值都是一个对象，即使是最原始的东西：字符串、数字，甚至连 true 和 false 都是对象。类本身也是一个<i>对象</i>，是 <i>Class</i> 类的一个实例。本章将向您讲解所有与 Ruby 面向对象相关的主要功能。</p> <p>类用于指定对象的形式，它结合了数据表示法和方法，把数据整理成一个整齐的包。类中的数据和方法被称为类的成员。</p> </div> <h2 class="tutheader">Ruby 类定义</h2> <p>当您定义一个类时，您实际是定义了一个数据类型的蓝图。这实际上并没有定义任何的数据，而是定义了类的名称意味着什么，也就是说，定义了类的对象将由什么组成，以及在该对象上能执行什么操作。</p> <p>类定义以关键字 <b>class</b> 开始，后跟<b>类名称</b>，最后以一个 <b>end</b> 进行分隔表示终止该类定义。例如，我们使用关键字 class 来定义 Box 类，如下所示：</p> <pre class="prettyprint">
+class Box
+   code
+end
+</pre> <p>按照惯例，名称必须以大写字母开头，如果包含多个单词，每个单词首字母大写，但此间没有分隔符（例如：CamelCase）。</p> <h2 class="tutheader">定义 Ruby 对象</h2> <p>类提供了对象的蓝图，所以基本上，对象是根据类进行创建的。我们使用 <b>new</b> 关键字声明类的对象。下面的语句声明了类 Box 的两个对象：</p> <pre class="prettyprint">
+box1 = Box.new
+box2 = Box.new
+</pre> <h2 class="tutheader">initialize 方法</h2> <p><b>initialize</b> 方法是一个标准的 Ruby 类方法，与其他面向对象编程语言中的 <b>constructor</b> 工作原理类似。当您想要在创建对象的同时初始化一些类变量，initialize 方法就派上用场了。该方法带有一系列参数，与其他 Ruby 方法一样，使用该方法时，必须在前面放置 <b>def</b> 关键字，如下所示：</p> <pre class="prettyprint">
+class Box
+   def initialize(w,h)
+      @width, @height = w, h
+   end
+end
+</pre> <h2 class="tutheader">实例变量</h2> <p><b>实例变量</b>是类属性，它们在使用类创建对象时就变成对象的属性。每个对象的属性是单独赋值的，和其他对象之间不共享值。在类的内部，是使用 @ 运算符访问这些属性，在类的外部，则是使用称为<b>访问器方法</b>的<b>公共</b>方法进行访问。下面我们以上面定义的类 <b>Box</b> 为实例，把 @width 和 @height 作为类 Box 的实例变量。</p> <pre class="prettyprint">
+class Box
+   def initialize(w,h)
+      # 给实例变量赋值
+      @width, @height = w, h
+   end
+end
+</pre> <h2 class="tutheader">访问器 & 设置器 方法</h2> <p>为了在类的外部使用变量，我们必须在<b>访问器方法</b>内部定义这些变量，这些访问器方法也被称为<b>获取器方法</b>。下面的实例演示了访问器方法的用法：</p> <pre class="prettyprint tryit">
+#!/usr/bin/ruby -w
+
+# 定义类
+class Box
+   # 构造器方法
+   def initialize(w,h)
+      @width, @height = w, h
+   end
+
+   # 访问器方法
+   def printWidth
+      @width
+   end
+
+   def printHeight
+      @height
+   end
+end
+
+# 创建对象
+box = Box.new(10, 20)
+
+# 使用访问器方法
+x = box.printWidth()
+y = box.printHeight()
+
+puts "Width of the box is : #{x}"
+puts "Height of the box is : #{y}"
+</pre> <p>当上面的代码执行时，它会产生以下结果：</p> <pre class="prettyprint">
+Width of the box is : 10
+Height of the box is : 20
+</pre> <p>与用于访问变量值的访问器方法类似，Ruby 提供了一种在类的外部设置变量值的方式，也就是所谓的<b>设置器方法</b>，定义如下：</p> <pre class="prettyprint tryit">
+#!/usr/bin/ruby -w
+
+# 定义类
+class Box
+   # 构造器方法
+   def initialize(w,h)
+      @width, @height = w, h
+   end
+
+   # 访问器方法
+   def getWidth
+      @width
+   end
+   def getHeight
+      @height
+   end
+
+   # 设置器方法
+   def setWidth=(value)
+      @width = value
+   end
+   def setHeight=(value)
+      @height = value
+   end
+end
+
+# 创建对象
+box = Box.new(10, 20)
+
+# 使用设置器方法
+box.setWidth = 30
+box.setHeight = 50
+
+# 使用访问器方法
+x = box.getWidth()
+y = box.getHeight()
+
+puts "Width of the box is : #{x}"
+puts "Height of the box is : #{y}"
+</pre> <p>当上面的代码执行时，它会产生以下结果：</p> <pre class="prettyprint">
+Width of the box is : 30
+Height of the box is : 50
+</pre> <h2 class="tutheader">实例方法</h2> <p><b>实例方法</b>的定义与其他方法的定义一样，都是使用 <b>def</b> 关键字，但它们只能通过类实例来使用，如下面实例所示。它们的功能不限于访问实例变量，也能按照您的需求做更多其他的任务。</p> <pre class="prettyprint tryit">
+#!/usr/bin/ruby -w
+
+# 定义类
+class Box
+   # constructor method
+   def initialize(w,h)
+      @width, @height = w, h
+   end
+   # 实例方法
+   def getArea
+      @width * @height
+   end
+end
+
+# 创建对象
+box = Box.new(10, 20)
+
+# 调用实例方法
+a = box.getArea()
+puts "Area of the box is : #{a}"
+</pre> <p>当上面的代码执行时，它会产生以下结果：</p> <pre class="prettyprint">
+Area of the box is : 200
+</pre> <h2 class="tutheader">类方法 & 类变量</h2> <p><b>类变量</b>是在类的所有实例中共享的变量。换句话说，类变量的实例可以被所有的对象实例访问。类变量以两个 @ 字符（@@）作为前缀，类变量必须在类定义中被初始化，如下面实例所示。</p> <p><b>类方法</b>使用 <b>def self.methodname()</b> 定义，类方法以 end 分隔符结尾。类方法可使用带有类名称的 <b>classname.methodname</b> 形式调用，如下面实例所示：</p> <pre class="prettyprint tryit">
+#!/usr/bin/ruby -w
+
+class Box
+   # 初始化类变量
+   @@count = 0
+   def initialize(w,h)
+      # 给实例变量赋值
+      @width, @height = w, h
+
+      @@count += 1
+   end
+
+   def self.printCount()
+      puts "Box count is : #@@count"
+   end
+end
+
+# 创建两个对象
+box1 = Box.new(10, 20)
+box2 = Box.new(30, 100)
+
+# 调用类方法来输出盒子计数
+Box.printCount()
+</pre> <p>当上面的代码执行时，它会产生以下结果：</p> <pre class="prettyprint">
+Box count is : 2
+</pre> <h2 class="tutheader">to_s 方法</h2> <p>您定义的任何类都有一个 <b>to_s</b> 实例方法来返回对象的字符串表示形式。下面是一个简单的实例，根据 width 和 height 表示 Box 对象：</p> <pre class="prettyprint tryit">
+#!/usr/bin/ruby -w
+
+class Box
+   # 构造器方法
+   def initialize(w,h)
+      @width, @height = w, h
+   end
+   # 定义 to_s 方法
+   def to_s
+      "(w:#@width,h:#@height)"  # 对象的字符串格式
+   end
+end
+
+# 创建对象
+box = Box.new(10, 20)
+
+# 自动调用 to_s 方法
+puts "String representation of box is : #{box}"
+</pre> <p>当上面的代码执行时，它会产生以下结果：</p> <pre class="prettyprint">
+String representation of box is : (w:10,h:20)
+</pre> <h2 class="tutheader">访问控制</h2> <p>Ruby 为您提供了三个级别的实例方法保护，分别是 <b>public、private 或 protected</b>。Ruby 不在实例和类变量上应用任何访问控制。</p> <ul class="list"> <li><b>Public 方法：</b> Public 方法可被任意对象调用。默认情况下，方法都是 public 的，除了 initialize 方法总是 private 的。</li> <li><b>Private 方法：</b> Private 方法不能从类外部访问或查看。只有类方法可以访问私有成员。</li> <li><b>Protected 方法：</b> Protected 方法只能被类及其子类的对象调用。访问也只能在类及其子类内部进行。</li> </ul> <p>下面是一个简单的实例，演示了这三种修饰符的语法：</p> <pre class="prettyprint tryit">
+#!/usr/bin/ruby -w
+
+# 定义类
+class Box
+   # 构造器方法
+   def initialize(w,h)
+      @width, @height = w, h
+   end
+
+   # 实例方法默认是 public 的
+   def getArea
+      getWidth() * getHeight
+   end
+
+   # 定义 private 的访问器方法
+   def getWidth
+      @width
+   end
+   def getHeight
+      @height
+   end
+   # make them private
+   private :getWidth, :getHeight
+
+   # 用于输出面积的实例方法
+   def printArea
+      @area = getWidth() * getHeight
+      puts "Big box area is : #@area"
+   end
+   # 让实例方法是 protected 的
+   protected :printArea
+end
+
+# 创建对象
+box = Box.new(10, 20)
+
+# 调用实例方法
+a = box.getArea()
+puts "Area of the box is : #{a}"
+
+# 尝试调用 protected 的实例方法
+box.printArea()
+</pre> <p>当上面的代码执行时，它会产生以下结果。在这里，第一种方法调用成功，但是第二方法会产生一个问题。</p> <pre class="prettyprint">
+Area of the box is : 200
+test.rb:42: protected method `printArea' called for #
+&lt;Box:0xb7f11280 @height=20, @width=10&gt; (NoMethodError)
+</pre> <h2 class="tutheader">类的继承</h2> <p>继承，是面向对象编程中最重要的概念之一。继承允许我们根据另一个类定义一个类，这样使得创建和维护应用程序变得更加容易。</p> <p>继承有助于重用代码和快速执行，不幸的是，Ruby 不支持多继承，但是 Ruby 支持 <b>mixins</b>。mixin 就像是多继承的一个特定实现，在多继承中，只有接口部分是可继承的。</p> <p>当创建类时，程序员可以直接指定新类继承自某个已有类的成员，这样就不用从头编写新的数据成员和成员函数。这个已有类被称为<b>基类或父类</b>，新类被称为<b>派生类或子类</b>。</p> <p>Ruby 也提供了子类化的概念，子类化即继承，下面的实例解释了这个概念。扩展一个类的语法非常简单。只要添加一个 &lt; 字符和父类的名称到类语句中即可。例如，下面定义了类 <i>BigBox</i> 是 <i>Box</i> 的子类：</p> <pre class="prettyprint tryit">
+#!/usr/bin/ruby -w
+
+# 定义类
+class Box
+   # 构造器方法
+   def initialize(w,h)
+      @width, @height = w, h
+   end
+   # 实例方法
+   def getArea
+      @width * @height
+   end
+end
+
+# 定义子类
+class BigBox &lt; Box
+
+   # 添加一个新的实例方法
+   def printArea
+      @area = @width * @height
+      puts "Big box area is : #@area"
+   end
+end
+
+# 创建对象
+box = BigBox.new(10, 20)
+
+# 输出面积
+box.printArea()
+</pre> <p>当上面的代码执行时，它会产生以下结果：</p> <pre class="prettyprint">
+Big box area is : 200
+</pre> <h2 class="tutheader">方法重载</h2> <p>虽然您可以在派生类中添加新的功能，但有时您可能想要改变已经在父类中定义的方法的行为。这时您可以保持方法名称不变，重载方法的功能即可，如下面实例所示：</p> <pre class="prettyprint tryit">
+#!/usr/bin/ruby -w
+
+# 定义类
+class Box
+   # 构造器方法
+   def initialize(w,h)
+      @width, @height = w, h
+   end
+   # 实例方法
+   def getArea
+      @width * @height
+   end
+end
+
+# 定义子类
+class BigBox &lt; Box
+
+   # 改变已有的 getArea 方法
+   def getArea
+      @area = @width * @height
+      puts "Big box area is : #@area"
+   end
+end
+
+# 创建对象
+box = BigBox.new(10, 20)
+
+# 使用重载的方法输出面积
+box.getArea()
+</pre> <h2 class="tutheader">运算符重载</h2> <p>我们希望使用 + 运算符执行两个 Box 对象的向量加法，使用 * 运算符来把 Box 的 width 和 height 相乘，使用一元运算符 - 对 Box 的 width 和 height 求反。下面是一个带有数学运算符定义的 Box 类版本：</p> <pre class="prettyprint">
+class Box
+  def initialize(w,h) # 初始化 width 和 height
+    @width,@height = w, h
+  end
+
+  def +(other)         # 定义 + 来执行向量加法
+    Box.new(@width + other.width, @height + other.height)
+  end
+
+  def -@               # 定义一元运算符 - 来对 width 和 height 求反
+    Box.new(-@width, -@height)
+  end
+
+  def *(scalar)        # 执行标量乘法
+    Box.new(@width*scalar, @height*scalar)
+  end
+end
+</pre> <h2 class="tutheader">冻结对象</h2> <p>有时候，我们想要防止对象被改变。在 Object 中，freeze 方法可实现这点，它能有效地把一个对象变成一个常量。任何对象都可以通过调用 <b>Object.freeze</b> 进行冻结。冻结对象不能被修改，也就是说，您不能改变它的实例变量。</p> <p>您可以使用 <b>Object.frozen?</b> 方法检查一个给定的对象是否已经被冻结。如果对象已被冻结，该方法将返回 true，否则返回一个 false 值。下面的实例解释了这个概念：</p> <pre class="prettyprint tryit">
+#!/usr/bin/ruby -w
+
+# 定义类
+class Box
+   # 构造器方法
+   def initialize(w,h)
+      @width, @height = w, h
+   end
+
+   # 访问器方法
+   def getWidth
+      @width
+   end
+   def getHeight
+      @height
+   end
+
+   # 设置器方法
+   def setWidth=(value)
+      @width = value
+   end
+   def setHeight=(value)
+      @height = value
+   end
+end
+
+# 创建对象
+box = Box.new(10, 20)
+
+# 让我们冻结该对象
+box.freeze
+if( box.frozen? )
+   puts "Box object is frozen object"
+else
+   puts "Box object is normal object"
+end
+
+# 现在尝试使用设置器方法
+box.setWidth = 30
+box.setHeight = 50
+
+# 使用访问器方法
+x = box.getWidth()
+y = box.getHeight()
+
+puts "Width of the box is : #{x}"
+puts "Height of the box is : #{y}"
+</pre> <p>当上面的代码执行时，它会产生以下结果：</p> <pre class="prettyprint">
+Box object is frozen object
+test.rb:20:in `setWidth=': can't modify frozen object (TypeError)
+        from test.rb:39
+</pre> <h2 class="tutheader">类常量</h2> <p>您可以在类的内部定义一个常量，通过把一个直接的数值或字符串值赋给一个变量来定义的，常量的定义不需要使用 @ 或 @@。按照惯例，常量的名称使用大写。</p> <p>一旦常量被定义，您就不能改变它的值，您可以在类的内部直接访问常量，就像是访问变量一样，但是如果您想要在类的外部访问常量，那么您必须使用 <b>classname::constant</b>，如下面实例所示。</p> <pre class="prettyprint tryit">
+#!/usr/bin/ruby -w
+
+# 定义类
+class Box
+   BOX_COMPANY = "TATA Inc"
+   BOXWEIGHT = 10
+   # 构造器方法
+   def initialize(w,h)
+      @width, @height = w, h
+   end
+   # 实例方法
+   def getArea
+      @width * @height
+   end
+end
+
+# 创建对象
+box = Box.new(10, 20)
+
+# 调用实例方法
+a = box.getArea()
+puts "Area of the box is : #{a}"
+puts Box::BOX_COMPANY
+puts "Box weight is: #{Box::BOXWEIGHT}"
+</pre> <p>当上面的代码执行时，它会产生以下结果：</p> <pre class="prettyprint">
+Area of the box is : 200
+TATA Inc
+Box weight is: 10
+</pre> <p>类常量可被继承，也可像实例方法一样被重载。</p> <h2 class="tutheader">使用 allocate 创建对象</h2> <p>可能有一种情况，您想要在不调用对象构造器 <b>initialize</b> 的情况下创建对象，即，使用 new 方法创建对象，在这种情况下，您可以调用 allocate 来创建一个未初始化的对象，如下面实例所示：</p> <pre class="prettyprint tryit">
+#!/usr/bin/ruby -w
+
+# 定义类
+class Box
+   attr_accessor :width, :height
+
+   # 构造器方法
+   def initialize(w,h)
+      @width, @height = w, h
+   end
+
+   # 实例方法
+   def getArea
+      @width * @height
+   end
+end
+
+# 使用 new 创建对象
+box1 = Box.new(10, 20)
+
+# 使用 allocate 创建两一个对象
+box2 = Box.allocate
+
+# 使用 box1 调用实例方法
+a = box1.getArea()
+puts "Area of the box is : #{a}"
+
+# 使用 box2 调用实例方法
+a = box2.getArea()
+puts "Area of the box is : #{a}"
+</pre> <p>当上面的代码执行时，它会产生以下结果：</p> <pre class="prettyprint">
+Area of the box is : 200
+test.rb:14: warning: instance variable @width not initialized
+test.rb:14: warning: instance variable @height not initialized
+test.rb:14:in `getArea': undefined method `*' 
+   for nil:NilClass (NoMethodError) from test.rb:29
+</pre> <h2 class="tutheader">类信息</h2> <p>如果类定义是可执行代码，这意味着，它们可在某个对象的上下文中执行，self 必须引用一些东西。让我们来看看下面的实例：.</p> <pre class="prettyprint tryit">
+#!/usr/bin/ruby -w
+
+class Box
+   # 输出类信息
+   puts "Type of self = #{self.type}"
+   puts "Name of self = #{self.name}"
+end
+</pre> <p>当上面的代码执行时，它会产生以下结果：</p> <pre class="prettyprint">
+Type of self = Class
+Name of self = Box
+</pre> <p>这意味着类定义可通过把该类作为当前对象来执行，同时也意味着元类和父类中的该方法在方法定义执行期间是可用的。</p> </div> <div class="chapter"> <div class="prev">&laquo; <a href="ruby-exceptions.html" href="http://www.w3cschool.cc/ruby/ruby-exceptions.html" rel="prev"> Ruby 异常</a></div> <div class="next"><a href="ruby-regular-expressions.html" href="http://www.w3cschool.cc/ruby/ruby-regular-expressions.html" rel="next">Ruby 正则表达式</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/ruby/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/ruby/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

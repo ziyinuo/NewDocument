@@ -1,0 +1,157 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>Node.js 安装配置 | w3cschool菜鸟教程</title> <link rel='prev' title='Node.js 教程' href="nodejs-tutorial.html"/> <link rel='next' title='Node.js 创建HTTP服务器' href="nodejs-http-server.html"/> <link rel='canonical' href='http://www.w3cschool.cc/nodejs/nodejs-install-setup.html'/> <meta name="keywords" content="Node.js 安装配置"> <meta name="description" content="Node.js 安装配置 本章节我们将向大家介绍在window和Linux上安装Node.js的方法。 本安装教程以Node.js v0.10.26 版本为例。 Node.js安装包及源码下载地址为：http://www.nodejs.org/download/。 根据不同平台系统选择你需要的Node.js安装包。 注意：Linux上安装Node.js需要安装Python 2.6 或 2.7 ，不建议安装Python 3.0以上.."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="../ruby/ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>Node.js 教程</strong></h2> <a target="_top" title="Node.js 教程" href="nodejs-tutorial.html" href="http://www.w3cschool.cc/nodejs/nodejs-tutorial.html"> Node.js 教程 </a> <a target="_top" title="Node.js 安装配置" href="nodejs-install-setup.html" href="http://www.w3cschool.cc/nodejs/nodejs-install-setup.html"> Node.js 安装配置 </a> <a target="_top" title="Node.js 创建HTTP服务器" href="nodejs-http-server.html" href="http://www.w3cschool.cc/nodejs/nodejs-http-server.html"> Node.js 创建HTTP服务器 </a> <a target="_top" title="Node.js 模块系统" href="nodejs-module-system.html" href="http://www.w3cschool.cc/nodejs/nodejs-module-system.html"> Node.js 模块系统 </a> <a target="_top" title="Node.js 事件" href="nodejs-event.html" href="http://www.w3cschool.cc/nodejs/nodejs-event.html"> Node.js 事件 </a> <a target="_top" title="Node.js 函数" href="nodejs-function.html" href="http://www.w3cschool.cc/nodejs/nodejs-function.html"> Node.js 函数 </a> <a target="_top" title="Node.js 路由" href="nodejs-router.html" href="http://www.w3cschool.cc/nodejs/nodejs-router.html"> Node.js 路由 </a> <a target="_top" title="Node.js 全局对象" href="nodejs-global-object.html" href="http://www.w3cschool.cc/nodejs/nodejs-global-object.html"> Node.js 全局对象 </a> <a target="_top" title="Node.js 常用工具util" href="nodejs-util.html" href="http://www.w3cschool.cc/nodejs/nodejs-util.html"> Node.js 常用工具util </a> <a target="_top" title="Node.js 文件系统" href="nodejs-fs.html" href="http://www.w3cschool.cc/nodejs/nodejs-fs.html"> Node.js 文件系统 </a> <a target="_top" title="Node.js GET/POST请求" href="node-js-get-post.html" href="http://www.w3cschool.cc/nodejs/node-js-get-post.html"> Node.js GET/POST请求 </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="nodejs-tutorial.html" href="http://www.w3cschool.cc/nodejs/nodejs-tutorial.html" rel="prev"> Node.js 教程</a></div> <div class="next"><a href="nodejs-http-server.html" href="http://www.w3cschool.cc/nodejs/nodejs-http-server.html" rel="next">Node.js 创建HTTP服务器</a> &raquo;</div> </div> <div id="content"> <h1>Node.js 安装配置</h1> <p>本章节我们将向大家介绍在window和Linux上安装Node.js的方法。 </p> <p>本安装教程以Node.js v0.10.26 版本为例。</p> <p>Node.js安装包及源码下载地址为：<a title="javascript:if(confirm('http://www.nodejs.org/download/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://www.nodejs.org/download/'" tppabs="http://www.nodejs.org/download/"/>http://www.nodejs.org/download/</a>。 <p><img src="../wp-content/uploads/2014/03/mongodb-update.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/nodejs_download.jpg" alt="nodejs_download" width="659" height="417" class="alignnone size-full wp-image-6549"/></p> </p>根据不同平台系统选择你需要的Node.js安装包。</p> <p><strong>注意：</strong>Linux上安装Node.js需要安装Python 2.6 或 2.7 ，不建议安装Python 3.0以上版本。</p> <hr> <h2>Windowv 上安装Node.js</h2><p> <strong>Windows 安装包(.msi)</strong>?:</p><p> 32 位安装包下载地址 : <a title="javascript:if(confirm('http://nodejs.org/dist/v0.10.26/mongodb-remove.html  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://nodejs.org/dist/v0.10.26/mongodb-remove.html'" tppabs="http://nodejs.org/dist/v0.10.26/node-v0.10.26-x86.msi">http://nodejs.org/dist/v0.10.26/node-v0.10.26-x86.msi</a></p><p> 64 位安装包下载地址 : <a title="javascript:if(confirm('http://nodejs.org/dist/v0.10.26/x64/mongodb-query.html  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://nodejs.org/dist/v0.10.26/x64/mongodb-query.html'" tppabs="http://nodejs.org/dist/v0.10.26/x64/node-v0.10.26-x64.msi">http://nodejs.org/dist/v0.10.26/x64/node-v0.10.26-x64.msi</a></p><p> 安装步骤：</p><p> 步骤 1 : 双击下载后的安装包 node-v0.10.26-x86.msi，如下所示：</p><p> <img class="attachment-full" alt="install-node-msi-version-on-windows-step1" src="../wp-content/uploads/2014/03/mongodb-operators.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-msi-version-on-windows-step1.png" width="414" height="308"/> </p><p> 步骤 2 : 点击以上的Run(运行)，将出现如下界面： </p><p> <img class="attachment-full" alt="install-node-msi-version-on-windows-step2" src="../wp-content/uploads/2014/03/mongodb-operators-type.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-msi-version-on-windows-step2.png" width="508" height="395"/> </p><p> 步骤 3 : 勾选接受协议选项，点击 next（下一步） 按钮 : </p><p> <img class="attachment-full" alt="install-node-msi-version-on-windows-step3" src="../wp-content/uploads/2014/03/mongodb-limit-skip.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-msi-version-on-windows-step3.png" width="511" height="400"/> </p><p> 步骤 4 : Node.js默认安装目录为 "C:\Program Files\nodejs\" , 你可以修改目录，并点击 next（下一步）： </p><p> <img class="attachment-full" alt="install-node-msi-version-on-windows-step4" src="../wp-content/uploads/2014/03/mongodb-sort.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-msi-version-on-windows-step4.png" width="509" height="400"/> </p><p> 步骤 5 : 点击树形图标来选择你需要的安装模式 , 然后点击下一步 next（下一步） </p><p> <img class="attachment-full" alt="install-node-msi-version-on-windows-step5" src="../wp-content/uploads/2014/03/mongodb-indexing.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-msi-version-on-windows-step5.png" width="506" height="399"/> </p><p> 步骤 6 :点击 Install（安装） 开始安装Node.js。你也可以点击 Back（返回）来修改先前的配置。 然后并点击 next（下一步）： </p><p> <img class="attachment-full" alt="install-node-msi-version-on-windows-step6" src="../wp-content/uploads/2014/03/mongodb-aggregate.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-msi-version-on-windows-step6.png" width="509" height="397"/> </p><p> 安装过程： </p><p> <img class="attachment-full" alt="install-node-msi-version-on-windows-step7" src="../wp-content/uploads/2014/03/mongodb-replication.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-msi-version-on-windows-step7.png" width="511" height="399"/></p><p> 点击 Finish（完成）按钮退出安装向导。 </p><p> <img class="attachment-full" alt="install-node-msi-version-on-windows-step8" src="../wp-content/uploads/2014/03/mongodb-sharding.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-msi-version-on-windows-step8.png" width="510" height="397"/></a> </p> <p>检测PATH环境变量是否配置了Node.js，点击开始=》运行=》输入"cmd" => 输入命令"path"，输出如下结果：</p> <pre>PATH=C:\oraclexe\app\oracle\product\10.2.0\server\bin;C:\Windows\system32;
+C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;
+c:\python32\python;C:\MinGW\bin;C:\Program Files\GTK2-Runtime\lib;
+C:\Program Files\MySQL\MySQL Server 5.5\bin;C:\Program Files\nodejs\;
+C:\Users\rg\AppData\Roaming\npm</pre> <p>我们可以看到环境变量中已经包含了C:\Program Files\nodejs\</p> <p>检查Node.js版本 </p><p> <img class="attachment-full" alt="node-version-test" src="../wp-content/uploads/2014/03/mongodb-mongodump-mongorerstore.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/node-version-test.png" width="240" height="62"/> </p><p> <strong>Windows 二进制文件 (.exe)安装</strong>?: </p><p> 32 位安装包下载地址 : <a title="javascript:if(confirm('http://nodejs.org/dist/v0.10.26/mongodb-mongostat-mongotop.html  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://nodejs.org/dist/v0.10.26/mongodb-mongostat-mongotop.html'" tppabs="http://nodejs.org/dist/v0.10.26/node.exe">http://nodejs.org/dist/v0.10.26/node.exe</a> </p><p> 64 位安装包下载地址 : <a title="javascript:if(confirm('http://nodejs.org/dist/v0.10.26/x64/mongodb-mongostat-mongotop.html  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://nodejs.org/dist/v0.10.26/x64/mongodb-mongostat-mongotop.html'" tppabs="http://nodejs.org/dist/v0.10.26/x64/node.exe">http://nodejs.org/dist/v0.10.26/x64/node.exe</a> </p><p> <strong>安装步骤</strong> </p><p> 步骤 1 : 双击下载的安装包 Node.exe ，将出现如下界面 : </p><p> <img class="attachment-full" alt="install-node-exe-on-windows-step1" src="../wp-content/uploads/2014/03/mongodb-java.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-exe-on-windows-step1.png" width="417" height="311"/> </p><p> 点击 Run（运行）按钮将出现命令行窗口： </p><p> <img class="attachment-full" alt="install-node-exe-on-windows-step21" src="../wp-content/uploads/2014/03/mongodb-php.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-exe-on-windows-step21.png" width="436" height="204"/> </p><p> 版本测试</p><p> 进入 node.exe 所在的目录，如下所示： </p><p> <img class="attachment-full" alt="node-version" src="../wp-content/uploads/2014/03/mongodb-relationships.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/node-version.png" width="243" height="62"/> </p><p> 如果你获得以上输出结果，说明你已经成功安装了Node.js。</p> <hr> <h2>Linux上安装 Node.js</h2> <h3>Ubuntu 安装</h3><p> 以下部分我们将介绍在Ubuntu Linux下安装 Node.js 。 其他的Linux系统，如Centos等类似如下安装步骤。 </p><p> 在 Github 上获取 Node.js 源码：</p><p> </p><p><img class="attachment-full" alt="install-node-msi-version-on-linux-step1" src="../wp-content/uploads/2014/03/mongodb-database-references.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-msi-version-on-linux-step1.png" width="722" height="52"/> <img class="attachment-full" alt="install-node-msi-version-on-linux-step2" src="../wp-content/uploads/2014/03/mongodb-covered-queries.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-msi-version-on-linux-step2.png" width="724" height="132"/> </p><p> 在完成下载后，将源码包名改为 'node'。</p><p> <img class="attachment-full" alt="install-node-msi-version-on-linux-step3" src="../wp-content/uploads/2014/03/mongodb-analyzing-queries.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-msi-version-on-linux-step3.png" width="723" height="188"/> </p><p> 修改目录权限：</p><p> <img class="attachment-full" alt="install-node-msi-version-on-linux-step4" src="../wp-content/uploads/2014/03/mongodb-atomic-operations.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-msi-version-on-linux-step4.png" width="724" height="38"/> </p><p> 使用 './configure' 创建编译文件。</p><p> <img class="attachment-full" alt="install-node-msi-version-on-linux-step5" src="../wp-content/uploads/2014/03/mongodb-advanced-indexing.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-msi-version-on-linux-step5.png" width="672" height="687"/> </p><p> 编译: make。</p><p> <img class="attachment-full" alt="install-node-msi-version-on-linux-step6" src="../wp-content/uploads/2014/03/mongodb-indexing-limitations.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-msi-version-on-linux-step6.png" width="1303" height="375"/> </p><p>完成安装: make install。 </p><p><img class="attachment-full" alt="install-node-msi-version-on-linux-step7" src="../wp-content/uploads/2014/03/mongodb-objectid.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-msi-version-on-linux-step7.png" width="452" height="44"/> </p><p>最后我们输入'node --version' 命令来查看Node.js是否安装成功。 </p><p><img class="attachment-full" alt="install-node-msi-version-on-linux-step8" src="../wp-content/uploads/2014/03/mongodb-map-reduce.html" href="http://www.w3cschool.cc/wp-content/uploads/2014/03/install-node-msi-version-on-linux-step8.png" width="431" height="73"/> </p> <h3>centOS下安装nodejs</h3> <p>1、下载源码，你需要在<a title="javascript:if(confirm('http://nodejs.org/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://nodejs.org/'" tppabs="http://nodejs.org/">http://nodejs.org/</a>下载最新的Nodejs版本，本文以v0.10.24为例:</p> <pre>
+cd /usr/local/src/
+wget http://nodejs.org/dist/v0.10.24/node-v0.10.24.tar.gz
+</pre> <p>2、解压源码 </p> <pre>
+tar zxvf node-v0.10.24.tar.gz
+</pre> <p>3、 编译安装 </p> <pre>
+cd node-v0.10.24
+./configure --prefix=/usr/local/node/0.10.24
+make
+make install
+</pre> <p>4、 配置NODE_HOME，进入profile编辑环境变量 </p> <pre>
+vim /etc/profile
+</pre> <p> 设置nodejs环境变量，在<i>export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL</i> 一行的上面添加如下内容:</p> <pre>
+#set for nodejs
+export NODE_HOME=/usr/local/node/0.10.24
+export PATH=$NODE_HOME/bin:$PATH
+</pre> <p> :wq保存并退出，编译/etc/profile 使配置生效 </p> <pre>
+source /etc/profile
+</pre> <p> 验证是否安装配置成功 </p> <pre>
+node -v
+</pre> <p> 输出 v0.10.24 表示配置成功 </p> <p> npm模块安装路径 </p> <pre>
+/usr/local/node/0.10.24/lib/node_modules/
+</pre> <p><strong>注：</strong>Nodejs 官网提供了编译好的Linux二进制包，你也可以下载下来直接应用。</p> </div> <div class="chapter"> <div class="prev">&laquo; <a href="nodejs-tutorial.html" href="http://www.w3cschool.cc/nodejs/nodejs-tutorial.html" rel="prev"> Node.js 教程</a></div> <div class="next"><a href="nodejs-http-server.html" href="http://www.w3cschool.cc/nodejs/nodejs-http-server.html" rel="next">Node.js 创建HTTP服务器</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/nodejs/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/nodejs/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

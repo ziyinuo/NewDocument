@@ -1,0 +1,184 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>Ruby 正则表达式 | w3cschool菜鸟教程</title> <link rel='prev' title='Ruby 面向对象' href="ruby-object-oriented.html"/> <link rel='next' title='Ruby 数据库访问 &#8211; DBI 教程' href="ruby-database-access.html"/> <link rel='canonical' href='http://www.w3cschool.cc/ruby/ruby-regular-expressions.html'/> <meta name="keywords" content="Ruby 正则表达式"> <meta name="description" content="Ruby 正则表达式 正则表达式是一种特殊序列的字符，它通过使用有专门语法的模式来匹配或查找其他字符串或字符串集合。 语法 正则表达式从字面上看是一种介于斜杠之间或介于跟在 %r 后的任意分隔符之间的模式，如下所示： /pattern/ /pattern/im # 可以指定选项 %r!/usr/local! # 一般的分隔的正则表达式 实例 #!/usr/bin/ruby line1 = &#039;Cats a.."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>Ruby 教程</strong></h2> <a target="_top" title="Ruby 教程" href="ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html"> Ruby 教程 </a> <a target="_top" title="Ruby 简介" href="ruby-intro.html" href="http://www.w3cschool.cc/ruby/ruby-intro.html"> Ruby 简介 </a> <a target="_top" title="Ruby 环境" href="ruby-environment.html" href="http://www.w3cschool.cc/ruby/ruby-environment.html"> Ruby 环境 </a> <a target="_top" title="Ruby 安装 &#8211; Unix" href="ruby-installation-unix.html" href="http://www.w3cschool.cc/ruby/ruby-installation-unix.html"> Ruby 安装 - Unix </a> <a target="_top" title="Ruby 安装 &#8211; Windows" href="ruby-installation-windows.html" href="http://www.w3cschool.cc/ruby/ruby-installation-windows.html"> Ruby 安装 - Windows </a> <a target="_top" title="Ruby 命令行选项" href="ruby-command-line-options.html" href="http://www.w3cschool.cc/ruby/ruby-command-line-options.html"> Ruby 命令行选项 </a> <a target="_top" title="Ruby 环境变量" href="ruby-environment-variables.html" href="http://www.w3cschool.cc/ruby/ruby-environment-variables.html"> Ruby 环境变量 </a> <a target="_top" title="Ruby 语法" href="ruby-syntax.html" href="http://www.w3cschool.cc/ruby/ruby-syntax.html"> Ruby 语法 </a> <a target="_top" title="Ruby 类和对象" href="ruby-class.html" href="http://www.w3cschool.cc/ruby/ruby-class.html"> Ruby 类和对象 </a> <a target="_top" title="Ruby 类案例" href="ruby-class-case-study.html" href="http://www.w3cschool.cc/ruby/ruby-class-case-study.html"> Ruby 类案例 </a> <a target="_top" title="Ruby 变量" href="ruby-variable.html" href="http://www.w3cschool.cc/ruby/ruby-variable.html"> Ruby 变量 </a> <a target="_top" title="Ruby 运算符" href="ruby-operator.html" href="http://www.w3cschool.cc/ruby/ruby-operator.html"> Ruby 运算符 </a> <a target="_top" title="Ruby 注释" href="ruby-comment.html" href="http://www.w3cschool.cc/ruby/ruby-comment.html"> Ruby 注释 </a> <a target="_top" title="Ruby 判断" href="ruby-decision.html" href="http://www.w3cschool.cc/ruby/ruby-decision.html"> Ruby 判断 </a> <a target="_top" title="Ruby 循环" href="ruby-loop.html" href="http://www.w3cschool.cc/ruby/ruby-loop.html"> Ruby 循环 </a> <a target="_top" title="Ruby 方法" href="ruby-method.html" href="http://www.w3cschool.cc/ruby/ruby-method.html"> Ruby 方法 </a> <a target="_top" title="Ruby 块" href="ruby-block.html" href="http://www.w3cschool.cc/ruby/ruby-block.html"> Ruby 块 </a> <a target="_top" title="Ruby 模块（Module）" href="ruby-module.html" href="http://www.w3cschool.cc/ruby/ruby-module.html"> Ruby 模块（Module） </a> <a target="_top" title="Ruby 字符串（String）" href="ruby-string.html" href="http://www.w3cschool.cc/ruby/ruby-string.html"> Ruby 字符串（String） </a> <a target="_top" title="Ruby 数组（Array）" href="ruby-array.html" href="http://www.w3cschool.cc/ruby/ruby-array.html"> Ruby 数组（Array） </a> <a target="_top" title="Ruby 哈希（Hash）" href="ruby-hash.html" href="http://www.w3cschool.cc/ruby/ruby-hash.html"> Ruby 哈希（Hash） </a> <a target="_top" title="Ruby 日期 &#038; 时间（Date &#038; Time）" href="ruby-date-time.html" href="http://www.w3cschool.cc/ruby/ruby-date-time.html"> Ruby 日期 & 时间 </a> <a target="_top" title="Ruby 范围（Range）" href="ruby-range.html" href="http://www.w3cschool.cc/ruby/ruby-range.html"> Ruby 范围（Range） </a> <a target="_top" title="Ruby 迭代器" href="ruby-iterators.html" href="http://www.w3cschool.cc/ruby/ruby-iterators.html"> Ruby 迭代器 </a> <a target="_top" title="Ruby 文件的输入与输出" href="ruby-input-output.html" href="http://www.w3cschool.cc/ruby/ruby-input-output.html"> Ruby 文件的输入与输出 </a> <a target="_top" title="Ruby File 类和方法" href="ruby-file-methods.html" href="http://www.w3cschool.cc/ruby/ruby-file-methods.html"> Ruby File 类和方法 </a> <a target="_top" title="Ruby Dir 类和方法" href="ruby-dir-methods.html" href="http://www.w3cschool.cc/ruby/ruby-dir-methods.html"> Ruby Dir 类和方法 </a> <a target="_top" title="Ruby 异常" href="ruby-exceptions.html" href="http://www.w3cschool.cc/ruby/ruby-exceptions.html"> Ruby 异常 </a> <br><h2 class="left"><span class="left_h2">Ruby</span> 高级教程</h2> <a target="_top" title="Ruby 面向对象" href="ruby-object-oriented.html" href="http://www.w3cschool.cc/ruby/ruby-object-oriented.html"> Ruby 面向对象 </a> <a target="_top" title="Ruby 正则表达式" href="ruby-regular-expressions.html" href="http://www.w3cschool.cc/ruby/ruby-regular-expressions.html"> Ruby 正则表达式 </a> <a target="_top" title="Ruby 数据库访问 &#8211; DBI 教程" href="ruby-database-access.html" href="http://www.w3cschool.cc/ruby/ruby-database-access.html"> Ruby 数据库访问 - DBI 教程 </a> <a target="_top" title="Ruby CGI 编程" href="ruby-cgi.html" href="http://www.w3cschool.cc/ruby/ruby-cgi.html"> Ruby CGI 编程 </a> <a target="_top" title="Ruby CGI方法" href="ruby-cgi-methods.html" href="http://www.w3cschool.cc/ruby/ruby-cgi-methods.html"> Ruby CGI方法 </a> <a target="_top" title="Ruby CGI Cookies" href="ruby-cgi-cookies.html" href="http://www.w3cschool.cc/ruby/ruby-cgi-cookies.html"> Ruby CGI Cookies </a> <a target="_top" title="Ruby CGI Sessions" href="ruby-cgi-sessions.html" href="http://www.w3cschool.cc/ruby/ruby-cgi-sessions.html"> Ruby CGI Sessions </a> <a target="_top" title="Ruby 发送邮件 &#8211; SMTP" href="ruby-sending-email.html" href="http://www.w3cschool.cc/ruby/ruby-sending-email.html"> Ruby 发送邮件 - SMTP </a> <a target="_top" title="Ruby Socket 编程" href="ruby-socket-programming.html" href="http://www.w3cschool.cc/ruby/ruby-socket-programming.html"> Ruby Socket 编程 </a> <a target="_top" title="Ruby XML, XSLT 和 XPath 教程" href="ruby-xml-xslt-xpath.html" href="http://www.w3cschool.cc/ruby/ruby-xml-xslt-xpath.html"> Ruby XML, XSLT 和 XPath 教程 </a> <a target="_top" title="Ruby Web Services 应用 &#8211; SOAP4R" href="ruby-web-services.html" href="http://www.w3cschool.cc/ruby/ruby-web-services.html"> Ruby Web Services </a> <a target="_top" title="Ruby 多线程" href="ruby-multithreading.html" href="http://www.w3cschool.cc/ruby/ruby-multithreading.html"> Ruby 多线程 </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="ruby-object-oriented.html" href="http://www.w3cschool.cc/ruby/ruby-object-oriented.html" rel="prev"> Ruby 面向对象</a></div> <div class="next"><a href="ruby-database-access.html" href="http://www.w3cschool.cc/ruby/ruby-database-access.html" rel="next">Ruby 数据库访问 &#8211; DBI 教程</a> &raquo;</div> </div> <div id="content"> <h1>Ruby <span class="color_h1">正则表达式</span></h1> <div class="tutintro"> <p><b>正则表达式</b>是一种特殊序列的字符，它通过使用有专门语法的模式来匹配或查找其他字符串或字符串集合。</p> </div> <h2 class="tutheader">语法</h2> <p><b>正则表达式</b>从字面上看是一种介于斜杠之间或介于跟在 %r 后的任意分隔符之间的模式，如下所示：</p> <pre class="prettyprint">
+/pattern/
+/pattern/im    # 可以指定选项
+%r!/usr/local! # 一般的分隔的正则表达式
+</pre> <h2 class="tutheader">实例</h2> <pre class="prettyprint tryit">
+#!/usr/bin/ruby
+
+line1 = "Cats are smarter than dogs";
+line2 = "Dogs also like meat";
+
+if ( line1 =~ /Cats(.*)/ )
+  puts "Line1 contains Cats"
+end
+if ( line2 =~ /Cats(.*)/ )
+  puts "Line2 contains  Dogs"
+end
+</pre> <p>这将产生以下结果：</p> <pre class="prettyprint">
+Line1 contains Cats
+</pre> <h2 class="tutheader">正则表达式修饰符</h2> <p>正则表达式从字面上看可能包含一个可选的修饰符，用于控制各方面的匹配。修饰符在第二个斜杠字符后指定，如上面实例所示。下标列出了 可能的修饰符：</p> <table class="reference notranslate"> <tr><th style="width:25%">修饰符</th><th>描述</th></tr> <tr><td>i</td><td>当匹配文本时忽略大小写。</td></tr> <tr><td>o</td><td>只执行一次 #{} 插值，正则表达式在第一次时就进行判断。</td></tr> <tr><td>x</td><td>忽略空格，允许在正则表达式中进行注释。</td></tr> <tr><td>m</td><td>匹配多行，把换行字符识别为正常字符。</td></tr> <tr><td>u,e,s,n</td><td>把正则表达式解释为 Unicode（UTF-8）、EUC、SJIS 或 ASCII。如果没有指定修饰符，则认为正则表达式使用的是源编码。</td></tr> </table> <p>就像字符串通过 %Q 进行分隔一样，Ruby 允许您以 %r 作为正则表达式的开头，后面跟着任意分隔符。这在描述包含大量您不想转义的斜杠字符时非常有用。</p> <pre class="prettyprint">
+# 下面匹配单个斜杠字符，不转义
+%r|/|               
+
+# Flag 字符可通过下面的语法进行匹配
+%r[&lt;/(.*)&gt;]i  
+</pre> <h2 class="tutheader">正则表达式模式</h2> <p>除了控制字符，<b>(+ ? . * ^ $ ( ) [ ] { } | \)</b>，其他所有字符都匹配本身。您可以通过在控制字符前放置一个反斜杠来对控制字符进行转义。</p> <p>下表列出了 Ruby 中可用的正则表达式语法。</p> <table class="reference notranslate"> <tr><th style="width:25%">模式</th><th>描述</th></tr> <tr><td>^</td><td>匹配行的开头。</td></tr> <tr><td>$</td><td>匹配行的结尾。</td></tr> <tr><td>.</td><td>匹配除了换行符以外的任意单字符。使用 m 选项时，它也可以匹配换行符。</td></tr> <tr><td>[...]</td><td>匹配在方括号中的任意单字符。</td></tr> <tr><td>[^...]</td><td>匹配不在方括号中的任意单字符。</td></tr> <tr><td>re*</td><td>匹配前面的子表达式零次或多次。</td></tr> <tr><td>re+</td><td>匹配前面的子表达式一次或多次。</td></tr> <tr><td>re?</td><td>匹配前面的子表达式零次或一次。</td></tr> <tr><td>re{ n}</td><td>匹配前面的子表达式 n 次。</td></tr> <tr><td>re{ n,}</td><td>匹配前面的子表达式 n 次或 n 次以上。</td></tr> <tr><td>re{ n, m}</td><td>匹配前面的子表达式至少 n 次至多 m 次。</td></tr> <tr><td>a| b</td><td>匹配 a 或 b。</td></tr> <tr><td>(re)</td><td>对正则表达式进行分组，并记住匹配文本。</td></tr> <tr><td>(?imx)</td><td>暂时打开正则表达式内的 i、 m 或 x 选项。如果在圆括号中，则只影响圆括号内的部分。</td></tr> <tr><td>(?-imx)</td><td>暂时关闭正则表达式内的 i、 m 或 x 选项。如果在圆括号中，则只影响圆括号内的部分。</td></tr> <tr><td>(?: re)</td><td>对正则表达式进行分组，但不记住匹配文本。</td></tr> <tr><td>(?imx: re)</td><td>暂时打开圆括号内的 i、 m 或 x 选项。</td></tr> <tr><td>(?-imx: re)</td><td>暂时关闭圆括号内的 i、 m 或 x 选项。</td></tr> <tr><td>(?#...)</td><td>注释。</td></tr> <tr><td>(?= re)</td><td>使用模式指定位置。没有范围。</td></tr> <tr><td>(?! re)</td><td>使用模式的否定指定位置。没有范围。</td></tr> <tr><td>(?&gt; re)</td><td>匹配无回溯的独立模式。</td></tr> <tr><td>\w</td><td>匹配单词字符。</td></tr> <tr><td>\W</td><td>匹配非单词字符。</td></tr> <tr><td>\s</td><td>匹配空白字符。等价于 [\t\n\r\f]。</td></tr> <tr><td>\S</td><td>匹配非空白字符。</td></tr> <tr><td>\d</td><td>匹配数字。等价于 [0-9]。</td></tr> <tr><td>\D</td><td>匹配非数字。</td></tr> <tr><td>\A</td><td>匹配字符串的开头。</td></tr> <tr><td>\Z</td><td>匹配字符串的结尾。如果存在换行符，则只匹配到换行符之前。</td></tr> <tr><td>\z</td><td>匹配字符串的结尾。</td></tr> <tr><td>\G</td><td>匹配最后一个匹配完成的点。</td></tr> <tr><td>\b</td><td>当在括号外时匹配单词边界，当在括号内时匹配退格键（0x08）。</td></tr> <tr><td>\B</td><td>匹配非单词边界。</td></tr> <tr><td>\n, \t, etc.</td><td>匹配换行符、回车符、制表符，等等。</td></tr> <tr><td>\1...\9</td><td>匹配第 n 个分组子表达式。</td></tr> <tr><td>\10</td><td>如果已匹配过，则匹配第 n 个分组子表达式。否则指向字符编码的八进制表示。</td></tr> </table> <br/> <h2 class="tutheader">正则表达式实例</h2> <h2>字符</h2> <table class="reference notranslate"> <tr><th style="width:25%">实例</th><th>描述</th></tr> <tr><td>/ruby/</td><td>匹配 "ruby"</td></tr> <tr><td>&yen;</td><td>匹配 Yen 符号。Ruby 1.9 和 Ruby 1.8 支持多个字符。</td></tr> </table> <h2>字符类</h2> <table class="reference notranslate"> <tr><th style="width:25%">实例</th><th>描述</th></tr> <tr><td>/[Rr]uby/ </td><td>匹配 "Ruby" 或 "ruby"</td></tr> <tr><td>/rub[ye]/ </td><td>匹配 "ruby" 或 "rube"</td></tr> <tr><td>/[aeiou]/</td><td>匹配任何一个小写元音字母</td></tr> <tr><td>/[0-9]/ </td><td>匹配任何一个数字，与 /[0123456789]/ 相同</td></tr> <tr><td>/[a-z]/</td><td>匹配任何一个小写 ASCII 字母</td></tr> <tr><td>/[A-Z]/</td><td>匹配任何一个大写 ASCII 字母</td></tr> <tr><td>/[a-zA-Z0-9]/</td><td>匹配任何一个括号内的字符</td></tr> <tr><td>/[^aeiou]/ </td><td>匹配任何一个非小写元音字母的字符</td></tr> <tr><td>/[^0-9]/</td><td>匹配任何一个非数字字符</td></tr> </table> <h2>特殊字符类</h2> <table class="reference notranslate"> <tr><th style="width:25%">实例</th><th>描述</th></tr> <tr><td>/./ </td><td>匹配除了换行符以外的其他任意字符</td></tr> <tr><td>/./m </td><td>在多行模式下，也能匹配换行符</td></tr> <tr><td>/\d/</td><td>匹配一个数字，等同于 /[0-9]/</td></tr> <tr><td>/\D/ </td><td>匹配一个非数字，等同于 /[^0-9]/</td></tr> <tr><td>/\s/</td><td>匹配一个空白字符，等同于 /[ \t\r\n\f]/</td></tr> <tr><td>/\S/ </td><td>匹配一个非空白字符，等同于 /[^ \t\r\n\f]/</td></tr> <tr><td>/\w/ </td><td>匹配一个单词字符，等同于 /[A-Za-z0-9_]/</td></tr> <tr><td>/\W/</td><td>匹配一个非单词字符，等同于 /[^A-Za-z0-9_]/</td></tr> </table> <h2>重复</h2> <table class="reference notranslate"> <tr><th style="width:25%">实例</th><th>描述</th></tr> <tr><td>/ruby?/ </td><td>匹配 "rub" 或 "ruby"。其中，y 是可有可无的。</td></tr> <tr><td>/ruby*/ </td><td>匹配 "rub" 加上 0 个或多个的 y。</td></tr> <tr><td>/ruby+/</td><td>匹配 "rub" 加上 1 个或多个的 y。</td></tr> <tr><td>/\d{3}/</td><td>刚好匹配 3 个数字。</td></tr> <tr><td>/\d{3,}/</td><td>匹配 3 个或多个数字。</td></tr> <tr><td>/\d{3,5}/</td><td>匹配 3 个、4 个或 5 个数字。</td></tr> </table> <h2>非贪婪重复</h2> <p>这会匹配最小次数的重复。</p> <table class="reference notranslate"> <tr><th style="width:25%">实例</th><th>描述</th></tr> <tr><td>/&lt;.*&gt;/</td><td>贪婪重复：匹配 "&lt;ruby&gt;perl&gt;"</td></tr> <tr><td>/&lt;.*?&gt;/ </td><td>非贪婪重复：匹配 "&lt;ruby&gt;perl&gt;" 中的 "&lt;ruby&gt;"</td></tr> </table> <h2>通过圆括号进行分组</h2> <table class="reference notranslate"> <tr><th style="width:25%">实例</th><th>描述</th></tr> <tr><td>/\D\d+/ </td><td>无分组： + 重复 \d</td></tr> <tr><td>/(\D\d)+/ </td><td>分组： + 重复 \D\d 对</td></tr> <tr><td>/([Rr]uby(, )?)+/</td><td>匹配 "Ruby"、"Ruby, ruby, ruby"，等等</td></tr> </table> <h2>反向引用</h2> <p>这会再次匹配之前匹配过的分组。</p> <table class="reference notranslate"> <tr><th style="width:25%">实例</th><th>描述</th></tr> <tr><td>/([Rr])uby&amp;\1ails/</td><td>匹配 ruby&amp;rails 或 Ruby&amp;Rails</td></tr> <tr><td> /(['"])(?:(?!\1).)*\1/</td><td>单引号或双引号字符串。\1 匹配第一个分组所匹配的字符，\2 匹配第二个分组所匹配的字符，依此类推。</td></tr> </table> <h2>替换</h2> <table class="reference notranslate"> <tr><th style="width:25%">实例</th><th>描述</th></tr> <tr><td>/ruby|rube/</td><td>匹配 "ruby" 或 "rube"</td></tr> <tr><td>/rub(y|le))/</td><td>匹配 "ruby" 或 "ruble"</td></tr> <tr><td>/ruby(!+|\?)/ </td><td>"ruby" 后跟一个或多个 ! 或者跟一个 ?</td></tr> </table> <h2>锚</h2> <p>这需要指定匹配位置。</p> <table class="reference notranslate"> <tr><th style="width:25%">实例</th><th>描述</th></tr> <tr><td>/^Ruby/</td><td>匹配以 "Ruby" 开头的字符串或行</td></tr> <tr><td>/Ruby$/ </td><td>匹配以 "Ruby" 结尾的字符串或行</td></tr> <tr><td>/\ARuby/ </td><td>匹配以 "Ruby" 开头的字符串</td></tr> <tr><td>/Ruby\Z/</td><td>匹配以 "Ruby" 结尾的字符串</td></tr> <tr><td>/\bRuby\b/</td><td>匹配单词边界的 "Ruby"</td></tr> <tr><td>/\brub\B/</td><td>\B 是非单词边界：匹配 "rube" 和 "ruby" 中的 "rub"，但不匹配单独的 "rub"</td></tr> <tr><td>/Ruby(?=!)/</td><td>如果 "Ruby" 后跟着一个感叹号，则匹配 "Ruby"</td></tr> <tr><td>/Ruby(?!!)/ </td><td>如果 "Ruby" 后没有跟着一个感叹号，则匹配 "Ruby"</td></tr> </table> <h2>圆括号的特殊语法</h2> <table class="reference notranslate"> <tr><th style="width:25%">实例</th><th>描述</th></tr> <tr><td>/R(?#comment)/ </td><td>匹配 "R"。所有剩余的字符都是注释。</td></tr> <tr><td>/R(?i)uby/ </td><td>当匹配 "uby" 时不区分大小写。</td></tr> <tr><td>/R(?i:uby)/ </td><td>与上面相同。</td></tr> <tr><td>/rub(?:y|le))/</td><td>只分组，不进行 \1 反向引用</td></tr> </table> <br/> <h2 class="tutheader">搜索和替换</h2> <p><b>sub</b> 和 <b>gsub</b> 及它们的替代变量 <b>sub!</b> 和 <b>gsub!</b> 是使用正则表达式时重要的字符串方法。</p> <p>所有这些方法都是使用正则表达式模式执行搜索与替换操作。<b>sub</b> 和 <b>sub!</b> 替换模式的第一次出现，<b>gsub</b> 和 <b>gsub!</b> 替换模式的所有出现。</p> <p><b>sub</b> 和 <b>gsub</b> 返回一个新的字符串，保持原始的字符串不被修改，而 <b>sub!</b> 和 <b>gsub!</b> 则会修改它们调用的字符串。</p> <p>下面是一个实例：</p> <pre class="prettyprint tryit">
+#!/usr/bin/ruby
+
+phone = "2004-959-559 #This is Phone Number"
+
+# 删除 Ruby 的注释
+phone = phone.sub!(/#.*$/, "")   
+puts "Phone Num : #{phone}"
+
+# 移除数字以外的其他字符
+phone = phone.gsub!(/\D/, "")    
+puts "Phone Num : #{phone}"
+</pre> <p>这将产生以下结果：</p> <pre class="prettyprint">
+Phone Num : 2004-959-559
+Phone Num : 2004959559
+</pre> <p>下面是另一个实例：</p> <pre class="prettyprint tryit">
+#!/usr/bin/ruby
+
+text = "rails are rails, really good Ruby on Rails"
+
+# 把所有的 "rails" 改为 "Rails"
+text.gsub!("rails", "Rails")
+
+# 把所有的单词 "Rails" 都改成首字母大写
+text.gsub!(/\brails\b/, "Rails")
+
+puts "#{text}"
+</pre> <p>这将产生以下结果：</p> <pre class="prettyprint">
+Rails are Rails, really good Ruby on Rails
+</pre> </div> <div class="chapter"> <div class="prev">&laquo; <a href="ruby-object-oriented.html" href="http://www.w3cschool.cc/ruby/ruby-object-oriented.html" rel="prev"> Ruby 面向对象</a></div> <div class="next"><a href="ruby-database-access.html" href="http://www.w3cschool.cc/ruby/ruby-database-access.html" rel="next">Ruby 数据库访问 &#8211; DBI 教程</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/ruby/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/ruby/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

@@ -1,0 +1,157 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>JSP HTTP 状态码 | w3cschool菜鸟教程</title> <link rel='prev' title='JSP 服务器响应' href="jsp-server-response.html"/> <link rel='next' title='JSP 表单处理' href="jsp-form-processing.html"/> <link rel='canonical' href='http://www.w3cschool.cc/jsp/jsp-http-status-codes.html'/> <meta name="keywords" content="JSP HTTP 状态码"> <meta name="description" content="JSP HTTP 状态码 HTTP请求与HTTP响应的格式相近，都有着如下结构： 以状态行+CRLF（回车换行）开始 零行或多行头模块+CRLF 一个空行，比如CRLF 可选的消息体比如文件，查询数据，查询输出 举例来说，一个服务器响应头看起来就像下面这样： HTTP/1.1 200 OK Content-Type: text/html Header2: ... ... .."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="../ruby/ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>JSP 教程</strong></h2> <a target="_top" title="JSP 教程" href="jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html"> JSP 教程 </a> <a target="_top" title="JSP 简介" href="jsp-intro.html" href="http://www.w3cschool.cc/jsp/jsp-intro.html"> JSP 简介 </a> <a target="_top" title="JSP 开发环境搭建" href="jsp-setup.html" href="http://www.w3cschool.cc/jsp/jsp-setup.html"> JSP 开发环境搭建 </a> <a target="_top" title="JSP 结构" href="jsp-architecture.html" href="http://www.w3cschool.cc/jsp/jsp-architecture.html"> JSP 结构 </a> <a target="_top" title="JSP 生命周期" href="jsp-life-cycle.html" href="http://www.w3cschool.cc/jsp/jsp-life-cycle.html"> JSP 生命周期 </a> <a target="_top" title="JSP 语法" href="jsp-syntax.html" href="http://www.w3cschool.cc/jsp/jsp-syntax.html"> JSP 语法 </a> <a target="_top" title="JSP 指令" href="jsp-directives.html" href="http://www.w3cschool.cc/jsp/jsp-directives.html"> JSP 指令 </a> <a target="_top" title="JSP 动作元素" href="jsp-actions.html" href="http://www.w3cschool.cc/jsp/jsp-actions.html"> JSP 动作元素 </a> <a target="_top" title="JSP 隐含对象" href="jsp-implicit-objects.html" href="http://www.w3cschool.cc/jsp/jsp-implicit-objects.html"> JSP 隐含对象 </a> <a target="_top" title="JSP 客户端请求" href="jsp-client-request.html" href="http://www.w3cschool.cc/jsp/jsp-client-request.html"> JSP 客户端请求 </a> <a target="_top" title="JSP 服务器响应" href="jsp-server-response.html" href="http://www.w3cschool.cc/jsp/jsp-server-response.html"> JSP 服务器响应 </a> <a target="_top" title="JSP HTTP 状态码" href="jsp-http-status-codes.html" href="http://www.w3cschool.cc/jsp/jsp-http-status-codes.html"> JSP HTTP 状态码 </a> <a target="_top" title="JSP 表单处理" href="jsp-form-processing.html" href="http://www.w3cschool.cc/jsp/jsp-form-processing.html"> JSP 表单处理 </a> <a target="_top" title="JSP 过滤器" href="jsp-writing-filters.html" href="http://www.w3cschool.cc/jsp/jsp-writing-filters.html"> JSP 过滤器 </a> <a target="_top" title="JSP Cookies 处理" href="jsp-cookies.html" href="http://www.w3cschool.cc/jsp/jsp-cookies.html"> JSP Cookies 处理 </a> <a target="_top" title="JSP Session" href="jsp-session.html" href="http://www.w3cschool.cc/jsp/jsp-session.html"> JSP Session </a> <a target="_top" title="JSP 文件上传" href="jsp-file-uploading.html" href="http://www.w3cschool.cc/jsp/jsp-file-uploading.html"> JSP 文件上传 </a> <a target="_top" title="JSP 日期处理" href="jsp-handling-date.html" href="http://www.w3cschool.cc/jsp/jsp-handling-date.html"> JSP 日期处理 </a> <a target="_top" title="JSP 页面重定向" href="jsp-page-redirect.html" href="http://www.w3cschool.cc/jsp/jsp-page-redirect.html"> JSP 页面重定向 </a> <a target="_top" title="JSP 点击量统计" href="jsp-hits-counter.html" href="http://www.w3cschool.cc/jsp/jsp-hits-counter.html"> JSP 点击量统计 </a> <a target="_top" title="JSP 自动刷新" href="jsp-auto-refresh.html" href="http://www.w3cschool.cc/jsp/jsp-auto-refresh.html"> JSP 自动刷新 </a> <a target="_top" title="JSP 发送邮件" href="jsp-sending-email.html" href="http://www.w3cschool.cc/jsp/jsp-sending-email.html"> JSP 发送邮件 </a> <br><h2 class="left"><span class="left_h2">JSP 高级教程</span></h2> <a target="_top" title="JSP 标准标签库（JSTL）" href="jsp-jstl.html" href="http://www.w3cschool.cc/jsp/jsp-jstl.html"> JSP 标准标签库（JSTL） </a> <a target="_top" title="JSP 连接数据库" href="jsp-database-access.html" href="http://www.w3cschool.cc/jsp/jsp-database-access.html"> JSP 连接数据库 </a> <a target="_top" title="JSP XML 数据处理" href="jsp-xml-data.html" href="http://www.w3cschool.cc/jsp/jsp-xml-data.html"> JSP XML 数据处理 </a> <a target="_top" title="JSP JavaBean" href="jsp-javabean.html" href="http://www.w3cschool.cc/jsp/jsp-javabean.html"> JSP JavaBean </a> <a target="_top" title="JSP 自定义标签" href="jsp-custom-tags.html" href="http://www.w3cschool.cc/jsp/jsp-custom-tags.html"> JSP 自定义标签 </a> <a target="_top" title="JSP 表达式语言" href="jsp-expression-language.html" href="http://www.w3cschool.cc/jsp/jsp-expression-language.html"> JSP 表达式语言 </a> <a target="_top" title="JSP 异常处理" href="jsp-exception-handling.html" href="http://www.w3cschool.cc/jsp/jsp-exception-handling.html"> JSP 异常处理 </a> <a target="_top" title="JSP 调试" href="jsp-debugging.html" href="http://www.w3cschool.cc/jsp/jsp-debugging.html"> JSP 调试 </a> <a target="_top" title="JSP 国际化" href="jsp-internationalization.html" href="http://www.w3cschool.cc/jsp/jsp-internationalization.html"> JSP 国际化 </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="jsp-server-response.html" href="http://www.w3cschool.cc/jsp/jsp-server-response.html" rel="prev"> JSP 服务器响应</a></div> <div class="next"><a href="jsp-form-processing.html" href="http://www.w3cschool.cc/jsp/jsp-form-processing.html" rel="next">JSP 表单处理</a> &raquo;</div> </div> <div id="content"> <h1>JSP <span class="color_h1">HTTP 状态码</span></h1> <p>HTTP请求与HTTP响应的格式相近，都有着如下结构：</p> <ul> <li> 以状态行+CRLF（回车换行）开始</li> <li> 零行或多行头模块+CRLF</li> <li> 一个空行，比如CRLF</li> <li> 可选的消息体比如文件，查询数据，查询输出</li> </ul> <p> 举例来说，一个服务器响应头看起来就像下面这样： </p> <pre>
+HTTP/1.1 200 OK
+Content-Type: text/html
+Header2: ...
+...
+HeaderN: ...
+  (Blank Line)
+&lt;!doctype ...&gt;
+&lt;html&gt;
+&lt;head&gt;...&lt;/head&gt;
+&lt;body&gt;
+...
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> </p> 状态行包含HTTP版本，一个状态码，和状态码相对应的短消息。</p> <p> 下表列出了可能会从服务器返回的HTTP状态码和与之关联的消息：</p> <table class="reference"> <tbody> <tr> <th> <strong>状态码</strong></th> <th> <strong>消息</strong></th> <th> <strong>描述</strong></th> </tr> <tr> <td style="width:52px;"> 100</td> <td style="width:115px;"> Continue</td> <td> 只有一部分请求被服务器接收，但只要没被服务器拒绝，客户端就会延续这个请求</td> </tr> <tr> <td style="width:52px;"> 101</td> <td style="width:115px;"> Switching Protocols</td> <td> 服务器交换机协议</td> </tr> <tr> <td style="width:52px;"> 200</td> <td style="width:115px;"> OK</td> <td> 请求被确认</td> </tr> <tr> <td style="width:52px;"> 201</td> <td style="width:115px;"> Created</td> <td> 请求时完整的，新的资源被创建</td> </tr> <tr> <td style="width:52px;"> 202</td> <td style="width:115px;"> Accepted</td> <td> 请求被接受，但未处理完</td> </tr> <tr> <td style="width:52px;"> 203</td> <td style="width:115px;"> Non-authoritative Information</td> <td> &nbsp;</td> </tr> <tr> <td style="width:52px;"> 204</td> <td style="width:115px;"> No Content</td> <td> &nbsp;</td> </tr> <tr> <td style="width:52px;"> 205</td> <td style="width:115px;"> Reset Content</td> <td> &nbsp;</td> </tr> <tr> <td style="width:52px;"> 206</td> <td style="width:115px;"> Partial Content</td> <td> &nbsp;</td> </tr> <tr> <td style="width:52px;"> 300</td> <td style="width:115px;"> Multiple Choices</td> <td> 一个超链接表，用户可以选择一个超链接并访问，最大支持5个超链接</td> </tr> <tr> <td style="width:52px;"> 301</td> <td style="width:115px;"> Moved Permanently</td> <td> 被请求的页面已经移动到了新的URL下</td> </tr> <tr> <td style="width:52px;"> 302</td> <td style="width:115px;"> Found</td> <td> 被请求的页面暂时性地移动到了新的URL下</td> </tr> <tr> <td style="width:52px;"> 303</td> <td style="width:115px;"> See Other</td> <td> 被请求的页面可以在一个不同的URL下找到</td> </tr> <tr> <td style="width:52px;"> 304</td> <td style="width:115px;"> Not Modified</td> <td> &nbsp;</td> </tr> <tr> <td style="width:52px;"> 305</td> <td style="width:115px;"> Use Proxy</td> <td> &nbsp;</td> </tr> <tr> <td style="width:52px;"> 306</td> <td style="width:115px;"> <em>Unused</em></td> <td> 已经不再使用此状态码，但状态码被保留</td> </tr> <tr> <td style="width:52px;"> 307</td> <td style="width:115px;"> Temporary Redirect</td> <td> 被请求的页面暂时性地移动到了新的URL下</td> </tr> <tr> <td style="width:52px;"> 400</td> <td style="width:115px;"> Bad Request</td> <td> 服务器无法识别请求</td> </tr> <tr> <td style="width:52px;"> 401</td> <td style="width:115px;"> Unauthorized</td> <td> 被请求的页面需要用户名和密码</td> </tr> <tr> <td style="width:52px;"> 402</td> <td style="width:115px;"> Payment Required</td> <td> <em>目前还不能使用此状态码</em></td> </tr> <tr> <td style="width:52px;"> 403</td> <td style="width:115px;"> Forbidden</td> <td> 禁止访问所请求的页面</td> </tr> <tr> <td style="width:52px;"> 404</td> <td style="width:115px;"> Not Found</td> <td> 服务器无法找到所请求的页面</td> </tr> <tr> <td style="width:52px;"> 405</td> <td style="width:115px;"> Method Not Allowed</td> <td> 请求中所指定的方法不被允许</td> </tr> <tr> <td style="width:52px;"> 406</td> <td style="width:115px;"> Not Acceptable</td> <td> 服务器只能创建一个客户端无法接受的响应</td> </tr> <tr> <td style="width:52px;"> 407</td> <td style="width:115px;"> Proxy Authentication Required</td> <td> 在请求被服务前必须认证一个代理服务器</td> </tr> <tr> <td style="width:52px;"> 408</td> <td style="width:115px;"> Request Timeout</td> <td> 请求时间超过了服务器所能等待的时间，连接被断开</td> </tr> <tr> <td style="width:52px;"> 409</td> <td style="width:115px;"> Conflict</td> <td> 请求有矛盾的地方</td> </tr> <tr> <td style="width:52px;"> 410</td> <td style="width:115px;"> Gone</td> <td> 被请求的页面不再可用</td> </tr> <tr> <td style="width:52px;"> 411</td> <td style="width:115px;"> Length Required</td> <td> "Content-Length"没有被定义，服务器拒绝接受请求</td> </tr> <tr> <td style="width:52px;"> 412</td> <td style="width:115px;"> Precondition Failed</td> <td> 请求的前提条件被服务器评估为false</td> </tr> <tr> <td style="width:52px;"> 413</td> <td style="width:115px;"> Request Entity Too Large</td> <td> 因为请求的实体太大，服务器拒绝接受请求</td> </tr> <tr> <td style="width:52px;"> 414</td> <td style="width:115px;"> Request-url Too Long</td> <td> 服务器拒绝接受请求，因为URL太长。多出现在把"POST"请求转换为"GET"请求时所附带的大量查询信息</td> </tr> <tr> <td style="width:52px;"> 415</td> <td style="width:115px;"> Unsupported Media Type</td> <td> 服务器拒绝接受请求，因为媒体类型不被支持</td> </tr> <tr> <td style="width:52px;"> 417</td> <td style="width:115px;"> Expectation Failed</td> <td> &nbsp;</td> </tr> <tr> <td style="width:52px;"> 500</td> <td style="width:115px;"> Internal Server Error</td> <td> 请求不完整，服务器遇见了出乎意料的状况</td> </tr> <tr> <td style="width:52px;"> 501</td> <td style="width:115px;"> Not Implemented</td> <td> 请求不完整，服务器不提供所需要的功能</td> </tr> <tr> <td style="width:52px;"> 502</td> <td style="width:115px;"> Bad Gateway</td> <td> 请求不完整，服务器从上游服务器接受了一个无效的响应</td> </tr> <tr> <td style="width:52px;"> 503</td> <td style="width:115px;"> Service Unavailable</td> <td> 请求不完整，服务器暂时重启或关闭</td> </tr> <tr> <td style="width:52px;"> 504</td> <td style="width:115px;"> Gateway Timeout</td> <td> 网关超时</td> </tr> <tr> <td style="width:52px;"> 505</td> <td style="width:115px;"> HTTP Version Not Supported</td> <td> 服务器不支持所指定的HTTP版本</td> </tr> </tbody> </table><hr> <h2> 设置HTTP状态码的方法</h2><p> 下表列出了HttpServletResponse 类中用来设置状态码的方法：</p> <table class="reference"> <tbody> <tr> <th> <strong>S.N.</strong></th> <th> <strong>方法</strong><strong> &amp; </strong><strong>描述</strong></th> </tr> <tr> <td> 1</td> <td> <strong>public void setStatus ( int statusCode )</strong></p> 此方法可以设置任意的状态码。如果您的响应包含一个特殊的状态码和一个文档，请确保在用PrintWriter返回任何内容前调用setStatus方法</td> </tr> <tr> <td> 2</td> <td> <strong>public void sendRedirect(String url)</strong></p> 此方法产生302响应，同时产生一个&nbsp;<em>Location</em>&nbsp;头告诉URL 一个新的文档</td> </tr> <tr> <td> 3</td> <td> <strong>public void sendError(int code, String message)</strong></p> 此方法将一个状态码(通常为 404)和一个短消息，自动插入HTML文档中并发回给客户端</td> </tr> </tbody> </table><hr> <h2> HTTP状态码程序示例</h2><p> 接下来的例子将会发送407错误码给浏览器，然后浏览器将会告诉您"Need authentication!!!"。</p> <pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Setting HTTP Status Code&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;%
+   // 设置错误代码，并说明原因
+   response.sendError(407, "Need authentication!!!" );
+%&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre><p> 访问以上JSP页面，将会得到以下结果：</p> <img src="../wp-content/uploads/2014/01/try.php-filename=trycss_list-style-type_all" href="http://www.w3cschool.cc/wp-content/uploads/2014/01/js_http_status_codes.jpg" alt="js_http_status_codes" width="563" height="162" class="alignnone size-full wp-image-5191"/> <p>您也可以试试使用其他的状态码，看会不会得到什么意想不到结果。</p> </div> <div class="chapter"> <div class="prev">&laquo; <a href="jsp-server-response.html" href="http://www.w3cschool.cc/jsp/jsp-server-response.html" rel="prev"> JSP 服务器响应</a></div> <div class="next"><a href="jsp-form-processing.html" href="http://www.w3cschool.cc/jsp/jsp-form-processing.html" rel="next">JSP 表单处理</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/jsp/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/jsp/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

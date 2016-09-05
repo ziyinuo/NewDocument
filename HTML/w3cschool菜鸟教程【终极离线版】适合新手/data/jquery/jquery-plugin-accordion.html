@@ -1,0 +1,511 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>jQuery Accordion | w3cschool菜鸟教程</title> <link rel='prev' title='jQuery Validate' href="jquery-plugin-validate.html"/> <link rel='next' title='jQuery Autocomplete' href="jquery-plugin-autocomplete.html"/> <link rel='canonical' href='http://www.w3cschool.cc/jquery/jquery-plugin-accordion.html'/> <meta name="keywords" content="jQuery Accordion"> <meta name="description" content="jQuery Accordion jQuery Accordion 插件用于创建折叠菜单。它通常与嵌套的列表、定义列表或嵌套的 div 一起使用。选项用于指定结构、激活的元素和定制的动画。 该插件现在是 jQuery UI 的一部分，独立的版本不会再更新了。目前版本是 1.6。 访问 jQuery Accordion 官网，下载 jQuery Accordion 插件。 如需了解更多有关 Accordion 的细节，请查看 API 文.."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="../php/php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="../ruby/ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>jQuery 教程</strong></h2> <a target="_top" title="jQuery 教程" href="jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html"> jQuery 教程 </a> <a target="_top" title="jQuery 简介" href="jquery-intro.html" href="http://www.w3cschool.cc/jquery/jquery-intro.html"> jQuery 简介 </a> <a target="_top" title="jQuery 安装" href="jquery-install.html" href="http://www.w3cschool.cc/jquery/jquery-install.html"> jQuery 安装 </a> <a target="_top" title="jQuery 语法" href="jquery-syntax.html" href="http://www.w3cschool.cc/jquery/jquery-syntax.html"> jQuery 语法 </a> <a target="_top" title="jQuery 选择器" href="jquery-selectors.html" href="http://www.w3cschool.cc/jquery/jquery-selectors.html"> jQuery 选择器 </a> <a target="_top" title="jQuery 事件" href="jquery-events.html" href="http://www.w3cschool.cc/jquery/jquery-events.html"> jQuery 事件 </a> <br><h2 class="left"><span class="left_h2">jQuery 效果</span></h2> <a target="_top" title="jQuery 效果 &#8211; 隐藏和显示" href="jquery-hide-show.html" href="http://www.w3cschool.cc/jquery/jquery-hide-show.html"> jQuery 隐藏/显示 </a> <a target="_top" title="jQuery 效果 &#8211; 淡入淡出" href="jquery-fade.html" href="http://www.w3cschool.cc/jquery/jquery-fade.html"> jQuery 淡入淡出 </a> <a target="_top" title="jQuery 效果 &#8211; 滑动" href="jquery-slide.html" href="http://www.w3cschool.cc/jquery/jquery-slide.html"> jQuery 滑动 </a> <a target="_top" title="jQuery 效果 &#8211; 动画" href="jquery-animate.html" href="http://www.w3cschool.cc/jquery/jquery-animate.html"> jQuery 动画 </a> <a target="_top" title="jQuery 效果 &#8211; 停止动画" href="jquery-stop.html" href="http://www.w3cschool.cc/jquery/jquery-stop.html"> jQuery 停止动画 </a> <a target="_top" title="jQuery Callback 方法" href="jquery-callback.html" href="http://www.w3cschool.cc/jquery/jquery-callback.html"> jQuery Callback </a> <a target="_top" title="jQuery Chaining" href="jquery-chaining.html" href="http://www.w3cschool.cc/jquery/jquery-chaining.html"> jQuery Chaining </a> <br><h2 class="left"><span class="left_h2">jQuery HTML</span></h2> <a target="_top" title="jQuery 获取内容和属性" href="jquery-dom-get.html" href="http://www.w3cschool.cc/jquery/jquery-dom-get.html"> jQuery 捕获 </a> <a target="_top" title="jQuery 设置内容和属性" href="jquery-dom-set.html" href="http://www.w3cschool.cc/jquery/jquery-dom-set.html"> jQuery 设置 </a> <a target="_top" title="jQuery 添加元素" href="jquery-dom-add.html" href="http://www.w3cschool.cc/jquery/jquery-dom-add.html"> jQuery 添加元素 </a> <a target="_top" title="jQuery 删除元素" href="jquery-dom-remove.html" href="http://www.w3cschool.cc/jquery/jquery-dom-remove.html"> jQuery 删除元素 </a> <a target="_top" title="jQuery 获取并设置 CSS 类" href="jquery-css-classes.html" href="http://www.w3cschool.cc/jquery/jquery-css-classes.html"> jQuery CSS 类 </a> <a target="_top" title="jQuery css() 方法" href="jquery-css.html" href="http://www.w3cschool.cc/jquery/jquery-css.html"> jQuery css() 方法 </a> <a target="_top" title="jQuery 尺寸" href="jquery-dimensions.html" href="http://www.w3cschool.cc/jquery/jquery-dimensions.html"> jQuery 尺寸 </a> <br><h2 class="left"><span class="left_h2">jQuery 遍历</span></h2> <a target="_top" title="jQuery 遍历" href="jquery-traversing.html" href="http://www.w3cschool.cc/jquery/jquery-traversing.html"> jQuery 遍历 </a> <a target="_top" title="jQuery 遍历 &#8211; 祖先" href="jquery-traversing-ancestors.html" href="http://www.w3cschool.cc/jquery/jquery-traversing-ancestors.html"> jQuery 祖先 </a> <a target="_top" title="jQuery 遍历 &#8211; 后代" href="jquery-traversing-descendants.html" href="http://www.w3cschool.cc/jquery/jquery-traversing-descendants.html"> jQuery 后代 </a> <a target="_top" title="jQuery 遍历 &#8211; 同胞(siblings)" href="jquery-traversing-siblings.html" href="http://www.w3cschool.cc/jquery/jquery-traversing-siblings.html"> jQuery 同胞 </a> <a target="_top" title="jQuery 遍历 &#8211; 过滤" href="jquery-traversing-filtering.html" href="http://www.w3cschool.cc/jquery/jquery-traversing-filtering.html"> jQuery 过滤 </a> <br><h2 class="left"><span class="left_h2">jQuery Ajax</span></h2> <a target="_top" title="jQuery AJAX 简介" href="jquery-ajax-intro.html" href="http://www.w3cschool.cc/jquery/jquery-ajax-intro.html"> jQuery AJAX 简介 </a> <a target="_top" title="jQuery &#8211; AJAX load() 方法" href="jquery-ajax-load.html" href="http://www.w3cschool.cc/jquery/jquery-ajax-load.html"> jQuery load() 方法 </a> <a target="_top" title="jQuery &#8211; AJAX get() 和 post() 方法" href="jquery-ajax-get-post.html" href="http://www.w3cschool.cc/jquery/jquery-ajax-get-post.html"> jQuery get()/post() 方法 </a> <br><h2 class="left"><span class="left_h2">jQuery 其他</span></h2> <a target="_top" title="jQuery noConflict() 方法" href="jquery-noconflict.html" href="http://www.w3cschool.cc/jquery/jquery-noconflict.html"> jQuery noConflict() 方法 </a> <a target="_blank" title="jQuery JSONP" href="../json/json-jsonp.html" href="http://www.w3cschool.cc/json/json-jsonp.html">jQuery JSONP </a> <br><h2 class="left"><span class="left_h2">jQuery 实例</span></h2> <a target="_top" title="jQuery 实例" href="jquery-examples.html" href="http://www.w3cschool.cc/jquery/jquery-examples.html"> jQuery 实例 </a> <br><h2 class="left"><span class="left_h2">jQuery 参考手册</span></h2> <a target="_top" title="jQuery 选择器" href="jquery-ref-selectors.html" href="http://www.w3cschool.cc/jquery/jquery-ref-selectors.html"> jQuery 选择器 </a> <a target="_top" title="jQuery 事件方法" href="jquery-ref-events.html" href="http://www.w3cschool.cc/jquery/jquery-ref-events.html"> jQuery 事件方法 </a> <a target="_top" title="jQuery 效果方法" href="jquery-ref-effects.html" href="http://www.w3cschool.cc/jquery/jquery-ref-effects.html"> jQuery 效果方法 </a> <a target="_top" title="jQuery HTML / CSS 方法" href="jquery-ref-html.html" href="http://www.w3cschool.cc/jquery/jquery-ref-html.html"> jQuery HTML / CSS 方法 </a> <a target="_top" title="jQuery 遍历方法" href="jquery-ref-traversing.html" href="http://www.w3cschool.cc/jquery/jquery-ref-traversing.html"> jQuery 遍历方法 </a> <a target="_top" title="jQuery AJAX 方法" href="jquery-ref-ajax.html" href="http://www.w3cschool.cc/jquery/jquery-ref-ajax.html"> jQuery AJAX 方法 </a> <a target="_top" title="jQuery 杂项方法" href="jquery-ref-misc.html" href="http://www.w3cschool.cc/jquery/jquery-ref-misc.html"> jQuery 杂项方法 </a> <a target="_top" title="jQuery 属性" href="jquery-ref-prop.html" href="http://www.w3cschool.cc/jquery/jquery-ref-prop.html"> jQuery 属性 </a> <br><h2 class="left">jQuery <span class="left_h2">插件</span></h2> <a target="_top" href="jquery-plugin-validate.html" href="http://www.w3cschool.cc/jquery/jquery-plugin-validate.html"> jQuery Validate </a> <a target="_top" href="jquery-plugin-accordion.html" href="http://www.w3cschool.cc/jquery/jquery-plugin-accordion.html"> jQuery Accordion</a> <a target="_top" href="jquery-plugin-autocomplete.html" href="http://www.w3cschool.cc/jquery/jquery-plugin-autocomplete.html"> jQuery Autocomplete</a> <a target="_top" href="jquery-plugin-message.html" href="http://www.w3cschool.cc/jquery/jquery-plugin-message.html"> jQuery Message</a> <a target="_top" href="jquery-plugin-password-validation.html" href="http://www.w3cschool.cc/jquery/jquery-plugin-password-validation.html"> jQuery 密码验证</a> <a target="_top" href="jquery-plugin-prettydate.html" href="http://www.w3cschool.cc/jquery/jquery-plugin-prettydate.html"> jQuery Prettydate</a> <a target="_top" href="jquery-plugin-tooltip.html" href="http://www.w3cschool.cc/jquery/jquery-plugin-tooltip.html"> jQuery Tooltip</a> <a target="_top" href="jquery-plugin-treeview.html" href="http://www.w3cschool.cc/jquery/jquery-plugin-treeview.html"> jQuery Treeview</a></div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="jquery-plugin-validate.html" href="http://www.w3cschool.cc/jquery/jquery-plugin-validate.html" rel="prev"> jQuery Validate</a></div> <div class="next"><a href="jquery-plugin-autocomplete.html" href="http://www.w3cschool.cc/jquery/jquery-plugin-autocomplete.html" rel="next">jQuery Autocomplete</a> &raquo;</div> </div> <div id="content"> <h1>jQuery <span class="color_h1">Accordion</span></h1> <div class="tutintro"> <p>jQuery Accordion 插件用于创建折叠菜单。它通常与嵌套的列表、定义列表或嵌套的 div 一起使用。选项用于指定结构、激活的元素和定制的动画。</p> <p>该插件现在是 <a href="../jqueryui/example-accordion.html" href="http://www.w3cschool.cc/jqueryui/example-accordion.html">jQuery UI</a> 的一部分，独立的版本不会再更新了。目前版本是 1.6。</p> <p>访问 <a title="javascript:if(confirm('http://bassistance.de/jquery-plugins/jquery-plugin-accordion/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://bassistance.de/jquery-plugins/jquery-plugin-accordion/'" tppabs="http://bassistance.de/jquery-plugins/jquery-plugin-accordion/" target="_blank">jQuery Accordion 官网</a>，下载 jQuery Accordion 插件。</p> <p>如需了解更多有关 Accordion 的细节，请查看 API 文档 <a title="javascript:if(confirm('http://www.w3cschool.cc/jqueryui/rdf-dublin.html  \n\n?????????? Teleport Ultra ????, ??? ??????, ???????????, ?????????????  \n\n?????????????????'))window.location='http://www.w3cschool.cc/jqueryui/rdf-dublin.html'" href="http://www.w3cschool.cc/jqueryui/api-accordion.html">折叠面板部件（Accordion Widget）</a>。</p> </div> <h2>实例演示</h2> <p>jQuery Accordion 插件演示。</p> <pre style="white-space: pre-wrap;">
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset=gbk&gt;
+	&lt;title&gt;jQuery Accordion 插件&lt;/title&gt;
+	
+	&lt;link rel="stylesheet" href="http://jquery.bassistance.de/accordion/demo/demo.css" /&gt;
+	
+	&lt;script type="text/javascript" src="http://jquery.bassistance.de/accordion/lib/jquery.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="http://jquery.bassistance.de/accordion/lib/chili-1.7.pack.js"&gt;&lt;/script&gt;
+	
+	&lt;script type="text/javascript" src="http://jquery.bassistance.de/accordion/lib/jquery.easing.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="http://jquery.bassistance.de/accordion/lib/jquery.dimensions.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="http://jquery.bassistance.de/accordion/jquery.accordion.js"&gt;&lt;/script&gt;
+
+	&lt;script type="text/javascript"&gt;
+	jQuery().ready(function(){
+		// 简单的 accordion
+		jQuery('#list1a').accordion();
+		jQuery('#list1b').accordion({
+			autoHeight: false
+		});
+		
+		// 第二个简单的 accordion，带有特殊标记
+		jQuery('#navigation').accordion({
+			active: false,
+			header: '.head',
+			navigation: true,
+			event: 'mouseover',
+			fillSpace: true,
+			animated: 'easeslide'
+		});
+		
+		// 定制 accordion
+		jQuery('#list2').accordion({
+			event: 'mouseover',
+			active: '.selected',
+			selectedClass: 'active',
+			animated: "bounceslide",
+			header: "dt"
+		}).bind("changeaccordion", function(event, ui) {
+			jQuery('&lt;div&gt;' + ui.oldHeader.text() + ' hidden, ' + ui.newHeader.text() + ' shown&lt;/div&gt;').appendTo('#log');
+		});
+		
+		// 第一个简单的 accordion，带有特殊标记
+		jQuery('#list3').accordion({
+			header: 'div.title',
+			active: false,
+			alwaysOpen: false,
+			animated: false,
+			autoHeight: false
+		});
+		
+		var wizard = $("#wizard").accordion({
+			header: '.title',
+			event: false
+		});
+		
+		var wizardButtons = $([]);
+		$("div.title", wizard).each(function(index) {
+			wizardButtons = wizardButtons.add($(this)
+			.next()
+			.children(":button")
+			.filter(".next, .previous")
+			.click(function() {
+				wizard.accordion("activate", index + ($(this).is(".next") ? 1 : -1))
+			}));
+		});
+		
+		// 绑定到 select 的 change 事件，控制第一个和第二个 accordion
+		// 与标签（tab）插件的 triggerTab() 类似，不带有额外的方法
+		var accordions = jQuery('#list1a, #list1b, #list2, #list3, #navigation, #wizard');
+		
+		jQuery('#switch select').change(function() {
+			accordions.accordion("activate", this.selectedIndex-1 );
+		});
+		jQuery('#close').click(function() {
+			accordions.accordion("activate", -1);
+		});
+		jQuery('#switch2').change(function() {
+			accordions.accordion("activate", this.value);
+		});
+		jQuery('#enable').click(function() {
+			accordions.accordion("enable");
+		});
+		jQuery('#disable').click(function() {
+			accordions.accordion("disable");
+		});
+		jQuery('#remove').click(function() {
+			accordions.accordion("destroy");
+			wizardButtons.unbind("click");
+		});
+	});
+	&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1 id="banner"&gt;jQuery Accordion 插件演示&lt;/h1&gt;
+&lt;div id="main"&gt;
+
+	&lt;fieldset&gt;
+		&lt;legend&gt;标准的，容器是一个 div，标题是 h3，内容是 div 和嵌套的 p。&lt;/legend&gt;	
+
+		&lt;h3&gt;代码&lt;/h3&gt;
+		&lt;code class="mix"&gt;jQuery('#list1a').accordion();
+jQuery('#list1b').accordion({
+	autoHeight: false
+});&lt;/code&gt;
+
+		&lt;div class="basic" style="float:left;"  id="list1a"&gt;
+			&lt;a&gt;There is one obvious advantage:&lt;/a&gt;
+			&lt;div&gt;
+				&lt;p&gt;
+					You've seen it coming!&lt;br/&gt;
+					Buy now and get nothing for free!&lt;br/&gt;
+					Well, at least no free beer. Perhaps a bear,&lt;br/&gt;
+					if you can afford it.
+				&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;a&gt;Now that you've got...&lt;/a&gt;
+			&lt;div&gt;
+				&lt;p&gt;
+					your bear, you have to admit it!&lt;br/&gt;
+					No, we aren't selling bears.
+				&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;a&gt;Rent one bear, ...&lt;/a&gt;
+			&lt;div&gt;
+				&lt;p&gt;
+					get two for three beer.
+				&lt;/p&gt;
+				&lt;p&gt;
+					And now, for something completely different.&lt;br/&gt;
+					And now, for something completely different.&lt;br/&gt;
+					And now, for something completely different.&lt;br/&gt;
+					And now, for something completely different.&lt;br/&gt;
+					And now, for something completely different.&lt;br/&gt;
+					And now, for something completely different.&lt;br/&gt;
+					And now, for something completely different.&lt;br/&gt;
+					And now, for something completely different.&lt;br/&gt;
+					Period.
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+			
+		&lt;div class="basic" style="float:left; margin-left: 2em;" id="list1b"&gt;
+			&lt;a&gt;There is one obvious advantage:&lt;/a&gt;
+			&lt;div&gt;
+				&lt;p&gt;
+					You've seen it coming!&lt;br/&gt;
+					Buy now and get nothing for free!&lt;br/&gt;
+					Well, at least no free beer. Perhaps a bear,&lt;br/&gt;
+					if you can afford it.
+				&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;a&gt;Now that you've got...&lt;/a&gt;
+			&lt;div&gt;
+				&lt;p&gt;
+					your bear, you have to admit it!&lt;br/&gt;
+					No, we aren't selling bears.
+				&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;a&gt;Rent one bear, ...&lt;/a&gt;
+			&lt;div&gt;
+				&lt;p&gt;
+					get two for three beer.
+				&lt;/p&gt;
+				&lt;p&gt;
+					And now, for something completely different.&lt;br/&gt;
+					And now, for something completely different.&lt;br/&gt;
+					And now, for something completely different.&lt;br/&gt;
+					And now, for something completely different.&lt;br/&gt;
+					And now, for something completely different.&lt;br/&gt;
+					And now, for something completely different.&lt;br/&gt;
+					And now, for something completely different.&lt;br/&gt;
+					And now, for something completely different.&lt;br/&gt;
+					Period.
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		
+	&lt;/fieldset&gt;
+		
+	&lt;fieldset&gt;
+		&lt;legend&gt;导航 - 带有锚和嵌套列表的无序列表。&lt;/legend&gt;
+		&lt;p&gt;基于位置的保存状态：激活的元素是基于 location.hash 被选中的：点击其中一个链接，重新载入页面。&lt;/p&gt;
+
+		&lt;h3&gt;代码&lt;/h3&gt;
+		&lt;code class="mix"&gt;jQuery('#navigation').accordion({
+	active: false,
+	header: '.head',
+	navigation: true,
+	event: 'mouseover',
+	fillSpace: true,
+	animated: 'easeslide'
+});&lt;/code&gt;
+		&lt;div  style="height:250px;margin-bottom:1em;"&gt;
+			&lt;ul id="navigation"&gt;
+				&lt;li&gt;
+					&lt;a class="head" href="?p=1.1.1"&gt;Guitar&lt;/a&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.1.1"&gt;Electric&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.1.2"&gt;Acoustic&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.1.3"&gt;Amps&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.1.4.1"&gt;Effects A&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.1.4.2"&gt;Effects B&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.1.4.3"&gt;Effects C&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.1.4.4"&gt;Effects D&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.1.5"&gt;Accessories&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt; 
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a class="head" href="?p=1.1.2"&gt;Bass&lt;/a&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.2.1"&gt;Electric&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.2.2"&gt;Acoustic&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.2.3"&gt;Amps&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.2.4"&gt;Effects&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.2.5"&gt;Accessories&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt; 
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a class="head" href="?p=1.1.3"&gt;Drums&lt;/a&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.3.2"&gt;Acoustic Drums&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.3.3"&gt;Electronic Drums&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.3.4"&gt;Cymbals&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.3.5"&gt;Hardware&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="?p=1.1.3.6"&gt;Accessories&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt; 
+				&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+		
+	&lt;/fieldset&gt;
+
+	&lt;fieldset&gt;
+		&lt;legend&gt;带有选项的，容器是一个定义列表，标题是 dt，内容是 dd。&lt;/legend&gt;
+		
+		&lt;h3&gt;代码&lt;/h3&gt;
+		&lt;code class="mix"&gt;jQuery('#list2').accordion({
+	event: 'mouseover',
+	active: '.selected',
+	selectedClass: 'active',
+	animated: "bounceslide",
+	header: "dt"
+}).bind("change.ui-accordion", function(event, ui) {
+	jQuery('&amp;lt;div&amp;gt;' + ui.oldHeader.text() + ' hidden, ' + ui.newHeader.text() + ' shown&amp;lt;/div&amp;gt;').appendTo('#log');
+});&lt;/code&gt;
+
+		&lt;dl id="list2"&gt;
+			&lt;dt class="red"&gt;Red&lt;/dt&gt;
+			&lt;dd&gt;
+				Fancy stuff about red thingies.
+			&lt;/dd&gt;
+			&lt;dt class="green selected"&gt;Green&lt;/dt&gt;
+			&lt;dd&gt;
+				Green! Green! Green!
+			&lt;/dd&gt;
+			&lt;dt class="blue"&gt;Blue&lt;/dt&gt;
+			&lt;dd&gt;
+				Cool kids are blue.
+			&lt;/dd&gt;
+		&lt;/dl&gt;
+		
+	&lt;/fieldset&gt;
+
+	&lt;fieldset&gt;
+		&lt;legend&gt;Divitus 结构，div 容器，div 标题（class="title"），div 内容，开始状态时没有打开的面板，面板可被完全关闭。&lt;/legend&gt;
+		
+		&lt;h3&gt;代码&lt;/h3&gt;
+		&lt;code class="mix"&gt;jQuery('#list3').accordion({
+	header: 'div.title',
+	active: false,
+	alwaysOpen: false,
+	animated: false,
+	autoHeight: false
+});&lt;/code&gt;
+
+		&lt;div id="list3"&gt;
+			&lt;div&gt;
+				&lt;div class="title"&gt;Tennis&lt;/div&gt;
+				&lt;div&gt;
+					One ball, two players. Lots of fun.
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div&gt;
+				&lt;div class="title"&gt;Soccer&lt;/div&gt;
+				&lt;div&gt;
+					One ball, 22 players. Lots of fun. &lt;a href="http://google.com"&gt;Go to google?&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div&gt;
+				&lt;div class="title"&gt;Baseball&lt;/div&gt;
+				&lt;div&gt;
+					&lt;p&gt;
+						Well, one ball, some guys running around, some guys hitting others with a stick.&lt;br/&gt;
+						Sounds like fun, doesn't it?
+					&lt;/p&gt;
+					&lt;p&gt;
+						Well, apart from the running part.
+						&lt;a href="#navigation"&gt;Navigation example&lt;/a&gt;
+					&lt;/p&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		
+	&lt;/fieldset&gt;
+	
+	&lt;fieldset&gt;
+		&lt;legend&gt;accordion 向导&lt;/legend&gt;
+		
+		&lt;h3&gt;代码&lt;/h3&gt;
+		&lt;code class="mix"&gt;var wizard = $("#wizard").accordion({
+	header: '.title',
+	event: false
+});
+
+$("div.title", wizard).each(function(index) {
+	$(this)
+	.next()
+	.children(":button")
+	.filter(".next, .previous")
+	.click(function() {
+		wizard.changeAccordion("activate", index + ($(this).is(".next") ? 1 : -1))
+	});
+});&lt;/code&gt;
+	
+		&lt;div id="wizard"&gt;
+			&lt;div&gt;
+				&lt;div class="title"&gt;标题 1&lt;/div&gt;
+				&lt;div&gt;
+					内容 1&lt;br/&gt;
+					&lt;input type="button" class="next" value="下一个" /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div&gt;
+		
+				&lt;div class="title"&gt;标题 2&lt;/div&gt;
+				&lt;div&gt;
+					内容 2&lt;br/&gt;
+					&lt;input type="button" class="previous" value="上一个"/&gt;
+					&lt;input type="button" class="next" value="下一个"/&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div&gt;
+				&lt;div class="title"&gt;标题 3&lt;/div&gt;
+		
+				&lt;div&gt;
+					内容 3&lt;br/&gt;
+					&lt;input type="button" class="previous" value="上一个"/&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		
+		
+		&lt;/div&gt;
+		&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+	&lt;/fieldset&gt;
+	
+	&lt;div id="switch" style="background-color:grey;padding:10px;"&gt;
+		&lt;select&gt;
+			&lt;option&gt;切换到...&lt;/option&gt;
+			&lt;option value="1"&gt;1&lt;/option&gt;
+			&lt;option value="2"&gt;2&lt;/option&gt;
+			&lt;option value="3"&gt;3&lt;/option&gt;
+		&lt;/select&gt;
+		&lt;button id="close"&gt;关闭全部&lt;/button&gt;
+		&lt;button id="enable"&gt;启用全部&lt;/button&gt;
+		&lt;button id="disable"&gt;禁用全部&lt;/button&gt;
+		&lt;button id="remove"&gt;移除全部&lt;/button&gt;
+		&lt;br /&gt;通过选择器激活，例如 ':first' 或 ':eq(1)': &lt;input id="switch2" /&gt;
+	&lt;/div&gt;
+
+	&lt;div id="log" style="background-color:grey;padding:10px;"&gt;&lt;div&gt;&lt;strong&gt;Log&lt;/strong&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <p><a title="javascript:if(confirm('http://www.w3csol.cc/try/rdf-owl.html  \n\n?????????? Teleport Ultra ????, ??? ????????????????????????????????????·???????(?????? Teleport Ultra ??????????; ?μ????????, ?????????)  \n\n?????????????????'))window.location='http://www.w3csol.cc/try/rdf-owl.html'" href="http://www.w3cschool.cc/try/tryit.php?filename=jquery-plugin-accordion" target="_blank"><button class="btn btn-info btn-lg">查看演示</button></a></p> </div> <div class="chapter"> <div class="prev">&laquo; <a href="jquery-plugin-validate.html" href="http://www.w3cschool.cc/jquery/jquery-plugin-validate.html" rel="prev"> jQuery Validate</a></div> <div class="next"><a href="jquery-plugin-autocomplete.html" href="http://www.w3cschool.cc/jquery/jquery-plugin-autocomplete.html" rel="next">jQuery Autocomplete</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/jquery/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/jquery/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+

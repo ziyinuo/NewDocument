@@ -1,0 +1,475 @@
+<!Doctype html> <html xmlns=http://www.w3.org/1999/xhtml> <head> <meta charset=gbk> <title>PHP 命名空间(namespace) | w3cschool菜鸟教程</title> <link rel='prev' title='HTML DOM Style wordWrap 属性' href="/jsref/prop-style-wordwrap.html"/> <link rel='next' title='CSS align-content 属性' href="/cssref/css3-pr-align-content.html"/> <link rel='canonical' href='http://www.w3cschool.cc/php/php-namespace.html'/> <meta name="keywords" content="PHP 命名空间(namespace)"> <meta name="description" content="PHP 命名空间(namespace) PHP 命名空间(namespace)是在PHP 5.3中加入的，如果你学过C#和Java，那命名空间就不算什么新事物。 不过在PHP当中还是有着相当重要的意义。 PHP 命名空间可以解决以下两类问题： 用户编写的代码与PHP内部的类/函数/常量或第三方类/函数/常量之间的名字冲突。 为很长的标识符名称(通常是为了缓解第一类问题而定义的)创建一个别名（或简短）的名称，提高源代码的可.."> <!--[if lt IE 7]> <style> #leftcolumn{margin-left:0} </style> <![endif]--> <link rel="shortcut icon" href="../favicon.ico" href="http://www.w3cschool.cc/favicon.ico" mce_href="/favicon.ico" type="image/x-icon"> <!-- src="../../libs.baidu.com/jquery/1.8.1/jquery.min.js" tppabs="http://libs.baidu.com/jquery/1.8.1/jquery.min.js">--> <link rel="stylesheet" type="text/css" href="../wp-content/themes/w3cschool.cc/assets/css/stdtheme.css-1.04.css" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/css/stdtheme.css?1.04"> </head> <body> <div id="top"> <div style="height:78px;"> <div id="topLogo"> <a id="top"></a> <a href="../index.htm" href="http://www.w3cschool.cc/" title="w3cschool菜鸟教程"><img width="336" height="69" src="../wp-content/themes/w3cschool.cc/assets/img/logo.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo.png" alt="W3CSchool.cc" style="border:0;margin-top:5px;"/></a> </div> <div id="searchTranslate"> <div id="searchText">Search w3cschool.cc:</div> <div id="googleSearch"> <form name="cse" id="searchbox_demo" action="http://wen.lu/search" target="_blank"> <input type="hidden" name="cref"/> <input type="hidden" name="ie" value="utf-8"/> <input type="hidden" name="hl"/> <input type="hidden" name="sitesearch" value="w3cschool.cc"> <input name="as_q" type="text" size="20"/> <input type="submit" name="sa" value="搜索"/> </form> </div> </div> </div> <div id="topnav"> <div id="topnavTut"> <a href="../index.htm" href="http://www.w3cschool.cc/">首页</a> <a href="../html/html-tutorial.html" href="http://www.w3cschool.cc/html/html-tutorial.html">HTML</a> <a href="../css/css-tutorial.html" href="http://www.w3cschool.cc/css/css-tutorial.html">CSS</a> <a href="../js/js-tutorial.html" href="http://www.w3cschool.cc/js/js-tutorial.html">JavaScript</a> <a href="../jquery/jquery-tutorial.html" href="http://www.w3cschool.cc/jquery/jquery-tutorial.html">jQuery</a> <a href="../jqueryui/jqueryui-tutorial.html" href="http://www.w3cschool.cc/jqueryui/jqueryui-tutorial.html">jQueryUI</a> <a href="../bootstrap/bootstrap-tutorial.html" href="http://www.w3cschool.cc/bootstrap/bootstrap-tutorial.html">Bootstrap</a> <a href="../jquerymobile/jquerymobile-tutorial.html" href="http://www.w3cschool.cc/jquerymobile/jquerymobile-tutorial.html">jMobile</a> <a href="../jeasyui/jqueryeasyui-tutorial.html" href="http://www.w3cschool.cc/jeasyui/jqueryeasyui-tutorial.html">EasyUI</a> <a href="../xml/xml-tutorial.html" href="http://www.w3cschool.cc/xml/xml-tutorial.html">XML</a> <a href="../sql/sql-tutorial.html" href="http://www.w3cschool.cc/sql/sql-tutorial.html">SQL</a> <a href="../mysql/mysql-tutorial.html" href="http://www.w3cschool.cc/mysql/mysql-tutorial.html">MySQL</a> <a href="../sqlite/sqlite-tutorial.html" href="http://www.w3cschool.cc/sqlite/sqlite-tutorial.html">SQLite</a> <a href="php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html">PHP</a> <a href="../csharp/csharp-tutorial.html" href="http://www.w3cschool.cc/csharp/csharp-tutorial.html">C#</a> <a href="../python/python-tutorial.html" href="http://www.w3cschool.cc/python/python-tutorial.html">Python</a> <a href="../java/java-tutorial.html" href="http://www.w3cschool.cc/java/java-tutorial.html">Java</a> <a href="../jsp/jsp-tutorial.html" href="http://www.w3cschool.cc/jsp/jsp-tutorial.html">JSP</a> <a href="../ruby/ruby-tutorial.html" href="http://www.w3cschool.cc/ruby/ruby-tutorial.html">Ruby</a> <a href="../css-radius.htm" href="http://www.w3cschool.cc/css-radius">前端工具</a> <a href="../sitemap.htm" href="http://www.w3cschool.cc/sitemap">更多……</a> </div> <div id="topnavAbout"> </div> </div> <div id="page"> <div style="clear:both;"></div> <div id="leftcolumn"> <h2 class="left"><strong>PHP 教程</strong></h2> <a target="_top" title="PHP 教程" href="php-tutorial.html" href="http://www.w3cschool.cc/php/php-tutorial.html"> PHP 教程 </a> <a target="_top" title="PHP 简介" href="php-intro.html" href="http://www.w3cschool.cc/php/php-intro.html"> PHP 简介 </a> <a target="_top" title="PHP 安装" href="php-install.html" href="http://www.w3cschool.cc/php/php-install.html"> PHP 安装 </a> <a target="_top" title="PHP 语法" href="php-syntax.html" href="http://www.w3cschool.cc/php/php-syntax.html"> PHP 语法 </a> <a target="_top" title="PHP 变量" href="php-variables.html" href="http://www.w3cschool.cc/php/php-variables.html"> PHP 变量 </a> <a target="_top" title="PHP echo/print 语句" href="php-echo-print.html" href="http://www.w3cschool.cc/php/php-echo-print.html"> PHP echo/print </a> <a target="_top" title="PHP 数据类型" href="php-datatypes.html" href="http://www.w3cschool.cc/php/php-datatypes.html"> PHP 数据类型 </a> <a target="_top" title="PHP 常量" href="php-constants.html" href="http://www.w3cschool.cc/php/php-constants.html"> PHP 常量 </a> <a target="_top" title="PHP 字符串变量" href="php-string.html" href="http://www.w3cschool.cc/php/php-string.html"> PHP 字符串 </a> <a target="_top" title="PHP 运算符" href="php-operators.html" href="http://www.w3cschool.cc/php/php-operators.html"> PHP 运算符 </a> <a target="_top" title="PHP If&#8230;Else 语句" href="php-if-else.html" href="http://www.w3cschool.cc/php/php-if-else.html"> PHP If...Else </a> <a target="_top" title="PHP Switch 语句" href="php-switch.html" href="http://www.w3cschool.cc/php/php-switch.html"> PHP Switch </a> <a target="_top" title="PHP 数组" href="php-arrays.html" href="http://www.w3cschool.cc/php/php-arrays.html"> PHP 数组 </a> <a target="_top" title="PHP 数组排序" href="php-arrays-sort.html" href="http://www.w3cschool.cc/php/php-arrays-sort.html"> PHP 数组排序 </a> <a target="_top" href="php-superglobals.html" href="http://www.w3cschool.cc/php/php-superglobals.html"> PHP 超级全局变量 </a> <a target="_top" title="PHP While 循环" href="php-looping.html" href="http://www.w3cschool.cc/php/php-looping.html"> PHP While 循环 </a> <a target="_top" title="PHP For 循环" href="php-looping-for.html" href="http://www.w3cschool.cc/php/php-looping-for.html"> PHP For 循环 </a> <a target="_top" title="PHP 函数" href="php-functions.html" href="http://www.w3cschool.cc/php/php-functions.html"> PHP 函数 </a> <a target="_top" href="php-magic-constant.html" href="http://www.w3cschool.cc/php/php-magic-constant.html"> PHP 魔术变量 </a> <a target="_top" href="php-namespace.html" href="http://www.w3cschool.cc/php/php-namespace.html"> PHP 命名空间</a> <br><h2 class="left"><span class="left_h2">PHP</span> 表单</h2> <a target="_top" title="PHP 表单" href="php-forms.html" href="http://www.w3cschool.cc/php/php-forms.html"> PHP 表单 </a> <a target="_top" href="php-form-validation.html" href="http://www.w3cschool.cc/php/php-form-validation.html"> PHP 表单验证</a> <a target="_top" href="php-form-required.html" href="http://www.w3cschool.cc/php/php-form-required.html"> PHP表单 - 必需字段</a> <a target="_top" href="php-form-url-email.html" href="http://www.w3cschool.cc/php/php-form-url-email.html"> PHP表单 - 验证邮件和URL</a> <a target="_top" href="php-form-complete.html" href="http://www.w3cschool.cc/php/php-form-complete.html"> PHP 完整表单实例</a> <a target="_top" title="PHP $_GET 变量" href="php-get.html" href="http://www.w3cschool.cc/php/php-get.html"> PHP $_GET 变量 </a> <a target="_top" title="PHP $_POST 变量" href="php-post.html" href="http://www.w3cschool.cc/php/php-post.html"> PHP $_POST 变量 </a> <br><h2 class="left"><span class="left_h2">PHP</span> 高级教程</h2> <a target="_top" title="PHP 多维数组" href="php-arrays-multi.html" href="http://www.w3cschool.cc/php/php-arrays-multi.html"> PHP 多维数组 </a> <a target="_top" title="PHP Date() 函数" href="php-date.html" href="http://www.w3cschool.cc/php/php-date.html"> PHP 日期 </a> <a target="_top" title="PHP include 和 require" href="php-includes.html" href="http://www.w3cschool.cc/php/php-includes.html"> PHP 包含 </a> <a target="_top" title="PHP 文件" href="php-file.html" href="http://www.w3cschool.cc/php/php-file.html"> PHP 文件 </a> <a target="_top" title="PHP 文件上传" href="php-file-upload.html" href="http://www.w3cschool.cc/php/php-file-upload.html"> PHP 文件上传 </a> <a target="_top" title="PHP Cookies" href="php-cookies.html" href="http://www.w3cschool.cc/php/php-cookies.html"> PHP Cookies </a> <a target="_top" title="PHP Sessions" href="php-sessions.html" href="http://www.w3cschool.cc/php/php-sessions.html"> PHP Sessions </a> <a target="_top" title="PHP 邮件" href="php-mail.html" href="http://www.w3cschool.cc/php/php-mail.html"> PHP E-mail </a> <a target="_top" title="PHP 安全 E-mail" href="php-secure-mail.html" href="http://www.w3cschool.cc/php/php-secure-mail.html"> PHP 安全 E-mail </a> <a target="_top" title="PHP 错误处理" href="php-error.html" href="http://www.w3cschool.cc/php/php-error.html"> PHP Error </a> <a target="_top" title="PHP 异常处理" href="php-exception.html" href="http://www.w3cschool.cc/php/php-exception.html"> PHP Exception </a> <a target="_top" title="PHP 过滤器" href="php-filter.html" href="http://www.w3cschool.cc/php/php-filter.html"> PHP Filter </a> <br><h2 class="left"><span class="left_h2">PHP</span> 数据库</h2> <a target="_top" title="PHP MySQL 简介" href="php-mysql-intro.html" href="http://www.w3cschool.cc/php/php-mysql-intro.html"> PHP MySQL 简介 </a> <a target="_top" title="PHP 连接 MySQL 数据库" href="php-mysql-connect.html" href="http://www.w3cschool.cc/php/php-mysql-connect.html"> PHP MySQL Connect </a> <a target="_top" title="PHP 创建数据库和表" href="php-mysql-create.html" href="http://www.w3cschool.cc/php/php-mysql-create.html"> PHP MySQL Create </a> <a target="_top" title="PHP MySQL Insert Into" href="php-mysql-insert.html" href="http://www.w3cschool.cc/php/php-mysql-insert.html"> PHP MySQL Insert </a> <a target="_top" title="PHP MySQL Select" href="php-mysql-select.html" href="http://www.w3cschool.cc/php/php-mysql-select.html"> PHP MySQL Select </a> <a target="_top" title="PHP MySQL Where 子句" href="php-mysql-where.html" href="http://www.w3cschool.cc/php/php-mysql-where.html"> PHP MySQL Where </a> <a target="_top" title="PHP MySQL Order By 关键词" href="php-mysql-order-by.html" href="http://www.w3cschool.cc/php/php-mysql-order-by.html"> PHP MySQL Order By </a> <a target="_top" title="PHP MySQL Update" href="php-mysql-update.html" href="http://www.w3cschool.cc/php/php-mysql-update.html"> PHP MySQL Update </a> <a target="_top" title="PHP MySQL Delete From" href="php-mysql-delete.html" href="http://www.w3cschool.cc/php/php-mysql-delete.html"> PHP MySQL Delete </a> <a target="_top" title="PHP 数据库 ODBC" href="php-db-odbc.html" href="http://www.w3cschool.cc/php/php-db-odbc.html"> PHP ODBC </a> <br><h2 class="left"><span class="left_h2">PHP</span> XML</h2> <a target="_top" title="PHP XML Expat 解析器" href="php-xml-parser-expat.html" href="http://www.w3cschool.cc/php/php-xml-parser-expat.html"> XML Expat Parser </a> <a target="_top" title="PHP XML DOM" href="php-xml-dom.html" href="http://www.w3cschool.cc/php/php-xml-dom.html"> XML DOM </a> <a target="_top" title="PHP XML SimpleXML" href="php-xml-simplexml.html" href="http://www.w3cschool.cc/php/php-xml-simplexml.html"> XML SimpleXML </a> <br><h2 class="left"><span class="left_h2">PHP</span> 与 AJAX</h2> <a target="_top" title="AJAX 简介" href="php-ajax-intro.html" href="http://www.w3cschool.cc/php/php-ajax-intro.html"> AJAX 简介 </a> <a target="_top" title="PHP &#8211; AJAX 与 PHP" href="php-ajax-php.html" href="http://www.w3cschool.cc/php/php-ajax-php.html"> AJAX PHP </a> <a target="_top" title="PHP 实例 AJAX 与 MySQL" href="php-ajax-database.html" href="http://www.w3cschool.cc/php/php-ajax-database.html"> AJAX 数据库 </a> <a target="_top" title="PHP 实例 AJAX 与 XML" href="php-ajax-xml.html" href="http://www.w3cschool.cc/php/php-ajax-xml.html"> AJAX XML </a> <a target="_top" title="PHP 实例 AJAX 实时搜索" href="php-ajax-livesearch.html" href="http://www.w3cschool.cc/php/php-ajax-livesearch.html"> AJAX 实时搜索 </a> <a target="_top" title="PHP 实例 AJAX RSS 阅读器" href="php-ajax-rss-reader.html" href="http://www.w3cschool.cc/php/php-ajax-rss-reader.html"> AJAX RSS Reader </a> <a target="_top" title="PHP 实例 AJAX 投票" href="php-ajax-poll.html" href="http://www.w3cschool.cc/php/php-ajax-poll.html"> AJAX 投票 </a> <br><h2 class="left"><span class="left_h2">PHP</span> 参考手册</h2> <a target="_top" title="PHP 5 Array 函数" href="php-ref-array.html" href="http://www.w3cschool.cc/php/php-ref-array.html"> PHP Array </a> <a target="_top" title="PHP 5 Calendar 函数" href="php-ref-calendar.html" href="http://www.w3cschool.cc/php/php-ref-calendar.html"> PHP Calendar </a> <a target="_top" href="php-ref-curl.html" href="http://www.w3cschool.cc/php/php-curl.html">PHP cURL </a> <a target="_top" title="PHP 5 Date/Time 函数" href="php-ref-date.html" href="http://www.w3cschool.cc/php/php-ref-date.html"> PHP Date </a> <a target="_top" title="PHP 5 Directory 函数" href="php-ref-directory.html" href="http://www.w3cschool.cc/php/php-ref-directory.html"> PHP Directory </a> <a target="_top" title="PHP Error 和 Logging 函数" href="php-ref-error.html" href="http://www.w3cschool.cc/php/php-ref-error.html"> PHP Error </a> <a target="_top" title="PHP 5 Filesystem 函数" href="php-ref-filesystem.html" href="http://www.w3cschool.cc/php/php-ref-filesystem.html"> PHP Filesystem </a> <a target="_top" title="PHP Filter 函数" href="php-ref-filter.html" href="http://www.w3cschool.cc/php/php-ref-filter.html"> PHP Filter </a> <a target="_top" title="PHP FTP 函数" href="php-ref-ftp.html" href="http://www.w3cschool.cc/php/php-ref-ftp.html"> PHP FTP </a> <a target="_top" title="PHP HTTP 函数" href="php-ref-http.html" href="http://www.w3cschool.cc/php/php-ref-http.html"> PHP HTTP </a> <a target="_top" title="PHP Libxml 函数" href="php-ref-libxml.html" href="http://www.w3cschool.cc/php/php-ref-libxml.html"> PHP Libxml </a> <a target="_top" title="PHP Mail 函数" href="php-ref-mail.html" href="http://www.w3cschool.cc/php/php-ref-mail.html"> PHP Mail </a> <a target="_top" title="PHP 5 Math 函数" href="php-ref-math.html" href="http://www.w3cschool.cc/php/php-ref-math.html"> PHP Math </a> <a target="_top" title="PHP Misc. 函数" href="php-ref-misc.html" href="http://www.w3cschool.cc/php/php-ref-misc.html"> PHP Misc </a> <a target="_top" title="PHP 5 MySQLi 函数" href="php-ref-mysqli.html" href="http://www.w3cschool.cc/php/php-ref-mysqli.html"> PHP MySQLi </a> <a target="_top" title="PHP PDO" href="php-pdo.html" href="http://www.w3cschool.cc/php/php-pdo.html"> PHP PDO </a> <a target="_top" title="PHP 5 SimpleXML 函数" href="php-ref-simplexml.html" href="http://www.w3cschool.cc/php/php-ref-simplexml.html"> PHP SimpleXML </a> <a target="_top" title="PHP 5 String 函数" href="php-ref-string.html" href="http://www.w3cschool.cc/php/php-ref-string.html"> PHP String </a> <a target="_top" title="PHP XML 函数" href="php-ref-xml.html" href="http://www.w3cschool.cc/php/php-ref-xml.html"> PHP XML </a> <a target="_top" title="PHP Zip File 函数" href="php-ref-zip.html" href="http://www.w3cschool.cc/php/php-ref-zip.html"> PHP Zip </a> <a target="_top" title="PHP 5 Timezones" href="php-ref-timezones.html" href="http://www.w3cschool.cc/php/php-ref-timezones.html"> PHP Timezones </a> </div><div id="main"> <div id="mainLeaderboard"> <div style="width:728px;height:90px;float:right;"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="2542143260"></ins> <!--
+(adsbygoogle = window.adsbygoogle || []).push({});
+--> </div> </div> <div class="chapter"> <div class="prev">&laquo; <a href="php-magic-constant.html" href="http://www.w3cschool.cc/php/php-magic-constant.html" rel="prev"> PHP魔术变量</a></div> <div class="next"><a href="php-pdo.html" href="http://www.w3cschool.cc/php/php-pdo.html" rel="next">PHP PDO</a> &raquo;</div> </div> <div id="content"> <h1>PHP 命名空间(namespace)</h1> <p> PHP 命名空间(namespace)是在PHP 5.3中加入的，如果你学过C#和Java，那命名空间就不算什么新事物。 不过在PHP当中还是有着相当重要的意义。 </p> <p> PHP 命名空间可以解决以下两类问题： </p> <ol> <li> 用户编写的代码与PHP内部的类/函数/常量或第三方类/函数/常量之间的名字冲突。 </li> <li> 为很长的标识符名称(通常是为了缓解第一类问题而定义的)创建一个别名（或简短）的名称，提高源代码的可读性。 </li> </ol> <h2>定义命名空间</h2> <p>默认情况下，所有常量、类和函数名都放在全局空间下，就和PHP支持命名空间之前一样。 </p> <p>命名空间通过关键字namespace 来声明。如果一个文件中包含命名空间，它必须在其它所有代码之前声明命名空间。语法格式如下；</p> <pre>
+&lt; ?php  
+// 定义代码在 'MyProject' 命名空间中  
+namespace MyProject;  
+ 
+// ... 代码 ...  
+</pre> <p>你也可以在同一个文件中定义不同的命名空间代码，如：</p> <pre>
+&lt; ?php  
+namespace MyProject1;  
+// MyProject1 命名空间中的PHP代码  
+ 
+namespace MyProject2;  
+// MyProject2 命名空间中的PHP代码    
+ 
+// 另一种语法
+namespace MyProject3 {  
+ // MyProject3 命名空间中的PHP代码    
+}  
+?&gt;  
+</pre> <p>在声明命名空间之前唯一合法的代码是用于定义源文件编码方式的 declare 语句。所有非 PHP 代码包括空白符都不能出现在命名空间的声明之前。</p> <pre>
+&lt;?php
+declare(encoding='UTF-8'); //定义多个命名空间和不包含在命名空间中的代码
+namespace MyProject {
+
+const CONNECT_OK = 1;
+class Connection { /* ... */ }
+function connect() { /* ... */  }
+}
+
+namespace { // 全局代码
+session_start();
+$a = MyProject\connect();
+echo MyProject\Connection::start();
+}
+?&gt;
+</pre> <p>以下代码会出现语法错误：</p> <pre>
+&lt;html&gt;
+&lt;?php
+namespace MyProject; // 命名空间前出现了&ldquo;&lt;html&gt;&rdquo; 会致命错误 -　命名空间必须是程序脚本的第一条语句
+?&gt;
+</pre> <hr> <h2>子命名空间</h2> <p> 与目录和文件的关系很象，PHP 命名空间也允许指定层次化的命名空间的名称。因此，命名空间的名字可以使用分层次的方式定义： </p> <pre>
+&lt;?php
+namespace MyProject\Sub\Level;  //声明分层次的单个命名空间
+
+const CONNECT_OK = 1;
+class Connection { /* ... */ }
+function Connect() { /* ... */  }
+
+?&gt;
+</pre> <p> 上面的例子创建了常量 MyProject\Sub\Level\CONNECT_OK，类 MyProject\Sub\Level\Connection 和函数 MyProject\Sub\Level\Connection。 </p> <hr> <h2>命名空间使用</h2> <p> PHP 命名空间中的类名可以通过三种方式引用： </p> <ol> <li> 非限定名称，或不包含前缀的类名称，例如 $a=new foo(); 或 foo::staticmethod();。如果当前命名空间是 currentnamespace，foo 将被解析为 currentnamespace\foo。如果使用 foo 的代码是全局的，不包含在任何命名空间中的代码，则 foo 会被解析为foo。 警告：如果命名空间中的函数或常量未定义，则该非限定的函数名称或常量名称会被解析为全局函数名称或常量名称。 </li><li> </li><li>限定名称,或包含前缀的名称，例如 $a = new subnamespace\foo(); 或 subnamespace\foo::staticmethod();。如果当前的命名空间是 currentnamespace，则 foo 会被解析为 currentnamespace\subnamespace\foo。如果使用 foo 的代码是全局的，不包含在任何命名空间中的代码，foo 会被解析为subnamespace\foo。 完全限定名称，或包含了全局前缀操作符的名称，例如， $a = new \currentnamespace\foo(); 或 \currentnamespace\foo::staticmethod();。在这种情况下，foo 总是被解析为代码中的文字名(literal name)currentnamespace\foo。 </li></ol> <p>下面是一个使用这三种方式的实例：</p> <p>file1.php 文件代码</p> <pre>
+&lt;?php
+namespace Foo\Bar\subnamespace; 
+
+const FOO = 1;
+function foo() {}
+class foo
+{
+    static function staticmethod() {}
+}
+?&gt;
+</pre> <p>file2.php 文件代码</p> <pre>
+&lt;?php
+namespace Foo\Bar;
+include 'file1.php';
+
+const FOO = 2;
+function foo() {}
+class foo
+{
+    static function staticmethod() {}
+}
+
+/* 非限定名称 */
+foo(); // 解析为 Foo\Bar\foo resolves to function Foo\Bar\foo
+foo::staticmethod(); // 解析为类 Foo\Bar\foo的静态方法staticmethod。resolves to class Foo\Bar\foo, method staticmethod
+echo FOO; // resolves to constant Foo\Bar\FOO
+
+/* 限定名称 */
+subnamespace\foo(); // 解析为函数 Foo\Bar\subnamespace\foo
+subnamespace\foo::staticmethod(); // 解析为类 Foo\Bar\subnamespace\foo,
+                                  // 以及类的方法 staticmethod
+echo subnamespace\FOO; // 解析为常量 Foo\Bar\subnamespace\FOO
+                                  
+/* 完全限定名称 */
+\Foo\Bar\foo(); // 解析为函数 Foo\Bar\foo
+\Foo\Bar\foo::staticmethod(); // 解析为类 Foo\Bar\foo, 以及类的方法 staticmethod
+echo \Foo\Bar\FOO; // 解析为常量 Foo\Bar\FOO
+?&gt;
+</pre> <p>注意访问任意全局类、函数或常量，都可以使用完全限定名称，例如 \strlen() 或 \Exception 或 \INI_ALL。</p> <p>在命名空间内部访问全局类、函数和常量：</p> <pre>
+&lt;?php
+namespace Foo;
+
+function strlen() {}
+const INI_ALL = 3;
+class Exception {}
+
+$a = \strlen('hi'); // 调用全局函数strlen
+$b = \INI_ALL; // 访问全局常量 INI_ALL
+$c = new \Exception('error'); // 实例化全局类 Exception
+?&gt;
+</pre> <hr> <h2>命名空间和动态语言特征</h2> <p>PHP 命名空间的实现受到其语言自身的动态特征的影响。因此，如果要将下面的代码转换到命名空间中，动态访问元素。</p> <p>example1.php 文件代码：</p> <pre>
+&lt;?php
+class classname
+{
+    function __construct()
+    {
+        echo __METHOD__,"\n";
+    }
+}
+function funcname()
+{
+    echo __FUNCTION__,"\n";
+}
+const constname = "global";
+
+$a = 'classname';
+$obj = new $a; // prints classname::__construct
+$b = 'funcname';
+$b(); // prints funcname
+echo constant('constname'), "\n"; // prints global
+?&gt;
+</pre> <p> 必须使用完全限定名称（包括命名空间前缀的类名称）。注意因为在动态的类名称、函数名称或常量名称中，限定名称和完全限定名称没有区别，因此其前导的反斜杠是不必要的。 </p> <p>动态访问命名空间的元素</p> <pre>
+&lt;?php
+namespace namespacename;
+class classname
+{
+    function __construct()
+    {
+        echo __METHOD__,"\n";
+    }
+}
+function funcname()
+{
+    echo __FUNCTION__,"\n";
+}
+const constname = "namespaced";
+
+include 'example1.php';
+
+$a = 'classname';
+$obj = new $a; // prints classname::__construct
+$b = 'funcname';
+$b(); // prints funcname
+echo constant('constname'), "\n"; // prints global
+
+/* note that if using double quotes, "\\namespacename\\classname" must be used */
+$a = '\namespacename\classname';
+$obj = new $a; // prints namespacename\classname::__construct
+$a = 'namespacename\classname';
+$obj = new $a; // also prints namespacename\classname::__construct
+$b = 'namespacename\funcname';
+$b(); // prints namespacename\funcname
+$b = '\namespacename\funcname';
+$b(); // also prints namespacename\funcname
+echo constant('\namespacename\constname'), "\n"; // prints namespaced
+echo constant('namespacename\constname'), "\n"; // also prints namespaced
+?&gt;
+</pre> <hr> <h2>namespace关键字和__NAMESPACE__常量</h2> <p>PHP支持两种抽象的访问当前命名空间内部元素的方法，__NAMESPACE__ 魔术常量和namespace关键字。</p> <p> 常量__NAMESPACE__的值是包含当前命名空间名称的字符串。在全局的，不包括在任何命名空间中的代码，它包含一个空的字符串。 </p> <p> __NAMESPACE__ 示例, 在命名空间中的代码 </p> <pre>
+&lt;?php
+namespace MyProject;
+
+echo '"', __NAMESPACE__, '"'; // 输出 "MyProject"
+?&gt;
+</pre> <p> __NAMESPACE__ 示例，全局代码</p> <pre>
+&lt;?php
+
+echo '"', __NAMESPACE__, '"'; // 输出 ""
+?&gt;
+</pre> <p> 常量 __NAMESPACE__ 在动态创建名称时很有用，例如： </p><p>使用__NAMESPACE__动态创建名称</p> <pre>
+&lt;?php
+namespace MyProject;
+
+function get($classname)
+{
+    $a = __NAMESPACE__ . '\\' . $classname;
+    return new $a;
+}
+?&gt;
+</pre> <p> 关键字 namespace 可用来显式访问当前命名空间或子命名空间中的元素。它等价于类中的 self 操作符。 </p> <p> amespace操作符，命名空间中的代码 </p> <pre>
+&lt;?php
+namespace MyProject;
+
+use blah\blah as mine; // see "Using namespaces: importing/aliasing"
+
+blah\mine(); // calls function blah\blah\mine()
+namespace\blah\mine(); // calls function MyProject\blah\mine()
+
+namespace\func(); // calls function MyProject\func()
+namespace\sub\func(); // calls function MyProject\sub\func()
+namespace\cname::method(); // calls static method "method" of class MyProject\cname
+$a = new namespace\sub\cname(); // instantiates object of class MyProject\sub\cname
+$b = namespace\CONSTANT; // assigns value of constant MyProject\CONSTANT to $b
+?&gt;
+</pre> <p> namespace操作符, 全局代码 </p> <pre>
+&lt;?php
+
+namespace\func(); // calls function func()
+namespace\sub\func(); // calls function sub\func()
+namespace\cname::method(); // calls static method "method" of class cname
+$a = new namespace\sub\cname(); // instantiates object of class sub\cname
+$b = namespace\CONSTANT; // assigns value of constant CONSTANT to $b
+?&gt;
+</pre> <hr> <h2>使用命名空间：别名/导入 </h2> <p> PHP 命名空间支持 有两种使用别名或导入方式：为类名称使用别名，或为命名空间名称使用别名。注意PHP不支持导入函数或常量。 </p> <p> 在PHP中，别名是通过操作符 use 来实现的. 下面是一个使用所有可能的三种导入方式的例子： </p> <p>1、使用use操作符导入/使用别名</p> <pre>
+&lt;?php
+namespace foo;
+use My\Full\Classname as Another;
+
+// 下面的例子与 use My\Full\NSname as NSname 相同
+use My\Full\NSname;
+
+// 导入一个全局类
+use \ArrayObject;
+
+$obj = new namespace\Another; // 实例化 foo\Another 对象
+$obj = new Another; // 实例化 My\Full\Classname　对象
+NSname\subns\func(); // 调用函数 My\Full\NSname\subns\func
+$a = new ArrayObject(array(1)); // 实例化 ArrayObject 对象
+// 如果不使用 "use \ArrayObject" ，则实例化一个 foo\ArrayObject 对象
+?&gt;
+</pre> <p>2、 一行中包含多个use语句 </p> <pre>
+&lt;?php
+use My\Full\Classname as Another, My\Full\NSname;
+
+$obj = new Another; // 实例化 My\Full\Classname 对象
+NSname\subns\func(); // 调用函数 My\Full\NSname\subns\func
+?&gt;
+</pre> <p> 导入操作是在编译执行的，但动态的类名称、函数名称或常量名称则不是。 </p> <p>3、导入和动态名称 </p> <pre>
+&lt;?php
+use My\Full\Classname as Another, My\Full\NSname;
+
+$obj = new Another; // 实例化一个 My\Full\Classname 对象
+$a = 'Another';
+$obj = new $a;      // 实际化一个 Another 对象
+?&gt;
+</pre> <p> 另外，导入操作只影响非限定名称和限定名称。完全限定名称由于是确定的，故不受导入的影响。 </p> <p> 4、导入和完全限定名称 </p> <pre>
+&lt;?php
+use My\Full\Classname as Another, My\Full\NSname;
+
+$obj = new Another; // instantiates object of class My\Full\Classname
+$obj = new \Another; // instantiates object of class Another
+$obj = new Another\thing; // instantiates object of class My\Full\Classname\thing
+$obj = new \Another\thing; // instantiates object of class Another\thing
+?&gt;
+</pre> <hr> <h2>使用命名空间：后备全局函数/常量 </h2> <p>在一个命名空间中，当 PHP 遇到一个非限定的类、函数或常量名称时，它使用不同的优先策略来解析该名称。类名称总是解析到当前命名空间中的名称。因此在访问系统内部或不包含在命名空间中的类名称时，必须使用完全限定名称，例如： </p> <p> 1、在命名空间中访问全局类 </p> <pre>
+&lt;?php
+namespace A\B\C;
+class Exception extends \Exception {}
+
+$a = new Exception('hi'); // $a 是类 A\B\C\Exception 的一个对象
+$b = new \Exception('hi'); // $b 是类 Exception 的一个对象
+
+$c = new ArrayObject; // 致命错误, 找不到 A\B\C\ArrayObject 类
+?&gt;
+</pre> <p>对于函数和常量来说，如果当前命名空间中不存在该函数或常量，PHP 会退而使用全局空间中的函数或常量。</p> <p>2、 命名空间中后备的全局函数/常量</p> <pre>
+&lt;?php
+namespace A\B\C;
+
+const E_ERROR = 45;
+function strlen($str)
+{
+    return \strlen($str) - 1;
+}
+
+echo E_ERROR, "\n"; // 输出 "45"
+echo INI_ALL, "\n"; // 输出 "7" - 使用全局常量 INI_ALL
+
+echo strlen('hi'), "\n"; // 输出 "1"
+if (is_array('hi')) { // 输出 "is not array"
+    echo "is array\n";
+} else {
+    echo "is not array\n";
+}
+?&gt;
+</pre> <hr> <h2> 全局空间</h2> <p> 如果没有定义任何命名空间，所有的类与函数的定义都是在全局空间，与 PHP 引入命名空间概念前一样。在名称前加上前缀 \ 表示该名称是全局空间中的名称，即使该名称位于其它的命名空间中时也是如此。 </p><p> 使用全局空间说明 </p> <pre>
+&lt;?php
+namespace A\B\C;
+
+/* 这个函数是 A\B\C\fopen */
+function fopen() { 
+     /* ... */
+     $f = \fopen(...); // 调用全局的fopen函数
+     return $f;
+} 
+?&gt;
+</pre> <hr> <h2>命名空间的顺序</h2><p> 自从有了命名空间之后，最容易出错的该是使用类的时候，这个类的寻找路径是什么样的了。 </p> <pre>
+&lt;?php
+namespace A;
+use B\D, C\E as F;
+
+// 函数调用
+
+foo();      // 首先尝试调用定义在命名空间"A"中的函数foo()
+            // 再尝试调用全局函数 "foo"
+
+\foo();     // 调用全局空间函数 "foo" 
+
+my\foo();   // 调用定义在命名空间"A\my"中函数 "foo" 
+
+F();        // 首先尝试调用定义在命名空间"A"中的函数 "F" 
+            // 再尝试调用全局函数 "F"
+
+// 类引用
+
+new B();    // 创建命名空间 "A" 中定义的类 "B" 的一个对象
+            // 如果未找到，则尝试自动装载类 "A\B"
+
+new D();    // 使用导入规则，创建命名空间 "B" 中定义的类 "D" 的一个对象
+            // 如果未找到，则尝试自动装载类 "B\D"
+
+new F();    // 使用导入规则，创建命名空间 "C" 中定义的类 "E" 的一个对象
+            // 如果未找到，则尝试自动装载类 "C\E"
+
+new \B();   // 创建定义在全局空间中的类 "B" 的一个对象
+            // 如果未发现，则尝试自动装载类 "B"
+
+new \D();   // 创建定义在全局空间中的类 "D" 的一个对象
+            // 如果未发现，则尝试自动装载类 "D"
+
+new \F();   // 创建定义在全局空间中的类 "F" 的一个对象
+            // 如果未发现，则尝试自动装载类 "F"
+
+// 调用另一个命名空间中的静态方法或命名空间函数
+
+B\foo();    // 调用命名空间 "A\B" 中函数 "foo"
+
+B::foo();   // 调用命名空间 "A" 中定义的类 "B" 的 "foo" 方法
+            // 如果未找到类 "A\B" ，则尝试自动装载类 "A\B"
+
+D::foo();   // 使用导入规则，调用命名空间 "B" 中定义的类 "D" 的 "foo" 方法
+            // 如果类 "B\D" 未找到，则尝试自动装载类 "B\D"
+
+\B\foo();   // 调用命名空间 "B" 中的函数 "foo" 
+
+\B::foo();  // 调用全局空间中的类 "B" 的 "foo" 方法
+            // 如果类 "B" 未找到，则尝试自动装载类 "B"
+
+// 当前命名空间中的静态方法或函数
+
+A\B::foo();   // 调用命名空间 "A\A" 中定义的类 "B" 的 "foo" 方法
+              // 如果类 "A\A\B" 未找到，则尝试自动装载类 "A\A\B"
+
+\A\B::foo();  // 调用命名空间 "A\B" 中定义的类 "B" 的 "foo" 方法
+              // 如果类 "A\B" 未找到，则尝试自动装载类 "A\B"
+?&gt;
+</pre> <p> 名称解析遵循下列规则： </p> <ol> <li> 对完全限定名称的函数，类和常量的调用在编译时解析。例如 <em>new \A\B</em> 解析为类 <em>A\B</em>。 </li> <li> 所有的非限定名称和限定名称（非完全限定名称）根据当前的导入规则在编译时进行转换。例如，如果命名空间 <em>A\B\C</em> 被导入为 <em>C</em>，那么对 <em>C\D\e()</em> 的调用就会被转换为 <em>A\B\C\D\e()</em>。 </li> <li> 在命名空间内部，所有的没有根据导入规则转换的限定名称均会在其前面加上当前的命名空间名称。例如，在命名空间 <em>A\B</em> 内部调用 <em>C\D\e()</em>，则 <em>C\D\e()</em> 会被转换为 <em>A\B\C\D\e()</em> 。 </li> <li> 非限定类名根据当前的导入规则在编译时转换（用全名代替短的导入名称）。例如，如果命名空间 <em>A\B\C</em> 导入为C，则 <em>new C()</em> 被转换为 <em>new A\B\C() </em>。 </li> <li> 在命名空间内部（例如A\B），对非限定名称的函数调用是在运行时解析的。例如对函数 <em>foo()</em> 的调用是这样解析的： <ol type="1"> <li> 在当前命名空间中查找名为 <em>A\B\foo()</em> 的函数 </li> <li> 尝试查找并调用 <em class="emphasis">全局(global)</em> 空间中的函数 <em>foo()</em>。 </li> </ol> </li> <li> 在命名空间（例如<em>A\B</em>）内部对非限定名称或限定名称类（非完全限定名称）的调用是在运行时解析的。下面是调用 <em>new C()</em> 及 <em>new D\E()</em> 的解析过程： <em> new C()</em>的解析: <ol type="1"> <li> 在当前命名空间中查找<em>A\B\C</em>类。 </li> <li> 尝试自动装载类<em>A\B\C</em>。 </li> </ol> <em> new D\E()</em>的解析: <ol type="1"> <li> 在类名称前面加上当前命名空间名称变成：<em>A\B\D\E</em>，然后查找该类。 </li> <li> 尝试自动装载类 <em>A\B\D\E</em>。 </li> </ol> 为了引用全局命名空间中的全局类，必须使用完全限定名称 <em>new \C()</em>。 </li> </ol> </div> <div class="chapter"> <div class="prev">&laquo; <a href="php-magic-constant.html" href="http://www.w3cschool.cc/php/php-magic-constant.html" rel="prev"> PHP魔术变量</a></div> <div class="next"><a href="php-pdo.html" href="http://www.w3cschool.cc/php/php-pdo.html" rel="next">PHP PDO</a> &raquo;</div> </div> </div> <div id="rightcolumn"> <div class="rightad"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote" target="_blank" style="border-top: 2px;"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/logo-2.png" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/logo-2.png"> </a> </div> <div class="rightad"> <h2 style="color:#67ad03">关注微信下载离线手册</h2> <a title="javascript:if(confirm('http://m.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://m.w3cschool.cc/'" tppabs="http://m.w3cschool.cc/" target="_blank"/> <img src="../wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/qrcode.jpg" width="150" height="150" alt="w3cschool移动版"/> </a> <a target="_blank" title="javascript:if(confirm('http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9'" tppabs="http://shang.qq.com/wpa/qunwpa?idkey=d7c53062c7a2016e4d70fc1baff04ec1c401eb673451b6cc8895751869e715f9"><img border="0" src="../../pub.idqqimg.com/wpa/images/group.png" tppabs="http://pub.idqqimg.com/wpa/images/group.png" alt="w3cschool.cc菜鸟家族" title="w3cschool.cc菜鸟家族"></a> </div> <div class="rightad"> <h2>参考手册</h2> <a href="../tags/html-reference.html" href="http://www.w3cschool.cc/tags/html-reference.html" title="HTML 4">HTML 参考手册</a> <a href="../jsref/jsref-tutorial.html" href="http://www.w3cschool.cc/jsref/jsref-tutorial.html" title="CSS 参考手册">JS 参考手册</a> <a href="../cssref/css-reference.html" href="http://www.w3cschool.cc/cssref/css-reference.html" title="CSS 参考手册">CSS 参考手册</a> <a title="javascript:if(confirm('http://jsbin.w3cschool.cc/  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://jsbin.w3cschool.cc/'" tppabs="http://jsbin.w3cschool.cc/" target="_blank" title="json格式工具"/>HTML/CSS/JS 在线工具</a> <a href="../jsontool.htm" href="http://www.w3cschool.cc/jsontool" target="_blank" title="json格式工具"/>JSON 格式工具</a> <a href="../coder-learn-path.htm" href="http://www.w3cschool.cc/coder-learn-path" target="_blank"/>程序猿学习路线</a> <a href="../chmproblem.htm" href="http://www.w3cschool.cc/chmproblem" target="_blank"/>打开CHM文档遇到问题……</a> <a title="javascript:if(confirm('http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w  \n\n?????????? Teleport Ultra ????, ??? ??????????·???????????????????????????  \n\n?????????????????'))window.location='http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w'" tppabs="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ssbDyoOAgfLU3crf09venNHd3w" rel="nofollow" target="_blank" title="问题/意见反馈"/>问题/意见反馈</a> </div> <div class="wideSkyscraper"> <!-- async src="../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">--> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5751451760833794" data-ad-slot="4106274865"></ins> <!--
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		--> </div> </div> <div style="clear:both;"></div> <div id="footer"> <br> <hr style="height:2px;"> <div id="footerImg"><a href="../index.htm" href="http://www.w3cschool.cc/"> <img style="border:0" src="../wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" href="http://www.w3cschool.cc/wp-content/themes/w3cschool.cc/assets/img/w3cschoolcc_gray.gif" alt="W3Cschool.cc"/></a> </div> <div id="footerAbout"> <a href="../w3cnote.htm" href="http://www.w3cschool.cc/w3cnote">W3C菜鸟笔记</a> <a href="../disclaimer.htm" href="http://www.w3cschool.cc/disclaimer">免责声明</a> <a href="../aboutus.htm" href="http://www.w3cschool.cc/aboutus">关于我们</a> </ul> </div> <div id="footerText"> 提供的内容仅用于培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。 版权所有，保留一切权利。W3CSchool 简体中文版的所有内容仅供测试，对任何法律问题及风险不承担任何责任。 </div> </div> </div> </div> <a class="backtop" href="javascript:void"></a> <div style="display:none;"> <!-- src="../../s11.cnzz.com/stat.php-id=5578006&web_id=5578006" tppabs="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript">--> </div> <!-- <div class="share-box-top">分享到</div> <div class="share-box-inner"> <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare"> <a class="bds_qzone" title="分享到QQ空间" href="#"></a> <a class="bds_tsina" title="分享到新浪微博" href="#"></a> <a class="bds_tqq" title="分享到人人网" href="#"></a> <a class="bds_baidu" title="百度收藏" href="#"></a> <span class="bds_more">更多</span> <a class="shareCount" id="shareCount" href="#" title="累计分享0次">0</a> </div> </div> <div class="share-box-bottom"></div> </div>--> <!-- type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=470751" >--> <!-- type="text/javascript" id="bdshell_js">--> <!-- type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+--> <!--
+function NewWindow(text)
+{
+  win=window.open(text,'','top=0,left=0,width=400,height=350');
+}
+$(function() { 
+	color_flag = false; //配色标记
+	prev_title_flag = false;
+	next_title_flag = false;
+ 	href = window.location.href;
+	console.log('href', href);
+	$("#leftcolumn").find("a").each(function(){
+		if(next_title_flag) {
+				return false; //结束循环
+		} 
+		cur_href = $(this).attr("href");
+		cur_obj = $(this);
+		
+		if(href.match(cur_href) != null) {
+			
+			if(cur_href.indexOf('/') == -1) { //第二重判断
+				tmp_url = href.substring(0, href.lastIndexOf('/')+1) + cur_href;
+				console.log('tmp_url', tmp_url);
+				if(href != tmp_url) return;
+			}
+			if(!color_flag) {
+				$(this).css("font-weight", "bold");
+				color_flag = true;
+			}
+			prev_href = $(this).prev("a").attr("href");
+			prev_title = $(this).prev("a").attr("title");
+			if(!prev_title) prev_title=$(this).prev("a").text();
+			next_href = $(this).next("a").attr("href");
+			next_title = $(this).next("a").attr("title");
+			if(!next_title) next_title=$(this).next("a").text();
+			if(!prev_title_flag) {
+				if( prev_title ) {
+					$(".prev a").attr("href", prev_href);
+					$(".prev a").attr("title", prev_title);
+					$(".prev a").text( prev_title);
+				} else {
+					if(typeof(prev_obj) != 'undefined') {
+						prev_href = prev_obj.attr("href");
+						prev_title = prev_obj.attr("title");
+						if(!prev_title) prev_title=prev_obj.text();
+						if(prev_title) {
+							$(".prev a").attr("href", prev_href);
+							$(".prev a").attr("title", prev_title);
+							$(".prev a").text( prev_title);
+						}
+					}
+					
+				}
+				prev_title_flag = true;
+			}
+			if(next_title) {
+				if($(".next a").attr("href")) {
+					$(".next a").attr("href", next_href);
+					$(".next a").attr("title", next_title);
+					$(".next a").text( next_title);
+				} else {
+					$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+				}
+				
+				next_title_flag = true;
+				
+			}
+			console.log(prev_href,prev_title);
+			console.log(next_href,next_title);
+			//return false; 
+		} else {
+			prev_obj = cur_obj;
+			if(next_title_flag) {
+				return false;
+			} else {
+				if(prev_title_flag) {
+					next_href = $(this).attr("href");
+					next_title = $(this).attr("title");
+					if(!next_title) next_title=$(this).text();
+					if(next_title) {
+						if($(".next a").attr("href")) {
+							$(".next a").attr("href", next_href);
+							$(".next a").attr("title", next_title);
+							$(".next a").text( next_title);
+						} else {
+							$(".next").html("<a href=\"" + next_href + "\" rel=\"next\" title=\"" + next_title + "\">" + next_title + "</a> &raquo;");
+						}
+						next_title_flag = true;
+					}
+				}
+			}
+		}
+		
+  });
+  
+  	$(window).scroll(function () {
+        if($(window).scrollTop()>=100) {
+            $(".backtop").fadeIn();
+        }else {
+        	
+        		$(".backtop").fadeOut();
+        }
+    });
+	
+
+	$(".backtop").click(function(event){	
+		$('html,body').animate({scrollTop:0}, 500);
+		return false;
+	});
+		
+});
+var host = window.location.host;
+if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
+
+    if(host == 'http://www.w3cschool.cc/php/www.w3cschool.cc') {
+		href = window.location.href;
+		href=href.replace(/www.w3cschool.cc/, "http://www.w3cschool.cc/php/m.w3cschool.cc");
+		window.location.href=href;
+	}
+}
+--> </body> </html>
+
+
+
+
