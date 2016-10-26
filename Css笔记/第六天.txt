@@ -1,0 +1,84 @@
+第六天
+列表样式用法及实例
+list-style-image：none|URL
+list-style-type ：none|各种类型
+list-style	：list-style-type；list-style-image；
+list-style-position；复合属性
+
+伪类
+伪类语法
+-选择器：伪类{属性：值}
+锚伪类
+a:link{color:#FF0000}		/*未访问的链接
+a:visited{color:#FF0000}	/*已访问的链接
+a:hover{color:#FF0000}		/*鼠标移动到链接上
+a:active{color:#FF0000}		/*选定的链接
+顺序不能乱
+
+Body>p{font-size;14pt;color:red;}
+其他伪类
+first-child	第一个子段落
+left		
+right
+lang
+foucs
+
+实例
+<head>
+    <meta charset="UTF-8">
+    <title>first-child</title>
+    <style type="text/css">
+        p:first-child{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>some text</p>
+    <p>some text</p>
+</body>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>匹配p中第一个i标记</title>
+    <style type="text/css">
+        p > i:first-child{
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>some <i>what </i>text <i>what </i></p>
+    <p>some <i>what </i>text <i>what </i> text</p>
+</body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>匹配所有</title>
+    <style type="text/css">
+        p:first-child i {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>some <i>what </i>text <i>what </i></p>
+    <p>some <i>what </i>text <i>what </i> text</p>
+</body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>lang伪类用法</title>
+    <style type="text/css">
+        q:lang(no)
+            {
+            quotes: "·" "·";
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>文字<q lang="no">段落中引用的文字</q>文字</p>
+</body>
