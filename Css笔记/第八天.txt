@@ -1,0 +1,12 @@
+流式布局
+
+float：left、right、none
+实现一行多个div排列
+clear：both、right、left、none
+清除浮动对象
+
+盒子模型
+maring 边界
+padding  填充
+border  框边
+可以设置负值
