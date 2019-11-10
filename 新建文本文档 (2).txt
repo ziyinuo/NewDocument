@@ -1,0 +1,26 @@
+EL表达式
+
+EL运算符
+/	div
+% 	mod
+>	gt
+>=	ge
+<	lt
+<=	le
+== 	eq
+!	ne
+&&	and
+||	or
+!	not
+empty：判断空变量、空值、空字符串、空列表、空集、空映射
+变量：相应范围内的属性
+<% request.setAttribute("myname", "abc") %>
+依次从page范围，request范围、session范围、application范围查找同名属性
+
+使用第一个查找到的属性，返回属性值，没有时不返回
+
+EL本身的隐含对象11个
+以***Scope为主
+
+
+EL支持自动类型转换，不支持 "+"连接

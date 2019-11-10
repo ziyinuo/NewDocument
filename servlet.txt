@@ -1,0 +1,192 @@
+
+
+
+
+
+
+
+
+
+
+请求对象，HttpServletRequest接口类型
+请求对象中保存用户发送请求的信息
+请求对象在一个请求响应过程中有效
+请求对象作为service()的第一个参数使用，作为doGet和doPost方法的第一个参数使用
+1.通过请求对象接收请求参数（页面中表单控件的name值），请求参数值就是表单控件的value值
+	使用getParameterValue就收参数
+	如果页面没有对象的控件，则接受的值是null
+	所有请求参数值都是String
+	如果页面中有多个同名控件，使用getParameterValues接收，返回String[]
+2.GET请求
+	1.在浏览器地址输入网址
+	2.单击页面中的超链接
+	3.表单method值为get
+3.post请求
+	表单method值为post
+区别
+	get请求在地址栏，只能传递String类型数据，不安全
+	post会被打成数据包，不限制数据量，相对安全
+请求对象的常用方法
+请求报头相关的方法
+
+响应对象作为service的第二个参数，doGet和doPost方法的第二个参数使用
+请求对象和响应对象成对出现
+
+状态码
+乱码问题setContentType()，get请求写法默认
+
+
+
+web资源之间：请求转发，重定向，包含
+1.请求转发：两份资源在一个请求响应过程中，共用一对请求对象和响应对象
+重定向，两个资源在不同请求响应过程中，使用不同的请求和响应对象
+
+请求转发时，通过请求对象来传递数据
+重定向时，不能同求请求传递数据
+传递数据时可以使用的方法
+	request.setAttribute()
+	request.getAttribute()
+	request.removeAttribute()
+	request.getAttributeNames()
+
+请求转发时，只能转发到当前项目中的另一个资源
+重定向时，既可以重定向到当前项目资源，也可以下一个项目的资源
+
+请求转发时，只能使用相对路径，相对于当前资源，当前项目
+重定向时，可以使用相对，也可以使用绝对路径
+
+请求转发时，地址栏显示第一个资源
+重定向时，地址栏显示第二个资源
+
+最终结果都会显示第二个资源
+
+请求转发的代码
+	RequestDispatcher s = req.kkkkk()
+
+重定向代码
+	 response.sendRedirect(路径)
+
+包含关系，第二个资源执行结果包含到第一个资源中，最为第一个资源的结果的一部分
+	RequestDispatcher s = req.kkkkk()
+	s.include();
+
+
+ServlectContext是web项目的全局对象，一个web项目有一个该对象
+该对象随着web项目启动创建，随着项目卸载销毁
+该对象可以跨多个请求/响应过程也可以跨多个会话使用
+在xml中配置该对象的初始化参数
+
+
+HTTP无状态协议
+会话，以及会话跟踪技术
+
+HttpSession、Cookie（使用时需要设置存活时间）
+
+HttpSession的工作原理
+
+常用方法，设置超时时长（默认30分钟）等，代码中或者xml文件中设置，不同位置的单位不同
+
+session对象调用invalidate()方法后，再次使用session，会抛出异常
+
+session对象是范围对象，一个会话中有效，具有范围操作方法
+
+
+线程安全特性
+
+
+
+
+
+JSP的概念	java代码与html代码混合
+JSP的工作原理
+
+JSP代码由两部分组成
+静态模板：HTML，CSS，JavaScript
+动态元素：Java代码
+
+JSP文件的第一次访问使用时间长（编译成class文件）
+修改内容后需要重新编译
+
+动态元素由脚本元素，动作元素和伪指令组成
+
+指令元素（和JSP运行没有任何关系）
+所有的指令都是JSP文件解释成Java源文件时起作用
+语法：<%@ directive {attr="value "}*%>
+JSP指令：page指令，include指令，taglib指令
+page指令 定义页面相关属性
+include指令用于静态包含相应的资源，只有一个属性
+taglib指令，导入第三方的标签库
+
+
+脚本元素由声明，脚本，表达式组成
+语法＜%  %>
+
+声明部分：
+	可以声明数据域，方法，内部类，作为编译后的Servlet的成员使用
+	声明部分在JSP中有多个，位置不固定
+	声明部分中不允许有隐含对象
+	如何声明对象
+	语法：
+		< % ! declaration ( s ) % > 
+		<jsp:declaration>declaration(s)</jsp:declaration> 
+
+脚本段
+	一段java代码，请求期间要执行的java代码
+	JSP中有多个脚本段，之间有先后顺序	
+	脚本段可以出现在任何位置
+	脚本段中可以使用隐含对象，输出语句等
+	语法：
+		< % scriptlet % > 
+		<jsp:scriptlet>scriptlet</jsp:scriptlet>
+
+	注释：
+		< % / / comments % > 
+		< % / * comments * / % > 
+		< % / * * comments * / % >
+
+表达式
+	输出语句，输出表达式结果
+	表达式中不允许写程序代码
+	也不允许表达式结果是void
+	表达的语法：
+		< % = expression % > 
+		<jsp:expression>expression</jsp:expression>
+
+
+注释两种：本身注释（只有程序员可见）和HTML注释（客户端可以看见）
+	ＨＴＭＬ注释
+		<!--comments …-->
+	ｊｓｐ注释
+		<%--comments …--%>
+
+掌握9个JSP隐含对象类型
+
+在JSP中有四种范围
+
+pageContext对象
+	本身是一种范围对象，作用范围当前jsp页面
+	通过它可以获得其他8个JSP隐含对象
+	该对象的removeAttribute()方法用与删除所有四个范围内的同名属性
+
+
+Ｓｔｒｕｔｓ２
+
+动态方法调用格式
+内建支持结果类型　：ｄｉｓｐａｔｃｈ
+ｐｒｏｐｅｒｔｙ标签
+
+
+Ｓｐｒｉｎｇ
+事务管理
+配置事务
+属性注入配置
+	ｂｅａｎ配置
+	ｉｄ和ｎａｍｅ要保证唯一性
+	
+	通过程序代码获得ｂｅａｎ
+
+
+
+
+
+
